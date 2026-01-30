@@ -108,7 +108,7 @@ const config: Config = {
           items: [
             {
               label: 'はじめに',
-              to: '/docs/intro',
+              to: '/docs',
             },
             {
               label: 'パラメータリファレンス',
