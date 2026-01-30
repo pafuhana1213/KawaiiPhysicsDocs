@@ -1,32 +1,41 @@
 ---
 name: add-page
-description: 新しいドキュメントページを追加
+description: 新しいドキュメントページを追加する
+disable-model-invocation: true
+allowed-tools: Write, Edit, Read
+argument-hint: "[category/page-name] [タイトル]"
 ---
 
-# ドキュメントページ追加
+# 新規ページ追加
 
-新しいドキュメントページを作成します: $ARGUMENTS
+新しいドキュメントページを作成: $ARGUMENTS
 
 ## テンプレート
 
 ```markdown
 ---
-sidebar_position: [番号]
+sidebar_position: [番号を決定]
 ---
 
-# タイトル
+# [タイトル]
 
-[導入文]
+[導入文 - このページで何を説明するか]
 
-## セクション1
+## 概要
 
-[内容]
+[機能やコンセプトの説明]
 
-## セクション2
+## 使用方法
 
-[内容]
+[具体的な手順や設定方法]
 
-## 関連リンク
+## 例
+
+[コード例やスクリーンショットプレースホルダー]
+
+<!-- IMAGE_NEEDED: [必要な画像の説明] -->
+
+## 関連
 
 - [関連ページ1](/docs/path)
 - [関連ページ2](/docs/path)
@@ -34,12 +43,12 @@ sidebar_position: [番号]
 
 ## 手順
 
-1. 適切なディレクトリに`.md`ファイルを作成
-2. frontmatterで`sidebar_position`を設定
-3. 必要に応じて`sidebars.ts`を更新
-4. ビルドで確認: `npm run build`
+1. `docs/[category]/[page-name].md` を作成
+2. frontmatter で `sidebar_position` を設定
+3. `sidebars.ts` に追加（必要な場合）
+4. `npm run build` で検証
 
 ## 命名規則
 
 - ファイル名: kebab-case (`my-new-page.md`)
-- URLパス: `/docs/category/my-new-page`
+- カテゴリ: `getting-started`, `parameters`, `features`, `advanced`, `api`

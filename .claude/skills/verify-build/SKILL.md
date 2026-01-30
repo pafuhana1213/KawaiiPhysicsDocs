@@ -1,36 +1,35 @@
 ---
 name: verify-build
-description: ビルドとリンクチェックを実行
+description: Docusaurusビルドとリンクチェックを実行
 disable-model-invocation: true
+allowed-tools: Bash
 ---
 
 # ビルド検証
 
-ドキュメントのビルドとリンクチェックを実行します。
-
-## 実行コマンド
-
 ```bash
-cd "F:\Github\KawaiiPhysicsDocs" && npm run build
+npm run build
 ```
 
 ## チェック項目
 
-1. **ビルドエラー**
-   - TypeScriptエラー
-   - Markdownパースエラー
-   - 不正なfrontmatter
+### 成功条件
+- `[SUCCESS] Generated static files in "build"` が表示
+- `[SUCCESS] Generated static files in "build\en"` が表示
 
-2. **リンクチェック**
-   - 壊れた内部リンク（`onBrokenLinks: 'throw'`で検出）
-   - 存在しない画像参照
+### エラー種別と対処
 
-3. **多言語ビルド**
-   - ja（日本語）
-   - en（英語）
-   両方でビルドが通ることを確認
+| エラー | 原因 | 対処 |
+|-------|------|------|
+| `broken links` | 内部リンク切れ | パスを修正 |
+| `broken markdown links` | MDファイル参照エラー | ファイル存在確認 |
+| `duplicate routes` | 同じURLパス | slug/ファイル名を変更 |
+| `missing sidebar item` | sidebars.tsに未登録 | sidebars.tsを更新 |
 
-## エラー対処
+## 多言語ビルド
 
-- リンク切れ: パスを修正、または`docs/`内にファイルを作成
-- 画像未発見: `static/img/`に配置、またはプレースホルダーに変更
+両言語でビルドが必要:
+- ja (日本語) - メイン
+- en (英語) - サブ
+
+英語版がない場合、日本語がフォールバックとして使用される。

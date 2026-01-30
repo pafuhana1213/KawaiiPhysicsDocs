@@ -1,48 +1,60 @@
 ---
 name: sync-docs
-description: KawaiiPhysicsソースコードからドキュメントを同期・更新
+description: KawaiiPhysicsソースコードを解析してドキュメントを同期・更新する。パラメータリファレンスやAPIドキュメントを最新の状態に保つ。
+context: fork
+agent: source-analyzer
+disable-model-invocation: true
+allowed-tools: Bash, Read, Write, Edit, Grep, Glob
 ---
 
-# ドキュメント同期ワークフロー
+# ドキュメント同期
 
 KawaiiPhysicsリポジトリのソースコードを解析し、ドキュメントを更新します。
 
-## 実行手順
+## 手順
 
-1. **ソースコードを取得**
-   ```bash
-   git clone --depth 1 https://github.com/pafuhana1213/KawaiiPhysics.git /tmp/KawaiiPhysics
-   ```
-
-2. **ヘッダーファイルを解析**
-   - `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/AnimNode_KawaiiPhysics.h`
-   - UPROPERTYマクロからパラメータ情報を抽出
-
-3. **ドキュメントを更新**
-   - `docs/parameters/*.md` を更新
-   - `docs/api/*.md` を更新
-   - `docs/changelog.md` にリリース情報を追加
-
-4. **ビルド検証**
-   ```bash
-   npm run build
-   ```
-
-5. **変更をコミット**
-   - 変更があればコミットを作成
-   - PR作成を提案
-
-## パラメータ抽出パターン
-
-```cpp
-// このパターンを検索
-UPROPERTY(EditAnywhere, Category = "...", meta = (...))
-float ParameterName;
+### 1. ソースコード取得
+```bash
+git clone --depth 1 https://github.com/pafuhana1213/KawaiiPhysics.git /tmp/KawaiiPhysics
 ```
 
-抽出する情報:
-- パラメータ名
-- 型
-- カテゴリ
-- メタ情報（範囲、ツールチップなど）
-- コメント（日本語含む）
+### 2. 解析対象ファイル
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/AnimNode_KawaiiPhysics.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/KawaiiPhysicsLibrary.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/KawaiiPhysicsLimitsDataAsset.h`
+
+### 3. 抽出パターン
+```cpp
+UPROPERTY(EditAnywhere, Category = "CategoryName", meta = (ClampMin = "0", ClampMax = "1"))
+float ParameterName; // 日本語コメント
+```
+
+### 4. 更新対象ドキュメント
+- `docs/parameters/physics.md`
+- `docs/parameters/collision.md`
+- `docs/parameters/limits.md`
+- `docs/parameters/external-forces.md`
+- `docs/api/animnode-kawaiiphysics.md`
+- `docs/api/kawaiiphysics-library.md`
+
+### 5. 検証
+```bash
+npm run build
+```
+
+## 出力形式
+
+各パラメータを以下の形式でドキュメント化:
+
+```markdown
+## ParameterName
+
+**説明文**（ソースコードのコメントから）
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | [型名] |
+| デフォルト | [値] |
+| 範囲 | [min] - [max] |
+| カテゴリ | [Category名] |
+```

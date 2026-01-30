@@ -1,15 +1,25 @@
 {
   "hooks": {
-    "PostEditFile": [
+    "PostToolUse": [
       {
-        "match": "docs/**/*.md",
-        "command": "echo 'Markdown file edited: {{filePath}}'"
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'File modified'"
+          }
+        ]
       }
     ],
-    "PreCommit": [
+    "Stop": [
       {
-        "command": "npm run build",
-        "description": "Verify build passes before commit"
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '✓ Claude Code session ended'"
+          }
+        ]
       }
     ]
   },
@@ -17,12 +27,16 @@
     "allow": [
       "Bash(npm run *)",
       "Bash(npm start)",
+      "Bash(npm install *)",
       "Bash(git *)",
+      "Bash(gh *)",
       "Read",
-      "Write",
-      "Edit",
       "Glob",
       "Grep"
+    ],
+    "deny": [
+      "Bash(rm -rf /)",
+      "Bash(rm -rf ~)"
     ]
   }
 }

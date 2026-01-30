@@ -4,46 +4,45 @@ UE向け軽量ボーン物理プラグイン [KawaiiPhysics](https://github.com/
 
 ## Tech Stack
 
-- **Framework**: Docusaurus 3.x (TypeScript)
-- **Deploy**: GitHub Pages
-- **Locales**: ja (primary), en
-
-## Directory Map
-
-- `docs/` - Markdown documentation (sidebars.ts で構成)
-- `blog/` - Update announcements
-- `src/pages/` - Custom React pages
-- `static/` - Images, assets
-- `.github/workflows/` - CI/CD
+- Docusaurus 3.x (TypeScript)
+- GitHub Pages
+- 日本語メイン、英語サブ
 
 ## Commands
 
 ```bash
-npm start      # Dev server (localhost:3000)
+npm start      # Dev server
 npm run build  # Production build (MUST pass before commit)
-npm run serve  # Preview build
 ```
 
-## Code Style
+## Directory
 
-- Markdown: 日本語メイン、コード例は英語
-- 画像プレースホルダー: `<!-- IMAGE_NEEDED: 説明 -->`
-- 自動生成マーク: `<!-- AUTO-GENERATED: ... -->`
-- Frontmatter必須: `sidebar_position`, `slug`（トップページのみ）
+- `docs/` - Markdown documentation
+- `blog/` - Update announcements
+- `.claude/rules/` - Path-specific rules
+- `.claude/skills/` - Reusable workflows
 
 ## Workflow
 
-1. **ソース解析**: KawaiiPhysicsリポジトリのUPROPERTYからパラメータ抽出
-2. **ドキュメント更新**: `docs/parameters/` 配下を更新
-3. **ビルド検証**: `npm run build` で必ず確認
-4. **コミット**: 変更内容を明確に記述
+1. ソース解析 → 2. ドキュメント更新 → 3. `npm run build` → 4. コミット
 
 ## IMPORTANT
 
 - ビルドエラーは必ず修正してからコミット
 - リンク切れは `onBrokenLinks: 'throw'` で検出される
-- 日英両言語でビルドされる点に注意
 
-## Source Repository
+## Skills
 
-@docs/source-mapping.md にソースコードとドキュメントの対応を記載
+- `/sync-docs` - ソースからドキュメント同期
+- `/add-page [path] [title]` - 新規ページ追加
+- `/verify-build` - ビルド検証
+
+## Rules
+
+@.claude/rules/markdown-style.md
+@.claude/rules/docusaurus.md
+@.claude/rules/ue-docs.md
+
+## Source Mapping
+
+@docs/source-mapping.md
