@@ -1,0 +1,28 @@
+{
+  "hooks": {
+    "PostEditFile": [
+      {
+        "match": "docs/**/*.md",
+        "command": "echo 'Markdown file edited: {{filePath}}'"
+      }
+    ],
+    "PreCommit": [
+      {
+        "command": "npm run build",
+        "description": "Verify build passes before commit"
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Bash(npm start)",
+      "Bash(git *)",
+      "Read",
+      "Write",
+      "Edit",
+      "Glob",
+      "Grep"
+    ]
+  }
+}
