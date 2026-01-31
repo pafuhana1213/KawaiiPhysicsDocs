@@ -7,16 +7,7 @@ slug: /
 
 **KawaiiPhysics** は、Unreal Engine向けの軽量なボーン物理シミュレーションプラグインです。
 
-<!-- IMAGE_NEEDED: intro-demo.gif
-     内容: KawaiiPhysicsのデモGIF
-     撮影対象: 髪や尻尾が揺れるキャラクター
-     要件:
-     - キャラクターが歩行または待機中に髪/尻尾が自然に揺れる様子
-     - 解像度: 800x450px以上
-     - フレームレート: 30fps
-     - ループ: 3-5秒のシームレスループ
-     - 背景: シンプルな単色またはUEデフォルトレベル
--->
+![KawaiiPhysics Demo](/img/intro-demo.gif)
 
 ## 特徴
 

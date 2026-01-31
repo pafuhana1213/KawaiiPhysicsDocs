@@ -54,12 +54,4 @@ git submodule add https://github.com/pafuhana1213/KawaiiPhysics.git Plugins/Kawa
 
 プラグインが正しくインストールされると、Animation Blueprintのノード一覧に **Kawaii Physics** が表示されます。
 
-<!-- IMAGE_NEEDED: installation-animgraph-node.png
-     内容: AnimGraphでKawaiiPhysicsノードを追加する様子
-     撮影場所: Animation Blueprint > AnimGraph
-     要件:
-     - 右クリックコンテキストメニューを開いた状態
-     - "Kawaii Physics" で検索し、ノードが表示されている
-     - 解像度: 800x600px以上
-     - AnimGraphの背景とノードが見える構図
--->
+![AnimGraphでのKawaiiPhysicsノード](/img/animgraph-example.jpg)

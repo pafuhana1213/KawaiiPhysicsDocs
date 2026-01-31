@@ -22,15 +22,7 @@ sidebar_position: 2
 
 AnimGraphで右クリックし、**Kawaii Physics** ノードを追加します。
 
-<!-- IMAGE_NEEDED: quickstart-add-node.png
-     内容: KawaiiPhysicsノード追加の手順
-     撮影場所: Animation Blueprint > AnimGraph
-     要件:
-     - 追加されたKawaiiPhysicsノードがAnimGraphに表示されている
-     - ノードの入出力ピンが見える状態
-     - Output Poseノードに接続された状態が望ましい
-     - 解像度: 800x500px以上
--->
+![AnimGraphでのKawaiiPhysicsノード](/img/animgraph-example.jpg)
 
 ### Step 3: Root Boneを設定
 
@@ -55,17 +47,7 @@ AnimGraphで右クリックし、**Kawaii Physics** ノードを追加します�
 
 Animation Blueprintのプレビューウィンドウでキャラクターを動かし、物理の動作を確認します。
 
-<!-- VIDEO_NEEDED: quickstart-preview.mp4 (またはGIF)
-     内容: 基本セットアップ後のプレビュー動画
-     撮影場所: Animation Blueprint プレビューウィンドウ
-     要件:
-     - Root Boneを設定した直後の状態
-     - プレビューウィンドウでキャラクターを動かし、ボーンが揺れる様子
-     - 髪や尻尾など、分かりやすい部位で実演
-     - 長さ: 5-10秒
-     - 解像度: 1280x720px以上
-     - フォーマット: MP4 (H.264) または高画質GIF
--->
+![KawaiiPhysicsのプレビュー](/img/intro-demo.gif)
 
 ## 次のステップ
 

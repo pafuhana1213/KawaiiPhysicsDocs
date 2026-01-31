@@ -12,15 +12,7 @@ sidebar_position: 2
 
 頭や肩など、球形に近い部位に適しています。
 
-<!-- IMAGE_NEEDED: collision-sphere-example.png
-     内容: 球体コリジョンの例
-     撮影場所: Animation Blueprint プレビューまたはPersona
-     要件:
-     - デバッグ表示で球体コリジョンが可視化された状態
-     - 頭や肩に配置された球体コリジョンの例
-     - ボーン（髪など）がコリジョンで制限されている様子
-     - 解像度: 600x400px以上
--->
+![コリジョンの例](/img/collision-example.gif)
 
 ### Capsule（カプセル）
 
@@ -34,6 +26,8 @@ sidebar_position: 2
      - 腕や脚に配置されたカプセルコリジョンの例
      - コリジョンの向きと長さが分かる角度
      - 解像度: 600x400px以上
+
+     現在は上のGIFでコリジョン例を表示中
 -->
 
 ### Plane（平面）
