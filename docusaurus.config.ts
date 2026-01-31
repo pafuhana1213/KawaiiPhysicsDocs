@@ -66,7 +66,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/kawaiiphysics-social-card.jpg',
+    image: 'img/docusaurus-social-card.jpg',
     colorMode: {
       defaultMode: 'light',
       respectPrefersColorScheme: true,
