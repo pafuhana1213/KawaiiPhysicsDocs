@@ -90,6 +90,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          to: '/adoption',
+          label: '採用実績',
+          position: 'left',
+        },
+        {
           type: 'localeDropdown',
           position: 'right',
         },
