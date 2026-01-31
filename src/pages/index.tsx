@@ -25,8 +25,8 @@ function HomepageHeader() {
       </div>
       <div className={styles.videoOverlay} />
       <div className={clsx('container', styles.heroContent)}>
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+        <Heading as="h1" className={clsx('hero__title', styles.heroTitle)}>
+          Kawaii Physics
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
         <div className={styles.buttons}>
