@@ -3,7 +3,6 @@ name: sync-docs
 description: KawaiiPhysicsソースコードを解析してドキュメントを同期・更新する。パラメータリファレンスやAPIドキュメントを最新の状態に保つ。
 context: fork
 agent: source-analyzer
-disable-model-invocation: true
 allowed-tools: Bash, Read, Write, Edit, Grep, Glob
 ---
 
