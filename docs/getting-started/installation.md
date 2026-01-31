@@ -6,9 +6,9 @@ sidebar_position: 1
 
 KawaiiPhysicsをプロジェクトに導入する方法を説明します。
 
-## 方法1: UE Marketplace（推奨）
+## 方法1: Fab（推奨）
 
-1. [UE Marketplace](https://www.unrealengine.com/marketplace/ja/product/kawaiiphysics) からプラグインを取得
+1. [Fab](https://www.fab.com/ja/listings/f870c07e-0a02-4a78-a888-e52a22794572) からプラグインを取得
 2. Epic Games Launcherでプロジェクトにインストール
 3. プロジェクトを再起動
 

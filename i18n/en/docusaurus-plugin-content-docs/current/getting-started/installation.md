@@ -6,9 +6,9 @@ sidebar_position: 1
 
 This guide explains how to install KawaiiPhysics in your project.
 
-## Method 1: UE Marketplace (Recommended)
+## Method 1: Fab (Recommended)
 
-1. Get the plugin from [UE Marketplace](https://www.unrealengine.com/marketplace/ja/product/kawaiiphysics)
+1. Get the plugin from [Fab](https://www.fab.com/ja/listings/f870c07e-0a02-4a78-a888-e52a22794572)
 2. Install it to your project via Epic Games Launcher
 3. Restart your project
 

@@ -35,9 +35,9 @@
     "message": "GitHub",
     "description": "The label of footer link with label=GitHub"
   },
-  "link.item.label.UE Marketplace": {
-    "message": "UE Marketplace",
-    "description": "The label of footer link with label=UE Marketplace"
+  "link.item.label.Fab": {
+    "message": "Fab",
+    "description": "The label of footer link with label=Fab"
   },
   "copyright": {
     "message": "Copyright © 2025 pafuhana1213. Built with Docusaurus.",
