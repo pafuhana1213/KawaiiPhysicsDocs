@@ -14,6 +14,7 @@ npm run build  # Production build - MUST pass before commit
 - **ビルドエラー修正必須**: コミット前に必ず `npm run build` を実行
 - **リンク切れ検出**: `onBrokenLinks: 'throw'` により自動検出
 - **日本語メイン**: 日本語で記述、技術用語は英語OK
+- **複数選択デフォルト**: AskUserQuestion で選択肢を提示する際は `multiSelect: true` を使用
 
 ## Workflow
 
