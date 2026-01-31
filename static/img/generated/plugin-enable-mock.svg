@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 350" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="600" height="350" fill="#2a2a2a"/>
+
+  <!-- Window Title Bar -->
+  <rect width="600" height="30" fill="#3c3c3c"/>
+  <text x="20" y="20" font-size="12" fill="#cccccc">Plugins</text>
+  <circle cx="570" cy="15" r="6" fill="#666" stroke="#888"/>
+  <circle cx="550" cy="15" r="6" fill="#666" stroke="#888"/>
+  <circle cx="530" cy="15" r="6" fill="#666" stroke="#888"/>
+
+  <!-- Search Bar -->
+  <rect x="20" y="45" width="560" height="28" rx="3" fill="#1e1e1e" stroke="#555"/>
+  <text x="30" y="64" font-size="13" fill="#0080ff">KawaiiPhysics</text>
+  <text x="140" y="64" font-size="13" fill="#666">|</text>
+
+  <!-- Left Panel - Categories -->
+  <rect x="20" y="85" width="140" height="245" fill="#1e1e1e" rx="3"/>
+  <text x="30" y="110" font-size="11" fill="#888">ALL</text>
+  <text x="30" y="130" font-size="11" fill="#888">INSTALLED</text>
+  <rect x="25" y="140" width="130" height="20" fill="#0080ff" rx="2"/>
+  <text x="35" y="154" font-size="11" fill="#ffffff">ANIMATION</text>
+  <text x="30" y="180" font-size="11" fill="#888">AUDIO</text>
+  <text x="30" y="200" font-size="11" fill="#888">CONTENT</text>
+  <text x="30" y="220" font-size="11" fill="#888">GAMEPLAY</text>
+
+  <!-- Right Panel - Plugin Details -->
+  <rect x="170" y="85" width="410" height="245" fill="#1e1e1e" rx="3"/>
+
+  <!-- Plugin Item -->
+  <rect x="180" y="95" width="390" height="80" fill="#252525" rx="3" stroke="#0080ff" stroke-width="2"/>
+
+  <!-- Checkbox - Enabled -->
+  <rect x="195" y="125" width="20" height="20" fill="#0080ff" rx="3"/>
+  <polyline points="200,135 207,142 218,128" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Plugin Icon -->
+  <rect x="225" y="110" width="50" height="50" fill="#333" rx="5"/>
+  <text x="239" y="143" font-size="20" fill="#0080ff">K</text>
+
+  <!-- Plugin Info -->
+  <text x="285" y="125" font-size="14" fill="#ffffff" font-weight="bold">KawaiiPhysics</text>
+  <text x="285" y="143" font-size="11" fill="#888">Lightweight bone physics plugin</text>
+  <text x="285" y="158" font-size="10" fill="#666">By: pafuhana1213 | Version: 1.12.0</text>
+
+  <!-- Enabled Badge -->
+  <rect x="495" y="115" width="65" height="20" fill="#0a5c0a" rx="10"/>
+  <text x="510" y="129" font-size="10" fill="#4ade80">Enabled</text>
+
+  <!-- Restart Notice -->
+  <rect x="180" y="285" width="390" height="35" fill="#4a3c00" rx="3"/>
+  <text x="200" y="307" font-size="11" fill="#fbbf24">Restart required to apply changes</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="700" height="280" fill="#2a2a2a"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">Damping値による減衰の違い</text>
+
+  <!-- Panel 1: Damping = 0.0 -->
+  <g transform="translate(20, 50)">
+    <rect width="200" height="200" fill="#1e1e1e" rx="5"/>
+    <text x="100" y="25" font-size="13" fill="#ff6b6b" text-anchor="middle" font-weight="bold">Damping = 0.0</text>
+    <text x="100" y="45" font-size="10" fill="#888" text-anchor="middle">（収束しない）</text>
+
+    <!-- Oscillation wave - continuous -->
+    <path d="M 20 130 Q 40 70, 60 130 Q 80 190, 100 130 Q 120 70, 140 130 Q 160 190, 180 130"
+          fill="none" stroke="#ff6b6b" stroke-width="3"/>
+
+    <!-- Time axis -->
+    <line x1="20" y1="180" x2="180" y2="180" stroke="#666" stroke-width="1"/>
+    <text x="100" y="195" font-size="9" fill="#666" text-anchor="middle">時間 →</text>
+  </g>
+
+  <!-- Panel 2: Damping = 0.2 -->
+  <g transform="translate(250, 50)">
+    <rect width="200" height="200" fill="#1e1e1e" rx="5"/>
+    <text x="100" y="25" font-size="13" fill="#4ade80" text-anchor="middle" font-weight="bold">Damping = 0.2</text>
+    <text x="100" y="45" font-size="10" fill="#888" text-anchor="middle">（適度に減衰）</text>
+
+    <!-- Damped oscillation -->
+    <path d="M 20 130 Q 40 75, 60 130 Q 80 175, 100 130 Q 120 95, 140 130 Q 160 155, 180 130"
+          fill="none" stroke="#4ade80" stroke-width="3"/>
+
+    <!-- Time axis -->
+    <line x1="20" y1="180" x2="180" y2="180" stroke="#666" stroke-width="1"/>
+    <text x="100" y="195" font-size="9" fill="#666" text-anchor="middle">時間 →</text>
+  </g>
+
+  <!-- Panel 3: Damping = 0.5 -->
+  <g transform="translate(480, 50)">
+    <rect width="200" height="200" fill="#1e1e1e" rx="5"/>
+    <text x="100" y="25" font-size="13" fill="#60a5fa" text-anchor="middle" font-weight="bold">Damping = 0.5</text>
+    <text x="100" y="45" font-size="10" fill="#888" text-anchor="middle">（すぐに収束）</text>
+
+    <!-- Quickly damped oscillation -->
+    <path d="M 20 130 Q 35 90, 50 130 Q 65 155, 80 130 Q 95 120, 110 130 L 180 130"
+          fill="none" stroke="#60a5fa" stroke-width="3"/>
+
+    <!-- Time axis -->
+    <line x1="20" y1="180" x2="180" y2="180" stroke="#666" stroke-width="1"/>
+    <text x="100" y="195" font-size="9" fill="#666" text-anchor="middle">時間 →</text>
+  </g>
+
+  <!-- Legend -->
+  <text x="350" y="270" font-size="10" fill="#888" text-anchor="middle">値が大きいほど、動きが早く収束します</text>
+</svg>

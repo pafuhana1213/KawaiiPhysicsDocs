@@ -29,16 +29,9 @@ sidebar_position: 4
 2. 対象のCurveプロパティを展開
 3. カーブエディタでキーを追加・編集
 
-<!-- IMAGE_NEEDED: curve-editor-ui.png
-     内容: カーブエディタのUI
-     撮影場所: KawaiiPhysicsノードのDetails Panel > Curveプロパティ
-     要件:
-     - カーブエディタが展開された状態
-     - 2-3個のキーポイントが設定されたカーブ
-     - X軸（0-1）とY軸が見える状態
-     - 根元から先端へ値が変化するカーブの例
-     - 解像度: 700x400px以上
--->
+![カーブエディタUI](/img/generated/curve-editor-mock.svg)
+
+*※この図は自動生成されたイメージです。実際のUE5画面とは異なる場合があります。*
 
 ## カーブの読み方
 

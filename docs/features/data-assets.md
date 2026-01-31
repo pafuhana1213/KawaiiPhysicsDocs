@@ -17,15 +17,9 @@ sidebar_position: 5
 3. **KawaiiPhysicsLimitsDataAsset** を選択
 4. 名前を付けて保存
 
-<!-- IMAGE_NEEDED: data-assets-create.png
-     内容: Data Asset作成のスクリーンショット
-     撮影場所: Content Browser
-     要件:
-     - 右クリックコンテキストメニュー > Miscellaneous > Data Asset
-     - または: Data Assetクラス選択ダイアログでKawaiiPhysicsLimitsDataAssetを選択中
-     - 解像度: 600x500px以上
-     - 作成フローが分かる1-2枚の画像
--->
+![Data Asset作成の流れ](/img/generated/data-assets-create-mock.svg)
+
+*※この図は自動生成されたイメージです。実際のUE5画面とは異なる場合があります。*
 
 ## パラメータの設定
 

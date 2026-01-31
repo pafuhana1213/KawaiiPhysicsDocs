@@ -40,15 +40,9 @@ git submodule add https://github.com/pafuhana1213/KawaiiPhysics.git Plugins/Kawa
 3. **Enabled** にチェック
 4. エディタを再起動
 
-<!-- IMAGE_NEEDED: installation-plugin-enable.png
-     内容: プラグイン有効化画面のスクリーンショット
-     撮影場所: Edit > Plugins ウィンドウ
-     要件:
-     - 検索欄に "KawaiiPhysics" と入力した状態
-     - KawaiiPhysicsプラグインが表示され、Enabledにチェックが入っている状態
-     - 解像度: 800x500px以上
-     - ウィンドウのみをキャプチャ（デスクトップ背景不要）
--->
+![プラグイン有効化画面](/img/generated/plugin-enable-mock.svg)
+
+*※この図は自動生成されたイメージです。実際のUE5画面とは異なる場合があります。*
 
 ## 確認
 
