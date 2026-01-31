@@ -6,18 +6,18 @@
         "hooks": [
           {
             "type": "command",
-            "command": "echo 'File modified'"
+            "command": "echo '[Hook] File modified: checking syntax...'"
           }
         ]
       }
     ],
-    "Stop": [
+    "PreCommit": [
       {
         "matcher": "",
         "hooks": [
           {
             "type": "command",
-            "command": "echo '✓ Claude Code session ended'"
+            "command": "npm run build"
           }
         ]
       }
@@ -28,7 +28,15 @@
       "Bash(npm run *)",
       "Bash(npm start)",
       "Bash(npm install *)",
-      "Bash(git *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(git log *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git checkout *)",
+      "Bash(git branch *)",
+      "Bash(git clone *)",
       "Bash(gh *)",
       "Read",
       "Glob",
@@ -36,7 +44,9 @@
     ],
     "deny": [
       "Bash(rm -rf /)",
-      "Bash(rm -rf ~)"
+      "Bash(rm -rf ~)",
+      "Bash(git push --force *)",
+      "Bash(git reset --hard *)"
     ]
   }
 }

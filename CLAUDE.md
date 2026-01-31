@@ -2,34 +2,22 @@
 
 UE向け軽量ボーン物理プラグイン [KawaiiPhysics](https://github.com/pafuhana1213/KawaiiPhysics) のドキュメントサイト。
 
-## Tech Stack
-
-- Docusaurus 3.x (TypeScript)
-- GitHub Pages
-- 日本語メイン、英語サブ
-
 ## Commands
 
 ```bash
-npm start      # Dev server
-npm run build  # Production build (MUST pass before commit)
+npm start      # Dev server (http://localhost:3000)
+npm run build  # Production build - MUST pass before commit
 ```
 
-## Directory
+## IMPORTANT
 
-- `docs/` - Markdown documentation
-- `blog/` - Update announcements
-- `.claude/rules/` - Path-specific rules
-- `.claude/skills/` - Reusable workflows
+- **ビルドエラー修正必須**: コミット前に必ず `npm run build` を実行
+- **リンク切れ検出**: `onBrokenLinks: 'throw'` により自動検出
+- **日本語メイン**: 日本語で記述、技術用語は英語OK
 
 ## Workflow
 
 1. ソース解析 → 2. ドキュメント更新 → 3. `npm run build` → 4. コミット
-
-## IMPORTANT
-
-- ビルドエラーは必ず修正してからコミット
-- リンク切れは `onBrokenLinks: 'throw'` で検出される
 
 ## Skills
 
@@ -37,8 +25,17 @@ npm run build  # Production build (MUST pass before commit)
 - `/add-page [path] [title]` - 新規ページ追加
 - `/verify-build` - ビルド検証
 
+## Directory
+
+| Path | 内容 |
+|------|------|
+| `docs/` | Markdownドキュメント |
+| `blog/` | 更新アナウンス |
+| `i18n/en/` | 英語翻訳 |
+
 ## Rules
 
+詳細ルールは以下を参照:
 @.claude/rules/markdown-style.md
 @.claude/rules/docusaurus.md
 @.claude/rules/ue-docs.md
