@@ -40,7 +40,16 @@ head (Root Bone)
 
 ボーンの動きを徐々に収束させます。値が大きいほど早く止まります。
 
-<!-- IMAGE_NEEDED: Dampingの違いを示す比較図 -->
+<!-- IMAGE_NEEDED: concepts-damping-comparison.png (またはGIF)
+     内容: Dampingの違いを示す比較図
+     撮影方法: 同じ動作で異なるDamping値を並べて比較
+     要件:
+     - 2-3パターンを横並びで表示
+     - Damping=0.0（収束しない）, Damping=0.2（適度）, Damping=0.5（すぐ止まる）
+     - 各パターンにラベル/テキストを追加
+     - GIFの場合: 3-5秒ループ
+     - 解像度: 1200x400px以上（横長レイアウト）
+-->
 
 ### Stiffness（剛性）
 

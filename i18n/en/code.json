@@ -1,0 +1,34 @@
+{
+  "homepage.readDocs": {
+    "message": "Read the Docs",
+    "description": "The button text on the homepage"
+  },
+  "homepage.feature1.title": {
+    "message": "Simple Setup",
+    "description": "Feature 1 title"
+  },
+  "homepage.feature1.description": {
+    "message": "Apply physics to hair and clothing by just adding a single node in AnimGraph.",
+    "description": "Feature 1 description"
+  },
+  "homepage.feature2.title": {
+    "message": "Lightweight Processing",
+    "description": "Feature 2 title"
+  },
+  "homepage.feature2.description": {
+    "message": "A custom algorithm independent of PhysX provides low-overhead, stable physics simulation.",
+    "description": "Feature 2 description"
+  },
+  "homepage.feature3.title": {
+    "message": "Flexible Customization",
+    "description": "Feature 3 title"
+  },
+  "homepage.feature3.description": {
+    "message": "Fine-tune with rich parameters including collision, curves, and external forces.",
+    "description": "Feature 3 description"
+  },
+  "homepage.description": {
+    "message": "Documentation for KawaiiPhysics, a lightweight bone physics plugin for Unreal Engine",
+    "description": "The meta description of the homepage"
+  }
+}

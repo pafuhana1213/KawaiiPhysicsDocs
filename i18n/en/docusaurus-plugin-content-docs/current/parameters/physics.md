@@ -1,0 +1,260 @@
+---
+sidebar_position: 2
+---
+
+# Physics Parameters
+
+<!-- AUTO-GENERATED: This page is auto-generated from source code -->
+
+Parameters that control the basic behavior of physics simulation.
+
+[View Source](https://github.com/pafuhana1213/KawaiiPhysics/blob/master/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/AnimNode_KawaiiPhysics.h)
+
+## FKawaiiPhysicsSettings
+
+A struct that defines the basic physics control settings.
+
+### Damping
+
+**Damping Coefficient** - Controls the intensity of swaying. Smaller values reflect more acceleration in physics behavior.
+
+| Property | Value |
+|----------|-------|
+| Type | float |
+| Default | 0.1 |
+| Range | 0.0 or higher |
+| Category | KawaiiPhysics |
+
+### Stiffness
+
+**Stiffness** - Higher values maintain the original shape more.
+
+| Property | Value |
+|----------|-------|
+| Type | float |
+| Default | 0.05 |
+| Range | 0.0 or higher |
+| Category | KawaiiPhysics |
+
+### WorldDampingLocation
+
+**Reflection rate of Skeletal Mesh Component movement in world coordinates**
+
+| Property | Value |
+|----------|-------|
+| Type | float |
+| Default | 0.8 |
+| Range | 0.0 or higher |
+| Category | KawaiiPhysics |
+
+### WorldDampingRotation
+
+**Reflection rate of Skeletal Mesh Component rotation in world coordinates**
+
+| Property | Value |
+|----------|-------|
+| Type | float |
+| Default | 0.8 |
+| Range | 0.0 or higher |
+| Category | KawaiiPhysics |
+
+### Radius
+
+**Collision radius for each bone**
+
+| Property | Value |
+|----------|-------|
+| Type | float |
+| Default | 3.0 |
+| Range | 0.0 or higher |
+| Category | KawaiiPhysics |
+
+### LimitAngle
+
+**Rotation limit by physics behavior** - Properly setting this can suppress erratic behavior.
+
+| Property | Value |
+|----------|-------|
+| Type | float |
+| Default | 0.0 |
+| Range | 0.0 or higher |
+| Category | KawaiiPhysics |
+
+## Simulation Settings
+
+### SimulationSpace
+
+**Simulation Space** - Specifies the coordinate system for physics control.
+
+| Property | Value |
+|----------|-------|
+| Type | EKawaiiPhysicsSimulationSpace |
+| Default | ComponentSpace |
+
+| Value | Description |
+|-------|-------------|
+| ComponentSpace | Simulate in component space |
+| WorldSpace | Simulate in world space. Can avoid influence from sudden Root bone movement/rotation |
+| BaseBoneSpace | Simulate in specified bone space |
+
+:::note
+Using anything other than ComponentSpace causes minor performance degradation, but can avoid influence from sudden Root bone movement/rotation.
+:::
+
+### TeleportDistanceThreshold
+
+**Teleport Distance Threshold** - If the SkeletalMeshComponent movement per frame exceeds this value, that movement won't be reflected in physics control.
+
+| Property | Value |
+|----------|-------|
+| Type | float |
+| Default | 300.0 |
+
+### TeleportRotationThreshold
+
+**Teleport Rotation Threshold** - If the SkeletalMeshComponent rotation per frame exceeds this value, that rotation won't be reflected in physics control.
+
+| Property | Value |
+|----------|-------|
+| Type | float |
+| Default | 10.0 |
+
+### PlanarConstraint
+
+**Planar Constraint** - Fixes each bone on a plane according to the specified axis.
+
+| Property | Value |
+|----------|-------|
+| Type | EPlanarConstraint |
+| Default | None |
+
+| Value | Description |
+|-------|-------------|
+| None | No planar constraint |
+| X | Constrain to X axis |
+| Y | Constrain to Y axis |
+| Z | Constrain to Z axis |
+
+### SkelCompMoveScale
+
+**Component Move Scale** - Scale applied when reflecting SkeletalMeshComponent movement in physics behavior.
+
+| Property | Value |
+|----------|-------|
+| Type | FVector |
+| Default | (1, 1, 1) |
+
+## Bone Settings
+
+### RootBone
+
+**Control Root Bone** - The specified bone and all bones below it become control targets.
+
+| Property | Value |
+|----------|-------|
+| Type | FBoneReference |
+| Category | Bones |
+
+### ExcludeBones
+
+**Exclude Bones** - Removes the specified bones and all bones below them from control targets.
+
+| Property | Value |
+|----------|-------|
+| Type | TArray\<FBoneReference\> |
+| Category | Bones |
+
+### DummyBoneLength
+
+**Dummy Bone Length** - If greater than 0, adds a dummy bone at the end of control bones. Adding dummy bones improves physics control of terminal bones.
+
+| Property | Value |
+|----------|-------|
+| Type | float |
+| Default | 0.0 |
+| Range | 0.0 or higher |
+
+### BoneForwardAxis
+
+**Bone Forward Direction** - Forward direction of bones. Affects physics control and dummy bone placement position.
+
+| Property | Value |
+|----------|-------|
+| Type | EBoneForwardAxis |
+| Default | X_Positive |
+
+| Value | Description |
+|-------|-------------|
+| X_Positive | +X direction |
+| X_Negative | -X direction |
+| Y_Positive | +Y direction |
+| Y_Negative | -Y direction |
+| Z_Positive | +Z direction |
+| Z_Negative | -Z direction |
+
+## Warm-up Settings
+
+### WarmUpFrames
+
+**Warm-up Frame Count** - Number of physics idle runs. Used when you want to start/display after physics processing settles.
+
+| Property | Value |
+|----------|-------|
+| Type | int32 |
+| Default | 0 |
+| Range | 0 or higher |
+
+### bNeedWarmUp
+
+**Enable Warm-up** - Flag to enable warm-up.
+
+| Property | Value |
+|----------|-------|
+| Type | bool |
+| Default | false |
+
+### bUseWarmUpWhenResetDynamics
+
+**Warm-up on Reset** - Flag to run physics idle during ResetDynamics.
+
+| Property | Value |
+|----------|-------|
+| Type | bool |
+| Default | true |
+
+## Curve Control
+
+The following parameters can be controlled by curves. The curve value at "length from RootBone to specific bone / length from RootBone to terminal bone" (0.0-1.0) is multiplied to each parameter.
+
+| Curve | Description |
+|-------|-------------|
+| DampingCurveData | Adjusts Damping parameter |
+| StiffnessCurveData | Adjusts Stiffness parameter |
+| WorldDampingLocationCurveData | Adjusts WorldDampingLocation parameter |
+| WorldDampingRotationCurveData | Adjusts WorldDampingRotation parameter |
+| RadiusCurveData | Adjusts Radius parameter |
+| LimitAngleCurveData | Adjusts LimitAngle parameter |
+
+:::tip
+Using curves allows settings like making the root stiff and the tip soft.
+:::
+
+## Advanced Settings
+
+### bUpdatePhysicsSettingsInGame
+
+**Update Parameters During Game** - Flag to update physics parameters for each bone every frame. Disabling slightly improves performance, but makes it impossible to change physics parameters during runtime.
+
+| Property | Value |
+|----------|-------|
+| Type | bool |
+| Default | true |
+
+### ResetBoneTransformWhenBoneNotFound
+
+**Reset When Bone Not Found** - Flag to reset Transform when control target bone is not found. Generally recommended to keep disabled.
+
+| Property | Value |
+|----------|-------|
+| Type | bool |
+| Default | false |

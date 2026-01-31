@@ -1,0 +1,46 @@
+{
+  "link.title.ドキュメント": {
+    "message": "Docs",
+    "description": "The title of the footer links column with title=ドキュメント"
+  },
+  "link.title.コミュニティ": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=コミュニティ"
+  },
+  "link.title.その他": {
+    "message": "More",
+    "description": "The title of the footer links column with title=その他"
+  },
+  "link.item.label.はじめに": {
+    "message": "Introduction",
+    "description": "The label of footer link with label=はじめに"
+  },
+  "link.item.label.パラメータリファレンス": {
+    "message": "Parameter Reference",
+    "description": "The label of footer link with label=パラメータリファレンス"
+  },
+  "link.item.label.更新情報": {
+    "message": "Updates",
+    "description": "The label of footer link with label=更新情報"
+  },
+  "link.item.label.GitHub Discussions": {
+    "message": "GitHub Discussions",
+    "description": "The label of footer link with label=GitHub Discussions"
+  },
+  "link.item.label.Issues": {
+    "message": "Issues",
+    "description": "The label of footer link with label=Issues"
+  },
+  "link.item.label.GitHub": {
+    "message": "GitHub",
+    "description": "The label of footer link with label=GitHub"
+  },
+  "link.item.label.UE Marketplace": {
+    "message": "UE Marketplace",
+    "description": "The label of footer link with label=UE Marketplace"
+  },
+  "copyright": {
+    "message": "Copyright © 2025 pafuhana1213. Built with Docusaurus.",
+    "description": "The footer copyright"
+  }
+}

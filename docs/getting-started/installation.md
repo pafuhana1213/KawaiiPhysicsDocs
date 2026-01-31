@@ -40,10 +40,26 @@ git submodule add https://github.com/pafuhana1213/KawaiiPhysics.git Plugins/Kawa
 3. **Enabled** にチェック
 4. エディタを再起動
 
-<!-- IMAGE_NEEDED: プラグイン有効化画面のスクリーンショット -->
+<!-- IMAGE_NEEDED: installation-plugin-enable.png
+     内容: プラグイン有効化画面のスクリーンショット
+     撮影場所: Edit > Plugins ウィンドウ
+     要件:
+     - 検索欄に "KawaiiPhysics" と入力した状態
+     - KawaiiPhysicsプラグインが表示され、Enabledにチェックが入っている状態
+     - 解像度: 800x500px以上
+     - ウィンドウのみをキャプチャ（デスクトップ背景不要）
+-->
 
 ## 確認
 
 プラグインが正しくインストールされると、Animation Blueprintのノード一覧に **Kawaii Physics** が表示されます。
 
-<!-- IMAGE_NEEDED: AnimGraphでKawaiiPhysicsノードを追加する様子 -->
+<!-- IMAGE_NEEDED: installation-animgraph-node.png
+     内容: AnimGraphでKawaiiPhysicsノードを追加する様子
+     撮影場所: Animation Blueprint > AnimGraph
+     要件:
+     - 右クリックコンテキストメニューを開いた状態
+     - "Kawaii Physics" で検索し、ノードが表示されている
+     - 解像度: 800x600px以上
+     - AnimGraphの背景とノードが見える構図
+-->

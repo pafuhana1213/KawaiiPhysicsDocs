@@ -4,6 +4,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
+import Translate, {translate} from '@docusaurus/Translate';
 
 import styles from './index.module.css';
 
@@ -20,7 +21,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/docs">
-            ドキュメントを読む
+            <Translate id="homepage.readDocs">ドキュメントを読む</Translate>
           </Link>
         </div>
       </div>
@@ -45,16 +46,16 @@ function HomepageFeatures() {
       <div className="container">
         <div className="row">
           <Feature
-            title="シンプルなセットアップ"
-            description="AnimGraph内で1つのノードを追加するだけで、髪や服に物理を適用できます。"
+            title={translate({id: 'homepage.feature1.title', message: 'シンプルなセットアップ'})}
+            description={translate({id: 'homepage.feature1.description', message: 'AnimGraph内で1つのノードを追加するだけで、髪や服に物理を適用できます。'})}
           />
           <Feature
-            title="軽量な処理"
-            description="PhysXに依存しない独自アルゴリズムにより、低負荷で安定した物理シミュレーションを実現。"
+            title={translate({id: 'homepage.feature2.title', message: '軽量な処理'})}
+            description={translate({id: 'homepage.feature2.description', message: 'PhysXに依存しない独自アルゴリズムにより、低負荷で安定した物理シミュレーションを実現。'})}
           />
           <Feature
-            title="柔軟なカスタマイズ"
-            description="コリジョン、カーブ、外部力など、豊富なパラメータで細かな調整が可能。"
+            title={translate({id: 'homepage.feature3.title', message: '柔軟なカスタマイズ'})}
+            description={translate({id: 'homepage.feature3.description', message: 'コリジョン、カーブ、外部力など、豊富なパラメータで細かな調整が可能。'})}
           />
         </div>
       </div>
@@ -63,11 +64,10 @@ function HomepageFeatures() {
 }
 
 export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
       title="KawaiiPhysics Documentation"
-      description="Unreal Engine向け軽量ボーン物理プラグイン KawaiiPhysics のドキュメント">
+      description={translate({id: 'homepage.description', message: 'Unreal Engine向け軽量ボーン物理プラグイン KawaiiPhysics のドキュメント'})}>
       <HomepageHeader />
       <main>
         <HomepageFeatures />
