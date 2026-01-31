@@ -7,16 +7,23 @@ slug: /
 
 **KawaiiPhysics** is a lightweight bone physics simulation plugin for Unreal Engine.
 
-<!-- IMAGE_NEEDED: intro-demo.gif
-     Content: KawaiiPhysics demo GIF
-     Subject: Character with swaying hair or tail
-     Requirements:
-     - Character walking or idle with hair/tail swaying naturally
-     - Resolution: 800x450px or higher
-     - Frame rate: 30fps
-     - Loop: 3-5 second seamless loop
-     - Background: Simple solid color or UE default level
--->
+![KawaiiPhysics Demo](/img/intro-demo.gif)
+
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/0f-l-SP07Mo"
+    title="KawaiiPhysics Demo Video"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen>
+  </iframe>
+</div>
+
+![Comparison Demo](/img/comparison-demo.png)
+
+*With/without physics simulation comparison*
 
 ## Features
 
@@ -48,8 +55,19 @@ slug: /
 
 For more details, see [Installation](/docs/getting-started/installation) and [Quick Start](/docs/getting-started/quick-start).
 
+## Featured In
+
+KawaiiPhysics has been used in the following titles:
+
+- **Granblue Fantasy Versus Rising** - Fighting Game
+- **Stellar Blade** - Action Game
+
+![Dance Demo](/img/dance-demo1.gif)
+
+*Example of in-game usage*
+
 ## Links
 
 - [GitHub Repository](https://github.com/pafuhana1213/KawaiiPhysics)
-- [UE Marketplace](https://www.unrealengine.com/marketplace/ja/product/kawaiiphysics)
+- [Fab](https://www.fab.com/ja/listings/f870c07e-0a02-4a78-a888-e52a22794572)
 - [GitHub Discussions](https://github.com/pafuhana1213/KawaiiPhysics/discussions)

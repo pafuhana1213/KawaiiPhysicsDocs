@@ -55,6 +55,37 @@ if (GetCurrentLOD() >= 2)
 
 更新頻度を下げることで負荷を軽減できます。
 
+### 5. Warm Up機能の活用
+
+Warm Up機能を使用すると、キャラクター生成時に物理演算を事前に安定させることができます。
+
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/stIOjZQh3Qw"
+    title="Warm Up Feature Demo"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen>
+  </iframe>
+</div>
+
+![Warm Up Parameters](/img/features/warmup-params.png)
+
+**設定方法:**
+
+1. **Need Warm Up** を `true` に設定
+2. **Warm Up Frame** に空回しするフレーム数を指定（1以上）
+
+:::tip
+Warm Up Frameが大きいほど安定しますが、物理計算の回数が増えるため初期化時の負荷が上がります。通常は10〜30フレーム程度で十分です。
+:::
+
+![AnimNode Functions](/img/features/animnode-functions.png)
+
+AnimNode関数からWarm Upを動的に有効にすることも可能です。詳細は [更新履歴 v1.13.0](/docs/changelog#v1130) を参照してください。
+
 ## プロファイリング
 
 ### Unreal Insightsでの確認

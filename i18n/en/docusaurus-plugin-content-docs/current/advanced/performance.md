@@ -55,6 +55,37 @@ if (GetCurrentLOD() >= 2)
 
 Reducing update frequency can reduce load.
 
+### 5. Using Warm Up Feature
+
+The Warm Up feature allows you to pre-stabilize physics simulation when spawning characters.
+
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/stIOjZQh3Qw"
+    title="Warm Up Feature Demo"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen>
+  </iframe>
+</div>
+
+![Warm Up Parameters](/img/features/warmup-params.png)
+
+**Configuration:**
+
+1. Set **Need Warm Up** to `true`
+2. Specify the number of warm-up frames in **Warm Up Frame** (1 or more)
+
+:::tip
+Larger Warm Up Frame values lead to more stability but increase initialization load. Usually 10-30 frames is sufficient.
+:::
+
+![AnimNode Functions](/img/features/animnode-functions.png)
+
+Warm Up can also be dynamically enabled via AnimNode functions. See [Changelog v1.13.0](/docs/changelog#v1130) for details.
+
 ## Profiling
 
 ### Checking with Unreal Insights

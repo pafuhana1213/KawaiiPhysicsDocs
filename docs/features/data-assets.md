@@ -17,9 +17,9 @@ sidebar_position: 5
 3. **KawaiiPhysicsLimitsDataAsset** を選択
 4. 名前を付けて保存
 
-![Data Asset作成の流れ](/img/generated/data-assets-create-mock.svg)
+![DataAsset Regex設定](/img/features/dataasset-regex.png)
 
-*※この図は自動生成されたイメージです。実際のUE5画面とは異なる場合があります。*
+*DataAssetでの正規表現による骨セット指定*
 
 ## パラメータの設定
 
@@ -37,6 +37,20 @@ Data Assetには以下のパラメータを保存できます：
 ```cpp
 UPROPERTY()
 UKawaiiPhysicsLimitsDataAsset* LimitsDataAsset;
+```
+
+## BoneConstraintの設定
+
+v1.14.0からDataAssetでBoneConstraint（骨間の距離拘束）を設定できるようになりました。
+
+![BoneConstraint Demo](/img/features/boneconstraint-demo.gif)
+
+正規表現を使って拘束対象の骨セットを指定できます：
+
+```
+// 例: skirt_01_* と skirt_02_* 間の拘束
+Bone1: skirt_01_.*
+Bone2: skirt_02_.*
 ```
 
 ## メリット

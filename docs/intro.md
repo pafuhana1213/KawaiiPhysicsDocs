@@ -9,6 +9,22 @@ slug: /
 
 ![KawaiiPhysics Demo](/img/intro-demo.gif)
 
+<div style={{textAlign: 'center', margin: '20px 0'}}>
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/0f-l-SP07Mo"
+    title="KawaiiPhysics Demo Video"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen>
+  </iframe>
+</div>
+
+![Comparison Demo](/img/comparison-demo.png)
+
+*物理シミュレーションあり/なしの比較*
+
 ## 特徴
 
 - **シンプルなセットアップ**: AnimGraph内で1つのノードを追加するだけ
@@ -39,8 +55,19 @@ slug: /
 
 詳しくは [インストール](/docs/getting-started/installation) と [クイックスタート](/docs/getting-started/quick-start) をご覧ください。
 
+## 採用実績
+
+KawaiiPhysicsは以下のタイトルで採用されています：
+
+- **Granblue Fantasy Versus Rising** - 格闘ゲーム
+- **Stellar Blade** - アクションゲーム
+
+![Dance Demo](/img/dance-demo1.gif)
+
+*実際のゲームでの使用例イメージ*
+
 ## リンク
 
 - [GitHub リポジトリ](https://github.com/pafuhana1213/KawaiiPhysics)
-- [UE Marketplace](https://www.unrealengine.com/marketplace/ja/product/kawaiiphysics)
+- [Fab](https://www.fab.com/ja/listings/f870c07e-0a02-4a78-a888-e52a22794572)
 - [GitHub Discussions](https://github.com/pafuhana1213/KawaiiPhysics/discussions)

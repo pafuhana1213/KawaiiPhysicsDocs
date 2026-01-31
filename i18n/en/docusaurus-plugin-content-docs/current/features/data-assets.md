@@ -17,15 +17,9 @@ Using **KawaiiPhysicsLimitsDataAsset**, you can share collision settings and lim
 3. Select **KawaiiPhysicsLimitsDataAsset**
 4. Name and save
 
-<!-- IMAGE_NEEDED: data-assets-create.png
-     Content: Screenshot of Data Asset creation
-     Location: Content Browser
-     Requirements:
-     - Right-click context menu > Miscellaneous > Data Asset
-     - Or: Data Asset class selection dialog with KawaiiPhysicsLimitsDataAsset selected
-     - Resolution: 600x500px or higher
-     - 1-2 images showing the creation flow
--->
+![DataAsset Regex Settings](/img/features/dataasset-regex.png)
+
+*Specifying bone sets with regular expressions in DataAsset*
 
 ## Setting Parameters
 
@@ -43,6 +37,20 @@ Data Assets can store the following parameters:
 ```cpp
 UPROPERTY()
 UKawaiiPhysicsLimitsDataAsset* LimitsDataAsset;
+```
+
+## BoneConstraint Settings
+
+From v1.14.0, BoneConstraint (distance constraints between bones) can be configured in DataAssets.
+
+![BoneConstraint Demo](/img/features/boneconstraint-demo.gif)
+
+Bone sets for constraints can be specified using regular expressions:
+
+```
+// Example: Constraints between skirt_01_* and skirt_02_*
+Bone1: skirt_01_.*
+Bone2: skirt_02_.*
 ```
 
 ## Benefits
