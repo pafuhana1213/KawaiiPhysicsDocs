@@ -10,9 +10,21 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+  const videoId = '0f-l-SP07Mo';
+
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
+    <header className={clsx('hero', styles.heroBanner)}>
+      <div className={styles.videoBackground}>
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1`}
+          title="KawaiiPhysics Demo"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+          className={styles.videoIframe}
+        />
+      </div>
+      <div className={styles.videoOverlay} />
+      <div className={clsx('container', styles.heroContent)}>
         <Heading as="h1" className="hero__title">
           {siteConfig.title}
         </Heading>
