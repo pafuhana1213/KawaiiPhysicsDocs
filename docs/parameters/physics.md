@@ -8,67 +8,253 @@ sidebar_position: 2
 
 物理シミュレーションの基本動作を制御するパラメータです。
 
-## Damping
+[ソースを見る](https://github.com/pafuhana1213/KawaiiPhysics/blob/master/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/AnimNode_KawaiiPhysics.h)
 
-**減衰係数** - ボーンの動きを徐々に収束させます。
+## FKawaiiPhysicsSettings
+
+物理制御の基本設定を定義する構造体です。
+
+### Damping
+
+**減衰係数** - 揺れの強さを制御します。値が小さいほど、加速度を物理挙動に反映します。
 
 | プロパティ | 値 |
 |-----------|-----|
 | 型 | float |
 | デフォルト | 0.1 |
-| 範囲 | 0.0 - 1.0 |
+| 範囲 | 0.0 以上 |
+| カテゴリ | KawaiiPhysics |
 
-値が大きいほど動きが早く収まります。
+### Stiffness
 
-## Stiffness
-
-**剛性** - 元のアニメーションポーズに戻ろうとする力です。
+**剛性** - 値が大きいほど、元の形状を維持します。
 
 | プロパティ | 値 |
 |-----------|-----|
 | 型 | float |
 | デフォルト | 0.05 |
-| 範囲 | 0.0 - 1.0 |
+| 範囲 | 0.0 以上 |
+| カテゴリ | KawaiiPhysics |
 
-## World Damping Location
+### WorldDampingLocation
 
-**ワールド座標での位置減衰**
-
-| プロパティ | 値 |
-|-----------|-----|
-| 型 | float |
-| デフォルト | 0.8 |
-| 範囲 | 0.0 - 1.0 |
-
-## World Damping Rotation
-
-**ワールド座標での回転減衰**
+**ワールド座標系におけるSkeletal Mesh Componentの移動量の反映度**
 
 | プロパティ | 値 |
 |-----------|-----|
 | 型 | float |
 | デフォルト | 0.8 |
-| 範囲 | 0.0 - 1.0 |
+| 範囲 | 0.0 以上 |
+| カテゴリ | KawaiiPhysics |
 
-## Radius
+### WorldDampingRotation
 
-**ボーン半径** - コリジョン判定に使用される各ボーンの大きさです。
+**ワールド座標系におけるSkeletal Mesh Componentの回転量の反映度**
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | float |
+| デフォルト | 0.8 |
+| 範囲 | 0.0 以上 |
+| カテゴリ | KawaiiPhysics |
+
+### Radius
+
+**各ボーンのコリジョン半径**
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | float |
+| デフォルト | 3.0 |
+| 範囲 | 0.0 以上 |
+| カテゴリ | KawaiiPhysics |
+
+### LimitAngle
+
+**物理挙動による回転制限** - 適切に設定することで荒ぶりを抑制できます。
 
 | プロパティ | 値 |
 |-----------|-----|
 | 型 | float |
 | デフォルト | 0.0 |
+| 範囲 | 0.0 以上 |
+| カテゴリ | KawaiiPhysics |
 
-:::tip
-Radiusはカーブで制御することで、根元は太く先端は細くといった設定が可能です。
+## シミュレーション設定
+
+### SimulationSpace
+
+**シミュレーション空間** - 物理制御を行う座標系を指定します。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | EKawaiiPhysicsSimulationSpace |
+| デフォルト | ComponentSpace |
+
+| 値 | 説明 |
+|-----|------|
+| ComponentSpace | コンポーネント空間でシミュレーション |
+| WorldSpace | ワールド空間でシミュレーション。Rootボーンの急激な移動・回転の影響を回避可能 |
+| BaseBoneSpace | 指定したボーン空間でシミュレーション |
+
+:::note
+ComponentSpace以外を使用すると微小のパフォーマンス低下が発生しますが、急激なRootボーンの移動・回転の影響を回避できます。
 :::
+
+### TeleportDistanceThreshold
+
+**テレポート距離しきい値** - 1フレームにおけるSkeletalMeshComponentの移動量が設定値を超えた場合、その移動量を物理制御に反映しません。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | float |
+| デフォルト | 300.0 |
+
+### TeleportRotationThreshold
+
+**テレポート回転しきい値** - 1フレームにおけるSkeletalMeshComponentの回転量が設定値を超えた場合、その回転量を物理制御に反映しません。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | float |
+| デフォルト | 10.0 |
+
+### PlanarConstraint
+
+**平面制約** - 指定した軸に応じた平面上に各ボーンを固定します。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | EPlanarConstraint |
+| デフォルト | None |
+
+| 値 | 説明 |
+|-----|------|
+| None | 平面制約なし |
+| X | X軸に制約 |
+| Y | Y軸に制約 |
+| Z | Z軸に制約 |
+
+### SkelCompMoveScale
+
+**コンポーネント移動スケール** - SkeletalMeshComponentの移動量を物理挙動に反映する際に適用されるスケール。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | FVector |
+| デフォルト | (1, 1, 1) |
+
+## ボーン設定
+
+### RootBone
+
+**制御ルートボーン** - 指定ボーンとそれ以下のボーンを制御対象にします。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | FBoneReference |
+| カテゴリ | Bones |
+
+### ExcludeBones
+
+**除外ボーン** - 指定したボーンとそれ以下のボーンを制御対象から除去します。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | TArray\<FBoneReference\> |
+| カテゴリ | Bones |
+
+### DummyBoneLength
+
+**ダミーボーン長** - 0より大きい場合は、制御ボーンの末端にダミーボーンを追加します。ダミーボーンを追加することで、末端のボーンの物理制御を改善します。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | float |
+| デフォルト | 0.0 |
+| 範囲 | 0.0 以上 |
+
+### BoneForwardAxis
+
+**ボーン前方向** - ボーンの前方向。物理制御やダミーボーンの配置位置に影響します。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | EBoneForwardAxis |
+| デフォルト | X_Positive |
+
+| 値 | 説明 |
+|-----|------|
+| X_Positive | +X方向 |
+| X_Negative | -X方向 |
+| Y_Positive | +Y方向 |
+| Y_Negative | -Y方向 |
+| Z_Positive | +Z方向 |
+| Z_Negative | -Z方向 |
+
+## ウォームアップ設定
+
+### WarmUpFrames
+
+**ウォームアップフレーム数** - 物理の空回し回数。物理処理が落ち着いてから開始・表示したい際に使用します。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | int32 |
+| デフォルト | 0 |
+| 範囲 | 0 以上 |
+
+### bNeedWarmUp
+
+**ウォームアップ有効化** - ウォームアップを有効にするフラグ。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | bool |
+| デフォルト | false |
+
+### bUseWarmUpWhenResetDynamics
+
+**リセット時ウォームアップ** - ResetDynamics時に物理の空回しを行うフラグ。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | bool |
+| デフォルト | true |
 
 ## カーブによる制御
 
-以下のパラメータはカーブで制御可能です：
+以下のパラメータはカーブで制御可能です。「RootBoneから特定のボーンまでの長さ / RootBoneから末端のボーンまでの長さ」(0.0~1.0)の値におけるカーブの値を各パラメータに乗算します。
 
-- Damping Curve
-- Stiffness Curve
-- Radius Curve
+| カーブ | 説明 |
+|-------|------|
+| DampingCurveData | Dampingパラメータを補正 |
+| StiffnessCurveData | Stiffnessパラメータを補正 |
+| WorldDampingLocationCurveData | WorldDampingLocationパラメータを補正 |
+| WorldDampingRotationCurveData | WorldDampingRotationパラメータを補正 |
+| RadiusCurveData | Radiusパラメータを補正 |
+| LimitAngleCurveData | LimitAngleパラメータを補正 |
 
-詳しくは [カーブエディタ](/docs/features/curve-editor) を参照してください。
+:::tip
+カーブを使用することで、根元は硬く先端は柔らかくといった設定が可能です。
+:::
+
+## 高度な設定
+
+### bUpdatePhysicsSettingsInGame
+
+**ゲーム中パラメータ更新** - 各ボーンの物理パラメータを毎フレーム更新するフラグ。無効にするとパフォーマンスが僅かに改善しますが、実行中に物理パラメータを変更することが不可能になります。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | bool |
+| デフォルト | true |
+
+### ResetBoneTransformWhenBoneNotFound
+
+**ボーン未検出時リセット** - 制御対象のボーンが見つからない場合にTransformをリセットするフラグ。基本的には無効を推奨。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | bool |
+| デフォルト | false |

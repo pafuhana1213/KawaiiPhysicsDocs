@@ -8,43 +8,145 @@ sidebar_position: 4
 
 ボーンの移動・回転を制限するパラメータです。
 
-## Angle Limit
+[ソースを見る](https://github.com/pafuhana1213/KawaiiPhysics/blob/master/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/AnimNode_KawaiiPhysics.h)
 
-**角度制限** - ボーンの回転角度を制限します。
+## Bone Constraint
+
+ボーン間の距離を維持するための制約設定です。スカートのように、ボーン間の距離を一定に保ちたい場合に使用します。
+
+### BoneConstraintGlobalComplianceType
+
+**剛性タイプ** - Bone Constraintで用いる剛性タイプを指定します。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | EXPBDComplianceType |
+| デフォルト | Leather |
+| カテゴリ | Bone Constraint |
+
+[XPBD Stiffnessについて](http://blog.mmacklin.com/2016/10/12/xpbd-slides-and-stiffness/)
+
+### EXPBDComplianceType
+
+| 値 | 説明 |
+|-----|------|
+| Concrete | コンクリート（最も硬い） |
+| Wood | 木材 |
+| Leather | 革 |
+| Tendon | 腱 |
+| Rubber | ゴム |
+| Muscle | 筋肉 |
+| Fat | 脂肪（最も柔らかい） |
+
+### BoneConstraintIterationCountBeforeCollision
+
+**コリジョン前処理回数** - Bone Constraintの処理回数（コリジョン処理前）。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | int32 |
+| デフォルト | 1 |
+| カテゴリ | Bone Constraint |
+
+### BoneConstraintIterationCountAfterCollision
+
+**コリジョン後処理回数** - Bone Constraintの処理回数（コリジョン処理後）。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | int32 |
+| デフォルト | 1 |
+| カテゴリ | Bone Constraint |
+
+### bAutoAddChildDummyBoneConstraint
+
+**ダミーボーン自動追加** - 末端ボーンをBoneConstraint処理の対象にした場合、自動的にダミーボーンも処理対象にするフラグ。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | bool |
+| デフォルト | true |
+| カテゴリ | Bone Constraint |
+
+### BoneConstraints
+
+**ボーン制約リスト** - BoneConstraint処理の対象となるボーンのペアを設定します。
+
+```cpp
+UPROPERTY(EditAnywhere, Category = "Bone Constraint")
+TArray<FModifyBoneConstraint> BoneConstraints;
+```
+
+### FModifyBoneConstraint
+
+| プロパティ | 型 | 説明 |
+|-----------|-----|------|
+| Bone1 | FBoneReference | 制約の1つ目のボーン |
+| Bone2 | FBoneReference | 制約の2つ目のボーン |
+| bOverrideCompliance | bool | 剛性タイプをオーバーライドするか |
+| ComplianceType | EXPBDComplianceType | オーバーライド時の剛性タイプ |
+
+### BoneConstraintsDataAsset
+
+**ボーン制約Data Asset** - BoneConstraint処理の対象となるボーンのペアをData Assetから設定します。別のAnimNodeやAnimation Blueprintで設定を流用したい場合に推奨されます。
+
+```cpp
+UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bone Constraint")
+TObjectPtr<UKawaiiPhysicsBoneConstraintsDataAsset> BoneConstraintsDataAsset;
+```
+
+## Sync Bone
+
+同期元のボーンの移動・回転を物理制御下のボーンに適用します。スカートが足などを貫通するのを防ぐのに役立ちます。
+
+### SyncBones
+
+**同期ボーンリスト** - 同期元のボーンと物理制御下のボーンのペアを設定します。
+
+```cpp
+UPROPERTY(EditAnywhere, Category = "Sync Bone")
+TArray<FKawaiiPhysicsSyncBone> SyncBones;
+```
+
+## 角度制限
+
+### LimitAngle
+
+物理挙動による回転制限です。適切に設定することで荒ぶりを抑制できます。
 
 | プロパティ | 値 |
 |-----------|-----|
 | 型 | float |
-| デフォルト | 0.0 (制限なし) |
-| 単位 | 度 |
+| デフォルト | 0.0（制限なし） |
+| 範囲 | 0.0 以上 |
+| カテゴリ | KawaiiPhysics |
 
-## Limit Type
-
-コリジョンの制限タイプを指定します。
-
-### ESphericalLimitType
-
-| 値 | 説明 |
-|-----|------|
-| Inside | 球の内側に制限 |
-| Outside | 球の外側に制限 |
-
-## Bone Constraints
-
-ボーン間の距離を一定に保つ制約です。
-
-```cpp
-// ボーンの伸縮を防止
-bUpdatePhysicsSettingsInGame = true;
-```
+:::tip
+LimitAngleは各ボーンの親ボーンからの角度を制限します。値を大きくすると自由度が下がり、小さくすると荒ぶりやすくなります。
+:::
 
 ## Data Assetからの読み込み
 
-制限パラメータは **KawaiiPhysicsLimitsDataAsset** から読み込むことができます。
+制限パラメータは以下のData Assetから読み込むことができます：
+
+### UKawaiiPhysicsLimitsDataAsset
+
+コリジョン設定を管理するData Assetです。
 
 ```cpp
-UPROPERTY()
-UKawaiiPhysicsLimitsDataAsset* LimitsDataAsset;
+UCLASS(Blueprintable)
+class KAWAIIPHYSICS_API UKawaiiPhysicsLimitsDataAsset : public UDataAsset
 ```
+
+#### プロパティ
+
+| プロパティ | 型 | 説明 |
+|-----------|-----|------|
+| SphericalLimits | TArray\<FSphericalLimit\> | 球体コリジョンリスト |
+| CapsuleLimits | TArray\<FCapsuleLimit\> | カプセルコリジョンリスト |
+| BoxLimits | TArray\<FBoxLimit\> | ボックスコリジョンリスト |
+| PlanarLimits | TArray\<FPlanarLimit\> | 平面コリジョンリスト |
+
+エディタでは、Skeletonを設定することでボーンプレビューが可能です。
 
 詳しくは [Data Assets](/docs/features/data-assets) を参照してください。

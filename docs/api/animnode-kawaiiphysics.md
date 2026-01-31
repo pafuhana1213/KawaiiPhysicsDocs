@@ -8,64 +8,127 @@ sidebar_position: 1
 
 KawaiiPhysicsのメインAnimGraphノードのAPIリファレンスです。
 
+[ソースを見る](https://github.com/pafuhana1213/KawaiiPhysics/blob/master/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/AnimNode_KawaiiPhysics.h)
+
 ## クラス定義
 
 ```cpp
-USTRUCT(BlueprintInternalUseOnly)
+USTRUCT(BlueprintType)
 struct KAWAIIPHYSICS_API FAnimNode_KawaiiPhysics : public FAnimNode_SkeletalControlBase
 ```
 
-## プロパティ
-
-### 基本設定
-
-| プロパティ | 型 | 説明 |
-|-----------|-----|------|
-| RootBone | FBoneReference | 物理を適用するボーンチェーンの親 |
-| ExcludeBones | TArray\<FBoneReference\> | 物理から除外するボーン |
-| TargetFramerate | int32 | ターゲットフレームレート |
-
-### 物理パラメータ
+## ボーン設定
 
 | プロパティ | 型 | デフォルト | 説明 |
 |-----------|-----|-----------|------|
-| Damping | float | 0.1 | 減衰係数 |
-| Stiffness | float | 0.05 | 剛性 |
-| Radius | float | 0.0 | ボーン半径 |
-| WorldDampingLocation | float | 0.8 | ワールド位置減衰 |
-| WorldDampingRotation | float | 0.8 | ワールド回転減衰 |
+| RootBone | FBoneReference | - | 制御対象のルートボーン |
+| ExcludeBones | TArray\<FBoneReference\> | - | 制御から除外するボーン |
+| AdditionalRootBones | TArray\<FKawaiiPhysicsRootBoneSetting\> | - | 追加のルートボーン設定 |
+| DummyBoneLength | float | 0.0 | ダミーボーンの長さ |
+| BoneForwardAxis | EBoneForwardAxis | X_Positive | ボーンの前方向軸 |
 
-### カーブ
+## Physics Settings
+
+| プロパティ | 型 | デフォルト | 説明 |
+|-----------|-----|-----------|------|
+| PhysicsSettings | FKawaiiPhysicsSettings | - | 物理制御の基本設定 |
+| SimulationSpace | EKawaiiPhysicsSimulationSpace | ComponentSpace | シミュレーション空間 |
+| SimulationBaseBone | FBoneReference | - | BaseBone空間時の基準ボーン |
+| TargetFramerate | int32 | 60 | ターゲットフレームレート |
+| OverrideTargetFramerate | bool | false | フレームレートのオーバーライド |
+| TeleportDistanceThreshold | float | 300.0 | テレポート距離しきい値 |
+| TeleportRotationThreshold | float | 10.0 | テレポート回転しきい値 |
+| PlanarConstraint | EPlanarConstraint | None | 平面制約 |
+| SkelCompMoveScale | FVector | (1, 1, 1) | コンポーネント移動スケール |
+
+## ウォームアップ設定
+
+| プロパティ | 型 | デフォルト | 説明 |
+|-----------|-----|-----------|------|
+| WarmUpFrames | int32 | 0 | ウォームアップフレーム数 |
+| bNeedWarmUp | bool | false | ウォームアップ有効化 |
+| bUseWarmUpWhenResetDynamics | bool | true | リセット時ウォームアップ |
+
+## カーブ
 
 | プロパティ | 型 | 説明 |
 |-----------|-----|------|
-| DampingCurve | FRuntimeFloatCurve | 減衰カーブ |
-| StiffnessCurve | FRuntimeFloatCurve | 剛性カーブ |
-| RadiusCurve | FRuntimeFloatCurve | 半径カーブ |
+| DampingCurveData | FRuntimeFloatCurve | 減衰カーブ |
+| StiffnessCurveData | FRuntimeFloatCurve | 剛性カーブ |
+| WorldDampingLocationCurveData | FRuntimeFloatCurve | ワールド位置減衰カーブ |
+| WorldDampingRotationCurveData | FRuntimeFloatCurve | ワールド回転減衰カーブ |
+| RadiusCurveData | FRuntimeFloatCurve | 半径カーブ |
+| LimitAngleCurveData | FRuntimeFloatCurve | 角度制限カーブ |
 
-### コリジョン
+## コリジョン（Limits）
 
 | プロパティ | 型 | 説明 |
 |-----------|-----|------|
 | SphericalLimits | TArray\<FSphericalLimit\> | 球体コリジョン |
 | CapsuleLimits | TArray\<FCapsuleLimit\> | カプセルコリジョン |
+| BoxLimits | TArray\<FBoxLimit\> | ボックスコリジョン |
 | PlanarLimits | TArray\<FPlanarLimit\> | 平面コリジョン |
+| LimitsDataAsset | UKawaiiPhysicsLimitsDataAsset* | コリジョンData Asset |
+| PhysicsAssetForLimits | UPhysicsAsset* | コリジョン用Physics Asset |
 
-### 外部力
+## Bone Constraint
+
+| プロパティ | 型 | デフォルト | 説明 |
+|-----------|-----|-----------|------|
+| BoneConstraintGlobalComplianceType | EXPBDComplianceType | Leather | 剛性タイプ |
+| BoneConstraintIterationCountBeforeCollision | int32 | 1 | コリジョン前処理回数 |
+| BoneConstraintIterationCountAfterCollision | int32 | 1 | コリジョン後処理回数 |
+| bAutoAddChildDummyBoneConstraint | bool | true | ダミーボーン自動追加 |
+| BoneConstraints | TArray\<FModifyBoneConstraint\> | - | ボーン制約リスト |
+| BoneConstraintsDataAsset | UKawaiiPhysicsBoneConstraintsDataAsset* | - | 制約Data Asset |
+
+## Sync Bone
 
 | プロパティ | 型 | 説明 |
 |-----------|-----|------|
-| Gravity | FVector | 重力ベクトル |
-| bEnableWind | bool | 風の有効化 |
-| WindScale | float | 風のスケール |
+| SyncBones | TArray\<FKawaiiPhysicsSyncBone\> | 同期ボーンリスト |
 
-### Data Asset
+## 外部力
+
+| プロパティ | 型 | デフォルト | 説明 |
+|-----------|-----|-----------|------|
+| Gravity | FVector | ZeroVector | 重力ベクトル |
+| bUseLegacyGravity | bool | false | レガシー重力方式 |
+| bUseDefaultGravityZProjectSetting | bool | false | プロジェクト設定の重力使用 |
+| bUseWorldSpaceGravity | bool | true | ワールド空間重力 |
+| bEnableWind | bool | false | 風の有効化 |
+| WindScale | float | 1.0 | 風のスケール |
+| WindDirectionNoiseAngle | float | 0.0 | 風方向ノイズ（度） |
+| SimpleExternalForce | FVector | ZeroVector | 単純な外力 |
+| bUseWorldSpaceSimpleExternalForce | bool | true | ワールド空間外力 |
+| ExternalForces | TArray\<FInstancedStruct\> | - | 外力プリセット |
+| CustomExternalForces | TArray\<UKawaiiPhysics_CustomExternalForce*\> | - | カスタム外力 |
+
+## World Collision
+
+| プロパティ | 型 | デフォルト | 説明 |
+|-----------|-----|-----------|------|
+| bAllowWorldCollision | bool | false | ワールドコリジョン有効化 |
+| bOverrideCollisionParams | bool | false | コリジョンパラメータオーバーライド |
+| CollisionChannelSettings | FBodyInstance | - | コリジョン設定 |
+| bIgnoreSelfComponent | bool | true | 自己コリジョン無視 |
+| IgnoreBones | TArray\<FBoneReference\> | - | 無視ボーンリスト |
+| IgnoreBoneNamePrefix | TArray\<FName\> | - | 無視ボーン名プリフィックス |
+
+## タグ
 
 | プロパティ | 型 | 説明 |
 |-----------|-----|------|
-| LimitsDataAsset | UKawaiiPhysicsLimitsDataAsset* | 制限設定のData Asset |
+| KawaiiPhysicsTag | FGameplayTag | フィルタリング用タグ |
 
-## メソッド
+## ランタイムデータ
+
+| プロパティ | 型 | 説明 |
+|-----------|-----|------|
+| ModifyBones | TArray\<FKawaiiPhysicsModifyBone\> | 物理制御対象のボーン |
+| DeltaTime | float | フレームのデルタタイム |
+
+## 主要メソッド
 
 ### Initialize_AnyThread
 
@@ -73,12 +136,20 @@ struct KAWAIIPHYSICS_API FAnimNode_KawaiiPhysics : public FAnimNode_SkeletalCont
 virtual void Initialize_AnyThread(const FAnimationInitializeContext& Context) override;
 ```
 
-ノードの初期化処理。
+ノードの初期化処理。ボーンチェーンの構築やパラメータの初期化を行います。
 
-### Update_AnyThread
+### CacheBones_AnyThread
 
 ```cpp
-virtual void Update_AnyThread(const FAnimationUpdateContext& Context) override;
+virtual void CacheBones_AnyThread(const FAnimationCacheBonesContext& Context) override;
+```
+
+ボーン参照のキャッシュ処理。
+
+### UpdateInternal
+
+```cpp
+virtual void UpdateInternal(const FAnimationUpdateContext& Context) override;
 ```
 
 フレームごとの更新処理。
@@ -94,17 +165,68 @@ virtual void EvaluateSkeletalControl_AnyThread(
 
 物理シミュレーションの評価とボーン変換の出力。
 
-## 使用例
-
-Animation Blueprintでの使用:
+### ResetDynamics
 
 ```cpp
-// AnimGraphでKawaiiPhysicsノードを追加
-// RootBoneを設定
-// パラメータを調整
+virtual void ResetDynamics(ETeleportType InTeleportType) override;
+```
+
+物理状態のリセット。テレポート時などに使用します。
+
+### PreUpdate
+
+```cpp
+virtual void PreUpdate(const UAnimInstance* InAnimInstance) override;
+```
+
+更新前の処理。シーン情報の取得などを行います。
+
+## 座標変換ヘルパー
+
+### GetBoneTransformInSimSpace
+
+```cpp
+FTransform GetBoneTransformInSimSpace(
+    FComponentSpacePoseContext& Output,
+    const FCompactPoseBoneIndex& BoneIndex
+) const;
+```
+
+ボーンのTransformをシミュレーション空間で取得します。
+
+### ConvertSimulationSpaceTransform
+
+```cpp
+FTransform ConvertSimulationSpaceTransform(
+    FComponentSpacePoseContext& Output,
+    EKawaiiPhysicsSimulationSpace From,
+    EKawaiiPhysicsSimulationSpace To,
+    const FTransform& InTransform
+) const;
+```
+
+シミュレーション空間間でTransformを変換します。
+
+## 使用例
+
+Animation Blueprintでの基本的な使用方法:
+
+1. AnimGraphにKawaiiPhysicsノードを追加
+2. RootBoneを設定
+3. PhysicsSettingsでDamping/Stiffnessを調整
+4. 必要に応じてコリジョンを追加
+
+```cpp
+// C++からのアクセス例
+FAnimNode_KawaiiPhysics* Node = ...;
+Node->PhysicsSettings.Damping = 0.2f;
+Node->PhysicsSettings.Stiffness = 0.1f;
+Node->Gravity = FVector(0, 0, -980.0f);
 ```
 
 ## 関連
 
 - [パラメータリファレンス](/docs/parameters/overview)
 - [UKawaiiPhysicsLibrary](/docs/api/kawaiiphysics-library)
+- [Physics パラメータ](/docs/parameters/physics)
+- [Collision パラメータ](/docs/parameters/collision)
