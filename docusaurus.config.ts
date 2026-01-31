@@ -66,7 +66,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/social-card.jpg',
     colorMode: {
       defaultMode: 'light',
       respectPrefersColorScheme: true,
@@ -75,7 +75,7 @@ const config: Config = {
       title: 'KawaiiPhysics',
       logo: {
         alt: 'KawaiiPhysics Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -141,8 +141,8 @@ const config: Config = {
               href: 'https://github.com/pafuhana1213/KawaiiPhysics',
             },
             {
-              label: 'UE Marketplace',
-              href: 'https://www.unrealengine.com/marketplace/ja/product/kawaiiphysics',
+              label: 'Fab',
+              href: 'https://www.fab.com/ja/listings/f870c07e-0a02-4a78-a888-e52a22794572',
             },
           ],
         },
