@@ -101,6 +101,39 @@ sidebar_position: 2
 ComponentSpace以外を使用すると微小のパフォーマンス低下が発生しますが、急激なRootボーンの移動・回転の影響を回避できます。
 :::
 
+### SimulationBaseBone
+
+**シミュレーション基準ボーン** - BaseBone座標系時の基準となるボーン。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | FBoneReference |
+| カテゴリ | Physics Settings |
+
+:::note
+SimulationSpaceがBaseBoneSpaceの場合のみ有効です。
+:::
+
+### TargetFramerate
+
+**ターゲットフレームレート** - 物理シミュレーションのターゲットとなるフレームレート。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | int32 |
+| デフォルト | 60 |
+| カテゴリ | Physics Settings |
+
+### OverrideTargetFramerate
+
+**フレームレートオーバーライド** - TargetFramerateを使用するかどうかのフラグ。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | bool |
+| デフォルト | false |
+| カテゴリ | Physics Settings |
+
 ### TeleportDistanceThreshold
 
 **テレポート距離しきい値** - 1フレームにおけるSkeletalMeshComponentの移動量が設定値を超えた場合、その移動量を物理制御に反映しません。
@@ -163,6 +196,20 @@ ComponentSpace以外を使用すると微小のパフォーマンス低下が発
 |-----------|-----|
 | 型 | TArray\<FBoneReference\> |
 | カテゴリ | Bones |
+
+### AdditionalRootBones
+
+**追加ルートボーン** - 指定ボーンとそれ以下のボーンを制御対象に追加します（複数追加用）。
+
+| プロパティ | 値 |
+|-----------|-----|
+| 型 | TArray\<FKawaiiPhysicsRootBoneSetting\> |
+| カテゴリ | Bones |
+
+各要素には以下のプロパティがあります：
+- `RootBone`: 制御対象のルートボーン
+- `OverrideExcludeBones`: このルートボーン専用の除外ボーンリスト
+- `bUseOverrideExcludeBones`: 除外ボーンオーバーライドの有効化
 
 ### DummyBoneLength
 
