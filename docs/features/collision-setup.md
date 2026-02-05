@@ -22,10 +22,52 @@ sidebar_position: 2
 
 地面や壁など、平らな面での制限に使用します。
 
+### Box（ボックス） {#box}
+
+:::tip バージョン情報
+v1.17.0で追加
+:::
+
+直方体形状のコリジョンです。体や建物など、矩形に近い形状に適しています。
+
+```cpp
+UPROPERTY()
+TArray<FBoxLimit> BoxLimits;
+```
+
+**FBoxLimitの設定項目:**
+
+| プロパティ | 型 | 説明 |
+|-----------|-----|------|
+| DrivingBone | FBoneReference | コリジョンが追従するボーン |
+| Offset | FVector | ボーンからのオフセット |
+| Rotation | FRotator | ボックスの回転 |
+| Extent | FVector | ボックスの半径（各軸方向のサイズ） |
+
+## PhysicsAssetからのコリジョン生成 {#physicsasset}
+
+:::tip バージョン情報
+v1.17.0で追加
+:::
+
+既存のPhysicsAssetからコリジョン形状を自動生成できます。PhysicsAssetで定義されているコリジョンボディを、KawaiiPhysicsのコリジョンに変換します。
+
+### 使用方法
+
+1. KawaiiPhysicsノードを選択
+2. **Physics Asset** プロパティに既存のPhysicsAssetを設定
+3. 自動的にコリジョン形状が生成される
+
+### メリット
+
+- 既存のPhysicsAssetを再利用可能
+- 手動でのコリジョン設定作業を削減
+- 一貫性のあるコリジョン設定
+
 ## コリジョンの追加
 
 1. KawaiiPhysicsノードを選択
-2. **Spherical Limits** / **Capsule Limits** / **Planar Limits** 配列に要素を追加
+2. **Spherical Limits** / **Capsule Limits** / **Box Limits** / **Planar Limits** 配列に要素を追加
 3. **Driving Bone** を設定（コリジョンが追従するボーン）
 4. オフセットとサイズを調整
 

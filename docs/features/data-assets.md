@@ -41,7 +41,7 @@ UKawaiiPhysicsLimitsDataAsset* LimitsDataAsset;
 
 ## BoneConstraintの設定
 
-v1.14.0からDataAssetでBoneConstraint（骨間の距離拘束）を設定できるようになりました。
+v1.14.0からDataAssetでBoneConstraint（骨間の距離拘束）を設定できるようになりました。v1.19.0で正式版になっています。
 
 ![BoneConstraint Demo](/img/features/boneconstraint-demo.gif)
 
@@ -51,6 +51,19 @@ v1.14.0からDataAssetでBoneConstraint（骨間の距離拘束）を設定で�
 // 例: skirt_01_* と skirt_02_* 間の拘束
 Bone1: skirt_01_.*
 Bone2: skirt_02_.*
+```
+
+### BoneConstraintsDataAsset
+
+:::tip バージョン情報
+v1.19.0で正式化
+:::
+
+BoneConstraint設定専用のData Assetです。複数のAnimNodeやAnimation Blueprintで設定を共有したい場合に推奨されます。
+
+```cpp
+UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bone Constraint")
+TObjectPtr<UKawaiiPhysicsBoneConstraintsDataAsset> BoneConstraintsDataAsset;
 ```
 
 ## メリット

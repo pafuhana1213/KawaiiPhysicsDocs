@@ -40,10 +40,52 @@ Suitable for cylindrical parts like arms and legs.
 
 Used for flat surface restrictions like ground and walls.
 
+### Box {#box}
+
+:::tip Version Info
+Added in v1.17.0
+:::
+
+Box-shaped collision. Suitable for rectangular shapes like body and buildings.
+
+```cpp
+UPROPERTY()
+TArray<FBoxLimit> BoxLimits;
+```
+
+**FBoxLimit Properties:**
+
+| Property | Type | Description |
+|----------|------|-------------|
+| DrivingBone | FBoneReference | Bone that collision follows |
+| Offset | FVector | Offset from bone |
+| Rotation | FRotator | Box rotation |
+| Extent | FVector | Box half-extents (size in each axis direction) |
+
+## Collision Generation from PhysicsAsset {#physicsasset}
+
+:::tip Version Info
+Added in v1.17.0
+:::
+
+You can auto-generate collision shapes from existing PhysicsAssets. Collision bodies defined in PhysicsAsset are converted to KawaiiPhysics collisions.
+
+### Usage
+
+1. Select KawaiiPhysics node
+2. Set existing PhysicsAsset to **Physics Asset** property
+3. Collision shapes are automatically generated
+
+### Benefits
+
+- Reuse existing PhysicsAssets
+- Reduces manual collision setup work
+- Consistent collision settings
+
 ## Adding Collision
 
 1. Select the KawaiiPhysics node
-2. Add elements to **Spherical Limits** / **Capsule Limits** / **Planar Limits** array
+2. Add elements to **Spherical Limits** / **Capsule Limits** / **Box Limits** / **Planar Limits** array
 3. Set **Driving Bone** (bone that collision follows)
 4. Adjust offset and size
 

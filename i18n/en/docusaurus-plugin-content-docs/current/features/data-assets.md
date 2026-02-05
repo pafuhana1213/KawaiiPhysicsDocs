@@ -41,7 +41,7 @@ UKawaiiPhysicsLimitsDataAsset* LimitsDataAsset;
 
 ## BoneConstraint Settings
 
-From v1.14.0, BoneConstraint (distance constraints between bones) can be configured in DataAssets.
+From v1.14.0, BoneConstraint (distance constraints between bones) can be configured in DataAssets. Became official in v1.19.0.
 
 ![BoneConstraint Demo](/img/features/boneconstraint-demo.gif)
 
@@ -51,6 +51,19 @@ Bone sets for constraints can be specified using regular expressions:
 // Example: Constraints between skirt_01_* and skirt_02_*
 Bone1: skirt_01_.*
 Bone2: skirt_02_.*
+```
+
+### BoneConstraintsDataAsset
+
+:::tip Version Info
+Stabilized in v1.19.0
+:::
+
+A Data Asset dedicated to BoneConstraint settings. Recommended when you want to share settings across multiple AnimNodes or Animation Blueprints.
+
+```cpp
+UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bone Constraint")
+TObjectPtr<UKawaiiPhysicsBoneConstraintsDataAsset> BoneConstraintsDataAsset;
 ```
 
 ## Benefits

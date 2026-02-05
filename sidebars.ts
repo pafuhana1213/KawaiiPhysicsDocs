@@ -32,6 +32,7 @@ const sidebars: SidebarsConfig = {
         'features/wind-and-forces',
         'features/curve-editor',
         'features/data-assets',
+        'features/sync-bone',
       ],
     },
     {

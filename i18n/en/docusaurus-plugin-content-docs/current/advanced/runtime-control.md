@@ -82,7 +82,45 @@ ResetDynamics();
 
 ## Event Integration
 
-### Animation Notify
+### AnimNotify Support {#animnotify}
+
+:::tip Version Info
+Added in v1.17.0
+:::
+
+KawaiiPhysics-specific AnimNotifies are provided.
+
+**AnimNotify_KawaiiPhysics_ResetDynamics**
+
+Resets physics state. Use for teleports or animation transitions.
+
+**AnimNotify_KawaiiPhysics_SetExternalForce**
+
+Sets external force. Use for wind pressure at jump start, etc.
+
+### AnimNotifyState: Set Alpha {#animnotifystate-setalpha}
+
+:::tip Version Info
+Added in v1.20.0
+:::
+
+AnimNotifyState that can dynamically change physics blend ratio during animation.
+
+```
+Animation Timeline:
+[=======================================]
+     [--Set Alpha: 0.0 -> 1.0--]
+     ↑                        ↑
+     Start (Physics OFF)      End (Physics ON)
+```
+
+**Use Cases:**
+
+- Disable physics only during specific animations
+- Smooth blending during animation transitions
+- Control during cutscenes
+
+### Custom AnimNotify
 
 Change physics parameters from Anim Notify:
 

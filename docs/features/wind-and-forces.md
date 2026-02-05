@@ -26,6 +26,22 @@ UPROPERTY()
 float WindScale = 1.0f;
 ```
 
+### Wind Directional Source対応 {#wind-directional-source}
+
+:::tip バージョン情報
+v1.17.0で追加
+:::
+
+Unreal EngineのWind Directional Sourceに対応しました。レベルに配置した風の影響を自動的に受けます。
+
+**設定方法:**
+
+1. レベルにWind Directional Sourceを配置
+2. KawaiiPhysicsノードで `bEnableWind` を有効化
+3. `WindScale` で影響度を調整
+
+Wind Directional Sourceの強度と方向がKawaiiPhysicsの物理ボーンに反映されます。
+
 ## カスタム外部力
 
 任意の方向に力を適用できます。

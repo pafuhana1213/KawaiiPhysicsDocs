@@ -59,6 +59,56 @@ AnimGraph
 パラメータが異なる部位は、別々のノードで管理すると調整しやすくなります。
 :::
 
+## Additional Root Bones（追加ルートボーン） {#additional-root-bones}
+
+:::tip バージョン情報
+v1.17.0で追加
+:::
+
+1つのKawaiiPhysicsノードで複数のRootBoneを設定できます。同じパラメータで複数のボーンチェーンを制御したい場合に便利です。
+
+### 設定方法
+
+1. KawaiiPhysicsノードを選択
+2. **Additional Root Bones** 配列に要素を追加
+3. 各要素に追加のRootBoneを設定
+
+### FKawaiiPhysicsRootBoneSetting
+
+| プロパティ | 型 | 説明 |
+|-----------|-----|------|
+| RootBone | FBoneReference | 追加の制御ルートボーン |
+| OverrideExcludeBones | TArray\<FBoneReference\> | このルートボーン専用の除外ボーンリスト |
+| bUseOverrideExcludeBones | bool | 除外ボーンオーバーライドの有効化 |
+
+### 使用例
+
+```
+// 1つのノードで髪の前後を制御
+RootBone: hair_front_root
+AdditionalRootBones:
+  - RootBone: hair_back_root
+  - RootBone: hair_side_l_root
+  - RootBone: hair_side_r_root
+```
+
+### メリット
+
+- **ノード数の削減**: 同じパラメータなら1つのノードでまとめられる
+- **パフォーマンス**: 複数ノードより僅かに効率的
+- **管理のしやすさ**: パラメータ変更が一括で反映
+
+### 従来の方法との比較
+
+| 方式 | メリット | デメリット |
+|-----|---------|----------|
+| 複数ノード | 部位ごとに異なるパラメータ設定可能 | ノード数が増える |
+| Additional Root Bones | 同じパラメータで一括管理 | 部位ごとの微調整が難しい |
+
+:::tip
+髪の毛のように同じパラメータで揺らしたい部位はAdditional Root Bonesを使用し、スカートと尻尾のように異なるパラメータが必要な部位は別ノードにすることを推奨します。
+:::
+
 ## ボーンの長さと半径
 
 各ボーンの長さは自動計算されます。半径は手動で設定するか、カーブで制御します。

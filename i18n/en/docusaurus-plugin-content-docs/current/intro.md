@@ -35,11 +35,15 @@ slug: /
 
 ## Supported Versions
 
-| Unreal Engine | KawaiiPhysics |
-|--------------|---------------|
-| 5.3 - 5.5    | 1.16.x        |
-| 5.0 - 5.2    | 1.14.x        |
-| 4.27         | 1.11.1        |
+| KawaiiPhysics | Supported UE Versions |
+|---------------|----------------------|
+| 1.20.x        | 5.3, 5.4, 5.5, 5.6, 5.7 |
+| 1.19.x        | 5.3, 5.4, 5.5, 5.6 |
+| 1.18.x        | 5.3, 5.4, 5.5 |
+| 1.17.x        | 5.3, 5.4, 5.5 |
+| 1.16.x        | 5.3, 5.4 |
+| 1.14.x        | 5.0, 5.1, 5.2 |
+| 1.11.1        | 4.27 |
 
 ## Quick Start
 
@@ -62,9 +66,13 @@ KawaiiPhysics has been used in the following titles:
 - **Granblue Fantasy Versus Rising** - Fighting Game
 - **Stellar Blade** - Action Game
 
-![Dance Demo](/img/dance-demo1.gif)
+![Dance Demo 1](https://github.com/user-attachments/assets/28d72d0c-4423-41c7-bc52-c5c7c3886e02)
 
-*Example of in-game usage*
+*Hair and cloth physics in dance animation (Lzebul)*
+
+![Dance Demo 2](https://github.com/user-attachments/assets/63faed3c-8aaa-4d4d-ae33-e98f9c8c15fd)
+
+*Hair and cloth physics in dance animation (TA式 鷺宮カノ)*
 
 ## Links
 

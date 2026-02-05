@@ -18,10 +18,17 @@ Frequently asked questions and answers.
 
 ### Q: Which UE versions are supported?
 
-**A:**
-- UE 5.3-5.5: Latest version
-- UE 5.0-5.2: v1.14.x
-- UE 4.27: v1.11.1
+**A:** Each KawaiiPhysics version supports multiple UE versions:
+
+| KawaiiPhysics | Supported UE Versions |
+|---------------|----------------------|
+| v1.20.x       | 5.3, 5.4, 5.5, 5.6, 5.7 |
+| v1.19.x       | 5.3, 5.4, 5.5, 5.6 |
+| v1.18.x       | 5.3, 5.4, 5.5 |
+| v1.17.x       | 5.3, 5.4, 5.5 |
+| v1.16.x       | 5.3, 5.4 |
+| v1.14.x       | 5.0, 5.1, 5.2 |
+| v1.11.1       | 4.27 |
 
 ## Setup
 
@@ -80,3 +87,15 @@ Frequently asked questions and answers.
 ### Q: Can I use it in commercial projects?
 
 **A:** Yes, it's available for commercial use under the MIT license. Just include the license notice.
+
+### Q: Skirt is penetrating through legs
+
+**A:** Use the [Sync Bone feature](/docs/features/sync-bone) added in v1.20.0. By reflecting leg bone movement to the skirt, you can prevent penetration without using collisions. Combining with [BoneConstraint](/docs/parameters/limits#bone-constraint) feature provides more natural movement.
+
+### Q: I want to control multiple bone chains with one node
+
+**A:** Use the [Additional Root Bones](/docs/features/bone-chain#additional-root-bones) feature added in v1.17.0. You can set multiple root bones with the same parameters.
+
+### Q: Is it available on the Fab store?
+
+**A:** Yes, it's been distributed on the Fab store since v1.19.0. Download from [Fab](https://www.fab.com/ja/listings/f870c07e-0a02-4a78-a888-e52a22794572).

@@ -23,9 +23,26 @@ Collision shapes can be displayed in the editor.
      - Resolution: 800x600px or higher
 -->
 
+### Supported Collision Shapes
+
+| Shape | Debug Display | Version |
+|-------|--------------|---------|
+| Sphere | Wireframe sphere | - |
+| Capsule | Wireframe capsule | - |
+| Plane | Plane grid | Improved in v1.20.0 |
+| Box | Wireframe box | Added in v1.20.0 |
+
 ### Bone Chain Verification
 
 You can visually verify which bones have physics applied.
+
+### GameplayTag Filtering {#gameplaytag-filtering}
+
+:::tip Version Info
+Added in v1.17.0, enhanced in v1.20.0
+:::
+
+Debug display targets can be filtered using GameplayTags. Useful when you want to debug display only specific characters among many characters.
 
 ## Common Issues
 

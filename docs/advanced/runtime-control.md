@@ -82,7 +82,45 @@ ResetDynamics();
 
 ## イベント連携
 
-### アニメーション通知
+### AnimNotifyサポート {#animnotify}
+
+:::tip バージョン情報
+v1.17.0で追加
+:::
+
+KawaiiPhysics専用のAnimNotifyが提供されています。
+
+**AnimNotify_KawaiiPhysics_ResetDynamics**
+
+物理状態をリセットします。テレポートやアニメーション遷移時に使用します。
+
+**AnimNotify_KawaiiPhysics_SetExternalForce**
+
+外部力を設定します。ジャンプ開始時の風圧などに使用します。
+
+### AnimNotifyState: Set Alpha {#animnotifystate-setalpha}
+
+:::tip バージョン情報
+v1.20.0で追加
+:::
+
+アニメーション中に物理のブレンド率を動的に変更できるAnimNotifyStateです。
+
+```
+アニメーションタイムライン:
+[=======================================]
+     [--Set Alpha: 0.0 -> 1.0--]
+     ↑                        ↑
+     開始（物理OFF）          終了（物理ON）
+```
+
+**使用例:**
+
+- 特定のアニメーション中だけ物理を無効化
+- アニメーション遷移時のスムーズなブレンド
+- カットシーン中の制御
+
+### カスタムAnimNotify
 
 Anim Notifyから物理パラメータを変更:
 
