@@ -42,6 +42,10 @@ sidebar_position: 4
 
 ## 設定例
 
+![カーブ設定例と効果](/img/generated/curve-effect-comparison.svg)
+
+*髪の毛、尻尾、スカートでのカーブ設定例と視覚的効果*
+
 ### 髪の毛
 
 根元は硬く、先端は柔らかく:

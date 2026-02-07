@@ -156,6 +156,10 @@ SimulationSpaceがBaseBoneSpaceの場合のみ有効です。
 | 型 | float |
 | デフォルト | 10.0 |
 
+![Teleport Thresholdの動作](/img/generated/teleport-threshold-concept.svg)
+
+*しきい値を超える移動があった場合、物理に反映されずテレポート扱いになる*
+
 ### PlanarConstraint
 
 **平面制約** - 指定した軸に応じた平面上に各ボーンを固定します。
@@ -228,6 +232,10 @@ SimulationSpaceがBaseBoneSpaceの場合のみ有効です。
 | 型 | float |
 | デフォルト | 0.0 |
 | 範囲 | 0.0 以上 |
+
+![DummyBoneの効果](/img/generated/dummybone-effect.svg)
+
+*DummyBoneを追加することで末端ボーンの動きが安定する*
 
 ### BoneForwardAxis
 

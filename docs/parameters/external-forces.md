@@ -132,6 +132,10 @@ WindScaleはbEnableWindがtrueの場合のみ有効です。
 v1.16.0で追加
 :::
 
+![External Forceプリセットシステム](/img/generated/external-force-presets.svg)
+
+*プリセットの種類と適用フロー*
+
 ![External Force設定1](/img/features/externalforce-settings1.png)
 
 ![External Force設定2](/img/features/externalforce-settings2.png)

@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 380" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="750" height="380" fill="#2a2a2a"/>
+
+  <!-- Title -->
+  <text x="375" y="30" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">カーブ設定例と効果</text>
+
+  <!-- Hair example -->
+  <g transform="translate(30, 55)">
+    <rect width="220" height="300" fill="#1e1e1e" rx="5"/>
+    <text x="110" y="25" font-size="12" fill="#fbbf24" text-anchor="middle" font-weight="bold">髪の毛</text>
+    <text x="110" y="42" font-size="10" fill="#888" text-anchor="middle">根元は硬く、先端は柔らかく</text>
+
+    <!-- Curve graph -->
+    <g transform="translate(30, 60)">
+      <rect width="160" height="80" fill="#2d2d2d" rx="3"/>
+      <!-- Axes -->
+      <line x1="20" y1="65" x2="150" y2="65" stroke="#555" stroke-width="1"/>
+      <line x1="20" y1="15" x2="20" y2="65" stroke="#555" stroke-width="1"/>
+      <text x="85" y="78" font-size="8" fill="#666" text-anchor="middle">根元 → 先端</text>
+      <text x="8" y="40" font-size="8" fill="#666" text-anchor="middle" transform="rotate(-90, 8, 40)">Stiffness</text>
+
+      <!-- Curve (high to low) -->
+      <path d="M 20 20 Q 60 25, 100 45 Q 130 55, 150 60" fill="none" stroke="#4ade80" stroke-width="3"/>
+      <circle cx="20" cy="20" r="4" fill="#4ade80"/>
+      <circle cx="150" cy="60" r="4" fill="#4ade80"/>
+    </g>
+
+    <!-- Visual result -->
+    <g transform="translate(110, 200)">
+      <!-- Head -->
+      <circle cx="0" cy="-30" r="20" fill="#444"/>
+
+      <!-- Hair strands with varying stiffness -->
+      <path d="M -15 -45 Q -18 -30, -20 0 Q -22 30, -15 55" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="-15" cy="55" r="4" fill="#fbbf24"/>
+
+      <path d="M 0 -50 Q 3 -25, 8 10 Q 12 45, 5 70" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="5" cy="70" r="4" fill="#fbbf24"/>
+
+      <path d="M 15 -45 Q 20 -25, 25 5 Q 28 40, 20 65" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="20" cy="65" r="4" fill="#fbbf24"/>
+    </g>
+
+    <text x="110" y="285" font-size="9" fill="#888" text-anchor="middle">先端がより大きく揺れる</text>
+  </g>
+
+  <!-- Tail example -->
+  <g transform="translate(265, 55)">
+    <rect width="220" height="300" fill="#1e1e1e" rx="5"/>
+    <text x="110" y="25" font-size="12" fill="#60a5fa" text-anchor="middle" font-weight="bold">尻尾</text>
+    <text x="110" y="42" font-size="10" fill="#888" text-anchor="middle">全体で均一な動き</text>
+
+    <!-- Curve graph -->
+    <g transform="translate(30, 60)">
+      <rect width="160" height="80" fill="#2d2d2d" rx="3"/>
+      <!-- Axes -->
+      <line x1="20" y1="65" x2="150" y2="65" stroke="#555" stroke-width="1"/>
+      <line x1="20" y1="15" x2="20" y2="65" stroke="#555" stroke-width="1"/>
+      <text x="85" y="78" font-size="8" fill="#666" text-anchor="middle">根元 → 先端</text>
+      <text x="8" y="40" font-size="8" fill="#666" text-anchor="middle" transform="rotate(-90, 8, 40)">Damping</text>
+
+      <!-- Curve (flat line) -->
+      <path d="M 20 40 L 150 40" fill="none" stroke="#60a5fa" stroke-width="3"/>
+      <circle cx="20" cy="40" r="4" fill="#60a5fa"/>
+      <circle cx="150" cy="40" r="4" fill="#60a5fa"/>
+    </g>
+
+    <!-- Visual result -->
+    <g transform="translate(110, 200)">
+      <!-- Body -->
+      <ellipse cx="0" cy="-20" rx="30" ry="20" fill="#444"/>
+
+      <!-- Tail with uniform movement -->
+      <path d="M 0 0 Q 20 20, 35 50 Q 45 80, 40 110" fill="none" stroke="#60a5fa" stroke-width="6"/>
+      <circle cx="40" cy="110" r="5" fill="#60a5fa"/>
+
+      <!-- Movement indicators (equal) -->
+      <path d="M 25 40 L 35 35" fill="none" stroke="#4ade80" stroke-width="2"/>
+      <path d="M 40 75 L 50 70" fill="none" stroke="#4ade80" stroke-width="2"/>
+      <path d="M 45 100 L 55 95" fill="none" stroke="#4ade80" stroke-width="2"/>
+    </g>
+
+    <text x="110" y="285" font-size="9" fill="#888" text-anchor="middle">全体が同じ速度で揺れる</text>
+  </g>
+
+  <!-- Skirt example -->
+  <g transform="translate(500, 55)">
+    <rect width="220" height="300" fill="#1e1e1e" rx="5"/>
+    <text x="110" y="25" font-size="12" fill="#c084fc" text-anchor="middle" font-weight="bold">スカート</text>
+    <text x="110" y="42" font-size="10" fill="#888" text-anchor="middle">裾に向かって広がる</text>
+
+    <!-- Curve graph -->
+    <g transform="translate(30, 60)">
+      <rect width="160" height="80" fill="#2d2d2d" rx="3"/>
+      <!-- Axes -->
+      <line x1="20" y1="65" x2="150" y2="65" stroke="#555" stroke-width="1"/>
+      <line x1="20" y1="15" x2="20" y2="65" stroke="#555" stroke-width="1"/>
+      <text x="85" y="78" font-size="8" fill="#666" text-anchor="middle">根元 → 先端</text>
+      <text x="8" y="40" font-size="8" fill="#666" text-anchor="middle" transform="rotate(-90, 8, 40)">Radius</text>
+
+      <!-- Curve (low to high) -->
+      <path d="M 20 55 Q 60 50, 100 35 Q 130 25, 150 18" fill="none" stroke="#c084fc" stroke-width="3"/>
+      <circle cx="20" cy="55" r="4" fill="#c084fc"/>
+      <circle cx="150" cy="18" r="4" fill="#c084fc"/>
+    </g>
+
+    <!-- Visual result -->
+    <g transform="translate(110, 180)">
+      <!-- Waist -->
+      <ellipse cx="0" cy="0" rx="30" ry="10" fill="#444"/>
+
+      <!-- Skirt bones with increasing radius -->
+      <path d="M -30 10 Q -35 40, -40 70 Q -42 95, -45 120" fill="none" stroke="#c084fc" stroke-width="2"/>
+      <circle cx="-45" cy="120" r="6" fill="#c084fc"/>
+
+      <path d="M -10 12 Q -8 45, -5 80 Q -3 100, -8 125" fill="none" stroke="#c084fc" stroke-width="2"/>
+      <circle cx="-8" cy="125" r="8" fill="#c084fc"/>
+
+      <path d="M 10 12 Q 8 45, 5 80 Q 3 100, 8 125" fill="none" stroke="#c084fc" stroke-width="2"/>
+      <circle cx="8" cy="125" r="8" fill="#c084fc"/>
+
+      <path d="M 30 10 Q 35 40, 40 70 Q 42 95, 45 120" fill="none" stroke="#c084fc" stroke-width="2"/>
+      <circle cx="45" cy="120" r="6" fill="#c084fc"/>
+
+      <!-- Radius indicators -->
+      <text x="0" y="20" font-size="7" fill="#666" text-anchor="middle">小</text>
+      <text x="0" y="130" font-size="7" fill="#666" text-anchor="middle">大</text>
+    </g>
+
+    <text x="110" y="285" font-size="9" fill="#888" text-anchor="middle">裾のコリジョン範囲が広い</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(200, 365)">
+    <line x1="0" y1="0" x2="30" y2="0" stroke="#4ade80" stroke-width="3"/>
+    <text x="40" y="4" font-size="10" fill="#888">Stiffness</text>
+
+    <line x1="130" y1="0" x2="160" y2="0" stroke="#60a5fa" stroke-width="3"/>
+    <text x="170" y="4" font-size="10" fill="#888">Damping</text>
+
+    <line x1="260" y1="0" x2="290" y2="0" stroke="#c084fc" stroke-width="3"/>
+    <text x="300" y="4" font-size="10" fill="#888">Radius</text>
+  </g>
+</svg>

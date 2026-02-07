@@ -66,6 +66,10 @@ sidebar_position: 4
 | デフォルト | 1 |
 | カテゴリ | Bone Constraint |
 
+![反復処理の効果](/img/generated/bone-constraint-iteration.svg)
+
+*反復回数による収束の違い。回数が多いほどボーン間距離が均等になる*
+
 ### bAutoAddChildDummyBoneConstraint
 
 **ダミーボーン自動追加** - 末端ボーンをBoneConstraint処理の対象にした場合、自動的にダミーボーンも処理対象にするフラグ。

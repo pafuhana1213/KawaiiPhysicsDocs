@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="700" height="350" fill="#2a2a2a"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">External Force プリセットシステム</text>
+
+  <!-- Preset Types Panel -->
+  <g transform="translate(30, 55)">
+    <rect width="200" height="270" fill="#1e1e1e" rx="5"/>
+    <text x="100" y="25" font-size="12" fill="#fbbf24" text-anchor="middle" font-weight="bold">プリセット種類</text>
+
+    <!-- Instanced Struct -->
+    <g transform="translate(15, 45)">
+      <rect width="170" height="60" fill="#2d2d2d" stroke="#4ade80" stroke-width="2" rx="4"/>
+      <text x="85" y="20" font-size="10" fill="#4ade80" text-anchor="middle" font-weight="bold">ExternalForces</text>
+      <text x="85" y="35" font-size="9" fill="#888" text-anchor="middle">Instanced Struct</text>
+      <text x="85" y="50" font-size="8" fill="#666" text-anchor="middle">C++で拡張可能</text>
+    </g>
+
+    <!-- Custom External Force -->
+    <g transform="translate(15, 115)">
+      <rect width="170" height="60" fill="#2d2d2d" stroke="#60a5fa" stroke-width="2" rx="4"/>
+      <text x="85" y="20" font-size="10" fill="#60a5fa" text-anchor="middle" font-weight="bold">CustomExternalForces</text>
+      <text x="85" y="35" font-size="9" fill="#888" text-anchor="middle">Instanced Property</text>
+      <text x="85" y="50" font-size="8" fill="#666" text-anchor="middle">BP/C++で拡張可能</text>
+    </g>
+
+    <!-- Built-in presets list -->
+    <g transform="translate(15, 190)">
+      <text x="0" y="0" font-size="10" fill="#888">組み込みプリセット:</text>
+      <text x="10" y="18" font-size="9" fill="#c084fc">• Gravity Override</text>
+      <text x="10" y="33" font-size="9" fill="#c084fc">• Simple Force</text>
+      <text x="10" y="48" font-size="9" fill="#c084fc">• Wind</text>
+      <text x="10" y="63" font-size="9" fill="#c084fc">• Curve-based</text>
+    </g>
+  </g>
+
+  <!-- Flow Diagram -->
+  <g transform="translate(260, 55)">
+    <rect width="410" height="180" fill="#1e1e1e" rx="5"/>
+    <text x="205" y="25" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">適用フロー</text>
+
+    <!-- Step 1: Define Preset -->
+    <g transform="translate(30, 50)">
+      <rect width="100" height="50" fill="#2d2d2d" stroke="#fbbf24" stroke-width="2" rx="4"/>
+      <text x="50" y="22" font-size="10" fill="#fbbf24" text-anchor="middle">プリセット</text>
+      <text x="50" y="38" font-size="9" fill="#888" text-anchor="middle">定義</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="140" y1="75" x2="170" y2="75" stroke="#666" stroke-width="2"/>
+    <polygon points="175,75 165,70 165,80" fill="#666"/>
+
+    <!-- Step 2: AnimNode or Blueprint -->
+    <g transform="translate(185, 50)">
+      <rect width="100" height="50" fill="#2d2d2d" stroke="#4ade80" stroke-width="2" rx="4"/>
+      <text x="50" y="22" font-size="10" fill="#4ade80" text-anchor="middle">AnimNode</text>
+      <text x="50" y="38" font-size="9" fill="#888" text-anchor="middle">or Blueprint</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="295" y1="75" x2="325" y2="75" stroke="#666" stroke-width="2"/>
+    <polygon points="330,75 320,70 320,80" fill="#666"/>
+
+    <!-- Step 3: Apply to Bones -->
+    <g transform="translate(340, 50)">
+      <rect width="100" height="50" fill="#2d2d2d" stroke="#60a5fa" stroke-width="2" rx="4"/>
+      <text x="50" y="22" font-size="10" fill="#60a5fa" text-anchor="middle">物理ボーン</text>
+      <text x="50" y="38" font-size="9" fill="#888" text-anchor="middle">に適用</text>
+    </g>
+
+    <!-- Filter Tag info -->
+    <g transform="translate(30, 120)">
+      <rect width="350" height="45" fill="#2d2d2d" stroke="#f472b6" stroke-width="1" stroke-dasharray="4,2" rx="4"/>
+      <text x="175" y="18" font-size="10" fill="#f472b6" text-anchor="middle">GameplayTag によるフィルタリング</text>
+      <text x="175" y="35" font-size="9" fill="#888" text-anchor="middle">特定のタグを持つボーンにのみ外力を適用</text>
+    </g>
+  </g>
+
+  <!-- API Panel -->
+  <g transform="translate(260, 250)">
+    <rect width="410" height="80" fill="#1e1e1e" rx="5"/>
+    <text x="205" y="22" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">Blueprint API</text>
+
+    <g transform="translate(20, 35)">
+      <rect width="115" height="35" fill="#2d2d2d" stroke="#4ade80" stroke-width="1" rx="3"/>
+      <text x="57" y="15" font-size="9" fill="#4ade80" text-anchor="middle">AddExternal</text>
+      <text x="57" y="28" font-size="9" fill="#4ade80" text-anchor="middle">Force</text>
+    </g>
+
+    <g transform="translate(150, 35)">
+      <rect width="115" height="35" fill="#2d2d2d" stroke="#60a5fa" stroke-width="1" rx="3"/>
+      <text x="57" y="15" font-size="9" fill="#60a5fa" text-anchor="middle">AddForcesTo</text>
+      <text x="57" y="28" font-size="9" fill="#60a5fa" text-anchor="middle">Component</text>
+    </g>
+
+    <g transform="translate(280, 35)">
+      <rect width="115" height="35" fill="#2d2d2d" stroke="#ff6b6b" stroke-width="1" rx="3"/>
+      <text x="57" y="15" font-size="9" fill="#ff6b6b" text-anchor="middle">RemoveForces</text>
+      <text x="57" y="28" font-size="9" fill="#ff6b6b" text-anchor="middle">FromComponent</text>
+    </g>
+  </g>
+
+  <!-- Note -->
+  <text x="350" y="345" font-size="10" fill="#888" text-anchor="middle">AnimNotifyからの外力制御も可能（v1.17.0以降）</text>
+</svg>
