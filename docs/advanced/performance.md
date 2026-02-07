@@ -33,6 +33,16 @@ hair_root → hair_01 → hair_02 → hair_03 → hair_04 → hair_05
 hair_root → hair_02 → hair_04
 ```
 
+### Additional RootBonesの活用
+
+v1.17.0から、1つのAnimNodeで複数のRootBoneを制御できるようになりました。
+
+![Additional RootBones](/img/features/additional-rootbones.gif)
+
+*1つのノードで複数のボーンチェーンを制御*
+
+複数のKawaiiPhysicsノードを使用する代わりに、AdditionalRootBonesを使うことでノード数を削減できます。
+
 ### 2. コリジョンの最適化
 
 - シンプルな形状を使用
@@ -92,6 +102,22 @@ AnimNode関数からWarm Upを動的に有効にすることも可能です。�
 
 1. **stat KawaiiPhysics** コンソールコマンドを実行
 2. 処理時間を確認
+
+### コンソール変数によるデバッグ
+
+:::tip バージョン情報
+v1.16.0で追加
+:::
+
+レベル上でデバッグ可能なコンソール変数が用意されています。
+
+![Console Debug](/img/features/console-debug.png)
+
+*コンソール変数によるデバッグ*
+
+- `a.AnimNode.KawaiiPhysics.Enable` - 有効/無効の切り替え
+- `a.AnimNode.KawaiiPhysics.Debug` - デバッグ表示
+- `a.AnimNode.KawaiiPhysics.Debug.LengthRate` - デバッグ表示のスケール
 
 ### ボトルネックの特定
 

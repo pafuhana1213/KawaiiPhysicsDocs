@@ -18,11 +18,25 @@ KawaiiPhysicsの更新履歴です。
 
 物理制御下のボーンに対して、指定したボーンの移動・回転を適用する機能が追加されました。スカートが足を貫通するのを防ぐのに効果的です。
 
+![SyncBone + Collision比較](/img/features/syncbone-collision-compare.gif)
+
+*SyncBoneとCollisionの組み合わせによる貫通防止*
+
+![SyncBone + BoneConstraint + Collision](/img/features/syncbone-full-demo.gif)
+
+*SyncBone、BoneConstraint、Collisionを組み合わせた完全なデモ*
+
 - 同期元ボーンの位置・回転を物理ボーンに反映
 - コリジョンを使わずに貫通を防止
 - パフォーマンスに優れた軽量な処理
 
 **重力システムの改善**
+
+![Gravity Demo](/img/features/gravity-demo.gif)
+
+*Gravity Directionによる柔軟な重力制御*
+
+![Gravity Settings](/img/features/gravity-settings.png)
 
 - Gravity Directionパラメータを追加
 - より柔軟な重力制御が可能に
@@ -31,14 +45,24 @@ KawaiiPhysicsの更新履歴です。
 
 アニメーション中に物理のブレンド率を動的に変更できるAnimNotifyStateが追加されました。
 
+![AnimNotifyState SetAlpha](/img/features/animnotify-setalpha.png)
+
 - アニメーションタイムライン上で物理の影響度を制御
 - スムーズなブレンドイン/アウト
 
 **デバッグ機能強化**
 
+![Debug Draw改善](/img/features/debug-draw-box-plane.png)
+
+*Box LimitとPlanar Limitのデバッグ表示*
+
 - Box Limitのデバッグ表示を追加
 - Planar Limitのデバッグ表示を改善
 - GameplayTagによるデバッグフィルタリング
+
+**新サンプル**
+
+![新サンプル一覧](/img/features/sample-v120.png)
 
 詳細は [GitHub Discussion #165](https://github.com/pafuhana1213/KawaiiPhysics/discussions/165) を参照してください。
 
@@ -50,9 +74,7 @@ KawaiiPhysicsの更新履歴です。
 
 物理シミュレーションを行う座標空間を選択できるようになりました。
 
-![Simulation Space比較](https://github.com/user-attachments/assets/c4a679b8-2651-473d-ba30-6d98fc293c5c)
-
-*ComponentSpace vs WorldSpaceの比較*
+![Simulation Space設定](/img/features/simulation-space-settings.png)
 
 | 値 | 説明 |
 |-----|------|
@@ -62,11 +84,25 @@ KawaiiPhysicsの更新履歴です。
 
 WorldSpaceやBaseBoneSpaceを使用すると、Rootボーンの急激な移動・回転の影響を回避できます。
 
-![WorldSpace動作例](https://github.com/user-attachments/assets/0e03868e-6dbf-47bf-bdb7-ca2214b1b715)
+**Wind Noise機能**
 
-*WorldSpace使用時の挙動*
+風にノイズを加えて自然な揺れを実現できます。
+
+| Wind Noise OFF | Wind Noise ON |
+|----------------|---------------|
+| ![Wind Noise OFF](/img/features/wind-noise-off.gif) | ![Wind Noise ON](/img/features/wind-noise-on.gif) |
+
+**Move Scale機能**
+
+移動の影響をスケーリングできます。
+
+| Move Scale OFF | Move Scale ON |
+|----------------|---------------|
+| ![Move Scale OFF](/img/features/move-scale-off.gif) | ![Move Scale ON](/img/features/move-scale-on.gif) |
 
 **サンプルプロジェクトの刷新**
+
+![サンプルV2概要](/img/features/sample-v2-overview.png)
 
 - 全サンプルを最新のベストプラクティスに更新
 - 新機能のデモを追加
@@ -110,27 +146,37 @@ Fabストアでの配布を開始しました。
 
 1つのAnimNodeで複数のRootBoneを設定できるようになりました。
 
+![Additional RootBones](/img/features/additional-rootbones.gif)
+
 - `AdditionalRootBones` パラメータで追加のRootBoneを指定
 - 各RootBoneに個別のExcludeBonesリストを設定可能
 - 同じパラメータで複数のボーンチェーンを制御
 
-**Box Collision**
+**Box Limits**
 
-直方体形状のコリジョンが追加されました。
+直方体形状のLimitが追加されました。
+
+![Box Limits](/img/features/box-limits.gif)
 
 - 体や建物など、矩形に近い形状に最適
 - オフセットと回転の調整が可能
 
 **PhysicsAsset統合**
 
-既存のPhysicsAssetからコリジョン形状を自動生成できるようになりました。
+既存のPhysicsAssetからLimits形状を自動生成できるようになりました。
+
+![PhysicsAsset for Limits](/img/features/physicsasset-limits.png)
 
 - PhysicsAssetを指定するだけで自動変換
-- 手動でのコリジョン設定作業を削減
+- 手動でのLimits設定作業を削減
 
 **AnimNotifyサポート**
 
 アニメーション通知から物理パラメータを制御できるようになりました。
+
+![AnimNotifyState External Force](/img/features/animnotify-externalforce.gif)
+
+![Blueprint Nodes](/img/features/bp-externalforce-nodes.png)
 
 - AnimNotify_KawaiiPhysics_ResetDynamics
 - AnimNotify_KawaiiPhysics_SetExternalForce
@@ -139,12 +185,24 @@ Fabストアでの配布を開始しました。
 
 GameplayTagを使用してデバッグ対象をフィルタリングできます。
 
+![Filter Tag](/img/features/filter-tag.png)
+
 **Wind Directional Sourceサポート**
 
 Unreal EngineのWind Directional Sourceに対応しました。
 
+![Wind External Force](/img/features/wind-externalforce.png)
+
 - レベルに配置した風の影響を自動的に受ける
 - WindScaleで影響度を調整
+
+**BoneConstraintエクスポート**
+
+![Export BoneConstraint](/img/features/export-boneconstraint.png)
+
+**新サンプル**
+
+![v1.17サンプル](/img/features/sample-v117.png)
 
 詳細は [GitHub Discussion #138](https://github.com/pafuhana1213/KawaiiPhysics/discussions/138) を参照してください。
 
@@ -156,16 +214,28 @@ Unreal EngineのWind Directional Sourceに対応しました。
 
 外部力の適用プロセスが大幅に改善されました。一部のボーンにのみ、ボーンのローカル座標系で一定間隔で力を加えることができる複数の外部力プリセットが追加されました。
 
+![External Force設定1](/img/features/externalforce-settings1.png)
+
+![External Force設定2](/img/features/externalforce-settings2.png)
+
+![External Forceデモ](/img/features/externalforce-demo.gif)
+
 - 複数のプリセットを組み合わせ可能
 - C++でカスタムプリセットを実装可能
 
 **Detailsパネルの整理**
+
+![Details Panel](/img/features/details-panel.png)
+
+![Property Tooltip](/img/features/property-tooltip.png)
 
 - プロパティ名とカテゴリの再編成
 - デバッグ機能をボタン化
 - すべてのプロパティにツールチップを追加
 
 **コンソール変数によるデバッグ**
+
+![Console Debug](/img/features/console-debug.png)
 
 レベル上でデバッグ可能な新しいコンソール変数を追加：
 
@@ -174,6 +244,10 @@ Unreal EngineのWind Directional Sourceに対応しました。
 - `a.AnimNode.KawaiiPhysics.Debug.LengthRate`
 
 **DataAssetの改善**
+
+![Bone Hierarchy Picker](/img/features/bone-hierarchy-picker.png)
+
+![Export Limits DataAsset](/img/features/export-limits-dataasset.png)
 
 - ボーン選択が階層ピッカーで可能に
 - AnimNodeのLimits設定をDataAssetにエクスポートするボタンを追加

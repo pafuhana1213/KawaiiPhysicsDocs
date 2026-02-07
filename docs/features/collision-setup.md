@@ -30,6 +30,10 @@ v1.17.0で追加
 
 直方体形状のコリジョンです。体や建物など、矩形に近い形状に適しています。
 
+![Box Limits](/img/features/box-limits.gif)
+
+*Box Limitsによる直方体形状の制限*
+
 ```cpp
 UPROPERTY()
 TArray<FBoxLimit> BoxLimits;
@@ -51,6 +55,10 @@ v1.17.0で追加
 :::
 
 既存のPhysicsAssetからコリジョン形状を自動生成できます。PhysicsAssetで定義されているコリジョンボディを、KawaiiPhysicsのコリジョンに変換します。
+
+![PhysicsAsset for Limits](/img/features/physicsasset-limits.png)
+
+*PhysicsAssetからLimitsを自動生成*
 
 ### 使用方法
 

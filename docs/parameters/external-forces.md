@@ -84,6 +84,10 @@ Gravity = FVector(0, 0, -1.0f);
 | デフォルト | 1.0 |
 | カテゴリ | ExternalForce |
 
+![Wind External Force](/img/features/wind-externalforce.png)
+
+*Wind Directional Sourceとの連携*
+
 :::note
 WindScaleはbEnableWindがtrueの場合のみ有効です。
 :::
@@ -124,6 +128,18 @@ WindScaleはbEnableWindがtrueの場合のみ有効です。
 
 ## External Force プリセット
 
+:::tip バージョン情報
+v1.16.0で追加
+:::
+
+![External Force設定1](/img/features/externalforce-settings1.png)
+
+![External Force設定2](/img/features/externalforce-settings2.png)
+
+![External Forceデモ](/img/features/externalforce-demo.gif)
+
+*External Forceプリセットによる揺れの制御*
+
 ### ExternalForces
 
 **外力プリセット（Instanced Struct）** - 外力のプリセット。C++で独自のプリセットを追加可能です。
@@ -158,6 +174,10 @@ TArray<TObjectPtr<UKawaiiPhysics_CustomExternalForce>> CustomExternalForces;
 | 型 | FGameplayTag |
 | カテゴリ | Tag |
 
+![Filter Tag](/img/features/filter-tag.png)
+
+*GameplayTagによるフィルタリング設定*
+
 ```cpp
 // タグを使用した外力の適用
 FGameplayTagContainer FilterTags;
@@ -165,9 +185,25 @@ FilterTags.AddTag(FGameplayTag::RequestGameplayTag("KawaiiPhysics.Hair"));
 UKawaiiPhysicsLibrary::AddExternalForcesToComponent(MeshComp, ExternalForces, Owner, FilterTags);
 ```
 
+## AnimNotifyによる外力制御
+
+:::tip バージョン情報
+v1.17.0で追加
+:::
+
+AnimNotifyを使用してアニメーション中に外力を制御できます。
+
+![AnimNotifyState External Force](/img/features/animnotify-externalforce.gif)
+
+*AnimNotifyStateによる外力の適用*
+
 ## Blueprint API
 
 外力はBlueprintから動的に制御できます。
+
+![Blueprint Nodes](/img/features/bp-externalforce-nodes.png)
+
+*Blueprint用の外力制御ノード*
 
 ### 外力の追加
 

@@ -25,6 +25,10 @@ KawaiiPhysicsの問題を調査・解決する方法を説明します。
 | Plane | 平面グリッド | v1.20.0で改善 |
 | Box | ワイヤーフレームボックス | v1.20.0で追加 |
 
+![Debug Draw改善](/img/features/debug-draw-box-plane.png)
+
+*Box LimitとPlanar Limitのデバッグ表示（v1.20.0）*
+
 ### ボーンチェーンの確認
 
 物理が適用されているボーンを視覚的に確認できます。
@@ -36,6 +40,10 @@ v1.17.0で追加、v1.20.0で強化
 :::
 
 GameplayTagを使用してデバッグ表示の対象をフィルタリングできます。多数のキャラクターがいる場合に、特定のキャラクターだけをデバッグ表示したい場合に便利です。
+
+![Filter Tag](/img/features/filter-tag.png)
+
+*GameplayTagによるフィルタリング設定*
 
 ## よくある問題
 

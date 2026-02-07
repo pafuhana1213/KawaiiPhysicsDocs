@@ -74,9 +74,21 @@ SyncBones:
     SyncRatio: 0.5
 ```
 
+## Collisionとの組み合わせ
+
+Sync Bone機能とCollisionを組み合わせることで、より確実な貫通防止が可能です。
+
+![SyncBone + Collision比較](/img/features/syncbone-collision-compare.gif)
+
+*SyncBoneとCollisionの組み合わせによる貫通防止効果*
+
 ## BoneConstraintとの組み合わせ
 
 Sync Bone機能とBoneConstraint機能を組み合わせることで、より自然なスカート表現が可能です。
+
+![SyncBone + BoneConstraint + Collision](/img/features/syncbone-full-demo.gif)
+
+*SyncBone、BoneConstraint、Collisionを組み合わせた完全なデモ*
 
 - **Sync Bone**: 足との貫通を防止
 - **BoneConstraint**: スカートのボーン間の距離を維持

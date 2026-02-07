@@ -34,6 +34,14 @@ Data Assetには以下のパラメータを保存できます：
 1. KawaiiPhysicsノードの **Limits Data Asset** プロパティを設定
 2. Data Assetのパラメータが自動的に読み込まれる
 
+![Bone Hierarchy Picker](/img/features/bone-hierarchy-picker.png)
+
+*ボーン選択が階層ピッカーで可能（v1.16.0以降）*
+
+![Export Limits DataAsset](/img/features/export-limits-dataasset.png)
+
+*AnimNodeのLimits設定をDataAssetにエクスポート（v1.16.0以降）*
+
 ```cpp
 UPROPERTY()
 UKawaiiPhysicsLimitsDataAsset* LimitsDataAsset;
@@ -60,6 +68,10 @@ v1.19.0で正式化
 :::
 
 BoneConstraint設定専用のData Assetです。複数のAnimNodeやAnimation Blueprintで設定を共有したい場合に推奨されます。
+
+![Export BoneConstraint](/img/features/export-boneconstraint.png)
+
+*AnimNodeからBoneConstraint設定をエクスポート*
 
 ```cpp
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bone Constraint")
