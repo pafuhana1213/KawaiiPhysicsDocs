@@ -97,6 +97,10 @@ sidebar_position: 2
 | WorldSpace | ワールド空間でシミュレーション。Rootボーンの急激な移動・回転の影響を回避可能 |
 | BaseBoneSpace | 指定したボーン空間でシミュレーション |
 
+![SimulationSpaceの比較](/img/generated/simulation-space-comparison.svg)
+
+*各SimulationSpaceの違いを示す概念図*
+
 :::note
 ComponentSpace以外を使用すると微小のパフォーマンス低下が発生しますが、急激なRootボーンの移動・回転の影響を回避できます。
 :::
@@ -167,6 +171,10 @@ SimulationSpaceがBaseBoneSpaceの場合のみ有効です。
 | X | X軸に制約 |
 | Y | Y軸に制約 |
 | Z | Z軸に制約 |
+
+![PlanarConstraintの効果](/img/generated/planar-constraint-effect.svg)
+
+*各軸での平面制約の効果*
 
 ### SkelCompMoveScale
 

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="700" height="320" fill="#2a2a2a"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">EXPBDComplianceType - 剛性タイプの比較</text>
+  <text x="350" y="50" font-size="11" fill="#888" text-anchor="middle">Bone Constraintで用いる剛性タイプ（硬い ← → 柔らかい）</text>
+
+  <!-- Stiffness scale bar -->
+  <defs>
+    <linearGradient id="stiffnessGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ade80"/>
+      <stop offset="50%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#ff6b6b"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="50" y="70" width="600" height="12" fill="url(#stiffnessGradient)" rx="6"/>
+  <text x="50" y="65" font-size="10" fill="#4ade80">硬い</text>
+  <text x="650" y="65" font-size="10" fill="#ff6b6b" text-anchor="end">柔らかい</text>
+
+  <!-- Types on the scale -->
+  <!-- Concrete -->
+  <g transform="translate(65, 95)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#4ade80" stroke-width="2"/>
+    <rect x="-35" y="15" width="70" height="50" fill="#1e1e1e" rx="4"/>
+    <text x="0" y="35" font-size="11" fill="#4ade80" text-anchor="middle" font-weight="bold">Concrete</text>
+    <text x="0" y="52" font-size="9" fill="#888" text-anchor="middle">コンクリート</text>
+  </g>
+
+  <!-- Wood -->
+  <g transform="translate(150, 95)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#86efac" stroke-width="2"/>
+    <rect x="-30" y="15" width="60" height="50" fill="#1e1e1e" rx="4"/>
+    <text x="0" y="35" font-size="11" fill="#86efac" text-anchor="middle" font-weight="bold">Wood</text>
+    <text x="0" y="52" font-size="9" fill="#888" text-anchor="middle">木材</text>
+  </g>
+
+  <!-- Leather (Default) -->
+  <g transform="translate(255, 95)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#fbbf24" stroke-width="2"/>
+    <rect x="-35" y="15" width="70" height="60" fill="#1e1e1e" stroke="#fbbf24" stroke-width="2" rx="4"/>
+    <text x="0" y="33" font-size="11" fill="#fbbf24" text-anchor="middle" font-weight="bold">Leather</text>
+    <text x="0" y="48" font-size="9" fill="#888" text-anchor="middle">革</text>
+    <text x="0" y="65" font-size="8" fill="#fbbf24" text-anchor="middle">（デフォルト）</text>
+  </g>
+
+  <!-- Tendon -->
+  <g transform="translate(360, 95)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#fcd34d" stroke-width="2"/>
+    <rect x="-30" y="15" width="60" height="50" fill="#1e1e1e" rx="4"/>
+    <text x="0" y="35" font-size="11" fill="#fcd34d" text-anchor="middle" font-weight="bold">Tendon</text>
+    <text x="0" y="52" font-size="9" fill="#888" text-anchor="middle">腱</text>
+  </g>
+
+  <!-- Rubber -->
+  <g transform="translate(460, 95)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#fb923c" stroke-width="2"/>
+    <rect x="-30" y="15" width="60" height="50" fill="#1e1e1e" rx="4"/>
+    <text x="0" y="35" font-size="11" fill="#fb923c" text-anchor="middle" font-weight="bold">Rubber</text>
+    <text x="0" y="52" font-size="9" fill="#888" text-anchor="middle">ゴム</text>
+  </g>
+
+  <!-- Muscle -->
+  <g transform="translate(545, 95)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#f87171" stroke-width="2"/>
+    <rect x="-30" y="15" width="60" height="50" fill="#1e1e1e" rx="4"/>
+    <text x="0" y="35" font-size="11" fill="#f87171" text-anchor="middle" font-weight="bold">Muscle</text>
+    <text x="0" y="52" font-size="9" fill="#888" text-anchor="middle">筋肉</text>
+  </g>
+
+  <!-- Fat -->
+  <g transform="translate(630, 95)">
+    <line x1="0" y1="0" x2="0" y2="10" stroke="#ff6b6b" stroke-width="2"/>
+    <rect x="-30" y="15" width="60" height="50" fill="#1e1e1e" rx="4"/>
+    <text x="0" y="35" font-size="11" fill="#ff6b6b" text-anchor="middle" font-weight="bold">Fat</text>
+    <text x="0" y="52" font-size="9" fill="#888" text-anchor="middle">脂肪</text>
+  </g>
+
+  <!-- Visual examples section -->
+  <text x="350" y="195" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">使用例イメージ</text>
+
+  <!-- Stiff example -->
+  <g transform="translate(120, 210)">
+    <rect x="-80" y="0" width="160" height="90" fill="#1e1e1e" rx="5"/>
+    <text x="0" y="20" font-size="10" fill="#4ade80" text-anchor="middle">硬い設定</text>
+
+    <!-- Stiff constraint visualization -->
+    <circle cx="-30" cy="55" r="8" fill="#0a3d62" stroke="#0080ff" stroke-width="2"/>
+    <circle cx="30" cy="55" r="8" fill="#0a3d62" stroke="#0080ff" stroke-width="2"/>
+    <line x1="-22" y1="55" x2="22" y2="55" stroke="#4ade80" stroke-width="4"/>
+
+    <text x="0" y="80" font-size="9" fill="#888" text-anchor="middle">距離をほぼ維持</text>
+  </g>
+
+  <!-- Medium example -->
+  <g transform="translate(350, 210)">
+    <rect x="-80" y="0" width="160" height="90" fill="#1e1e1e" rx="5"/>
+    <text x="0" y="20" font-size="10" fill="#fbbf24" text-anchor="middle">中間設定</text>
+
+    <!-- Medium constraint visualization -->
+    <circle cx="-35" cy="55" r="8" fill="#0a3d62" stroke="#0080ff" stroke-width="2"/>
+    <circle cx="35" cy="55" r="8" fill="#0a3d62" stroke="#0080ff" stroke-width="2"/>
+    <path d="M -27 55 Q 0 45, 27 55" fill="none" stroke="#fbbf24" stroke-width="3"/>
+
+    <text x="0" y="80" font-size="9" fill="#888" text-anchor="middle">適度に伸縮</text>
+  </g>
+
+  <!-- Soft example -->
+  <g transform="translate(580, 210)">
+    <rect x="-80" y="0" width="160" height="90" fill="#1e1e1e" rx="5"/>
+    <text x="0" y="20" font-size="10" fill="#ff6b6b" text-anchor="middle">柔らかい設定</text>
+
+    <!-- Soft constraint visualization -->
+    <circle cx="-40" cy="55" r="8" fill="#0a3d62" stroke="#0080ff" stroke-width="2"/>
+    <circle cx="40" cy="55" r="8" fill="#0a3d62" stroke="#0080ff" stroke-width="2"/>
+    <path d="M -32 55 Q -15 40, 0 55 Q 15 70, 32 55" fill="none" stroke="#ff6b6b" stroke-width="2"/>
+
+    <text x="0" y="80" font-size="9" fill="#888" text-anchor="middle">大きく伸縮</text>
+  </g>
+</svg>

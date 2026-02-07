@@ -54,13 +54,18 @@ head (Root Bone)
 
 ## コリジョンシステム
 
-KawaiiPhysicsは3種類のコリジョンをサポートします：
+KawaiiPhysicsは4種類のコリジョンをサポートします：
 
 | 種類 | 用途 |
 |-----|------|
 | Sphere | 球体（頭、肩など） |
 | Capsule | カプセル（腕、脚など） |
+| Box | ボックス（体、障害物など） |
 | Plane | 平面（地面、壁など） |
+
+![コリジョンシステム概要](/img/generated/collision-system-overview.svg)
+
+*コリジョンの配置例と各形状の用途*
 
 ## カーブによる制御
 

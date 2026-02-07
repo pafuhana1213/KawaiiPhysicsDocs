@@ -28,6 +28,10 @@ Sync Bone機能は、物理制御下のボーンに対して、指定したボ�
 
 同期元のボーンが移動・回転すると、その動きが物理ボーンに反映され、貫通を防ぎます。
 
+![Sync Boneの処理フロー](/img/generated/sync-bone-concept.svg)
+
+*Sync Boneによる貫通防止の仕組み*
+
 ## 設定方法
 
 1. KawaiiPhysicsノードを選択

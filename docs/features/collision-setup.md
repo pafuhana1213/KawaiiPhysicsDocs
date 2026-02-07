@@ -103,6 +103,10 @@ upperarm_r (Driving Bone)
 
 - 使用例: 肩にめり込まないようにする
 
+![Limit Typeの比較](/img/generated/collision-limit-type.svg)
+
+*Inner（内側制限）とOuter（外側制限）の違いを示す概念図*
+
 ## パフォーマンス考慮
 
 コリジョンの数が多いと処理負荷が増加します。

@@ -21,6 +21,10 @@ KawaiiPhysicsでは以下の4種類のコリジョン形状をサポートして
 | Box | ボックスコリジョン |
 | Planar | 平面コリジョン |
 
+![コリジョン形状の比較](/img/generated/collision-shapes-comparison.svg)
+
+*各コリジョン形状の特徴と使用例*
+
 ## FCollisionLimitBase（共通プロパティ）
 
 すべてのコリジョンタイプに共通する基本プロパティです。
@@ -53,6 +57,10 @@ TArray<FSphericalLimit> SphericalLimits;
 |-----|------|
 | Inner | 球の内側に制限（ボーンを球の内側に押し込む） |
 | Outer | 球の外側に制限（ボーンを球から押し出す） |
+
+![Limit Typeの比較](/img/generated/collision-limit-type.svg)
+
+*Inner（内側制限）とOuter（外側制限）の違い*
 
 ## FCapsuleLimit（カプセルコリジョン）
 

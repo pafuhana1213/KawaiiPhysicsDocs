@@ -14,6 +14,10 @@ sidebar_position: 4
 
 ボーン間の距離を維持するための制約設定です。スカートのように、ボーン間の距離を一定に保ちたい場合に使用します。
 
+![Bone Constraintの仕組み](/img/generated/bone-constraint-concept.svg)
+
+*Bone Constraintによるボーン間距離の維持*
+
 ### BoneConstraintGlobalComplianceType
 
 **剛性タイプ** - Bone Constraintで用いる剛性タイプを指定します。
@@ -37,6 +41,10 @@ sidebar_position: 4
 | Rubber | ゴム |
 | Muscle | 筋肉 |
 | Fat | 脂肪（最も柔らかい） |
+
+![剛性タイプの比較](/img/generated/compliance-type-comparison.svg)
+
+*各剛性タイプの硬さの違いと使用イメージ*
 
 ### BoneConstraintIterationCountBeforeCollision
 

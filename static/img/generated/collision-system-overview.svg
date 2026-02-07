@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 400" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="650" height="400" fill="#2a2a2a"/>
+
+  <!-- Title -->
+  <text x="325" y="30" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">コリジョンシステム概要</text>
+
+  <!-- Character silhouette area -->
+  <g transform="translate(150, 50)">
+    <rect width="350" height="300" fill="#1e1e1e" rx="8"/>
+    <text x="175" y="25" font-size="12" fill="#888" text-anchor="middle">キャラクターとコリジョン配置例</text>
+
+    <!-- Simplified character -->
+    <!-- Head -->
+    <ellipse cx="175" cy="70" rx="25" ry="28" fill="none" stroke="#555" stroke-width="2"/>
+    <text x="175" y="75" font-size="9" fill="#555" text-anchor="middle">Head</text>
+
+    <!-- Body -->
+    <rect x="145" y="100" width="60" height="80" fill="none" stroke="#555" stroke-width="2" rx="5"/>
+    <text x="175" y="145" font-size="9" fill="#555" text-anchor="middle">Body</text>
+
+    <!-- Arms -->
+    <line x1="145" y1="110" x2="90" y2="150" stroke="#555" stroke-width="8" stroke-linecap="round"/>
+    <line x1="205" y1="110" x2="260" y2="150" stroke="#555" stroke-width="8" stroke-linecap="round"/>
+
+    <!-- Legs -->
+    <line x1="160" y1="180" x2="140" y2="260" stroke="#555" stroke-width="10" stroke-linecap="round"/>
+    <line x1="190" y1="180" x2="210" y2="260" stroke="#555" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Hair bones (physics controlled) -->
+    <g>
+      <path d="M 155 55 Q 140 70, 130 100 Q 125 130, 135 155" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="135" cy="155" r="4" fill="#fbbf24"/>
+      <path d="M 195 55 Q 210 70, 220 100 Q 225 130, 215 155" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="215" cy="155" r="4" fill="#fbbf24"/>
+    </g>
+
+    <!-- Collision: Sphere on head (Inner) -->
+    <circle cx="175" cy="70" r="35" fill="#60a5fa" fill-opacity="0.15" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3"/>
+    <text x="225" y="50" font-size="9" fill="#60a5fa">Sphere (Inner)</text>
+    <text x="225" y="62" font-size="8" fill="#666">頭の形状に沿わせる</text>
+
+    <!-- Collision: Capsule on shoulders (Outer) -->
+    <ellipse cx="100" cy="130" rx="20" ry="35" fill="#4ade80" fill-opacity="0.15" stroke="#4ade80" stroke-width="2" stroke-dasharray="5,3" transform="rotate(-20, 100, 130)"/>
+    <text x="40" y="100" font-size="9" fill="#4ade80">Capsule</text>
+    <text x="40" y="112" font-size="8" fill="#666">(Outer)</text>
+
+    <ellipse cx="250" cy="130" rx="20" ry="35" fill="#4ade80" fill-opacity="0.15" stroke="#4ade80" stroke-width="2" stroke-dasharray="5,3" transform="rotate(20, 250, 130)"/>
+    <text x="275" y="100" font-size="9" fill="#4ade80">Capsule</text>
+    <text x="275" y="112" font-size="8" fill="#666">(Outer)</text>
+
+    <!-- Collision: Plane for ground -->
+    <line x1="50" y1="275" x2="300" y2="275" stroke="#f472b6" stroke-width="3"/>
+    <polygon points="175,270 170,265 180,265" fill="#f472b6"/>
+    <text x="175" y="260" font-size="9" fill="#f472b6" text-anchor="middle">Planar</text>
+
+  </g>
+
+  <!-- Legend box -->
+  <g transform="translate(520, 60)">
+    <rect width="115" height="165" fill="#1e1e1e" rx="5"/>
+    <text x="57" y="20" font-size="11" fill="#ffffff" text-anchor="middle" font-weight="bold">凡例</text>
+
+    <!-- Physics bone -->
+    <line x1="15" y1="40" x2="35" y2="50" stroke="#fbbf24" stroke-width="3"/>
+    <circle cx="35" cy="50" r="3" fill="#fbbf24"/>
+    <text x="45" y="48" font-size="9" fill="#888">物理ボーン</text>
+
+    <!-- Sphere -->
+    <circle cx="25" cy="75" r="10" fill="#60a5fa" fill-opacity="0.2" stroke="#60a5fa" stroke-width="2" stroke-dasharray="3,2"/>
+    <text x="45" y="78" font-size="9" fill="#888">Sphere</text>
+
+    <!-- Capsule -->
+    <ellipse cx="25" cy="105" rx="8" ry="12" fill="#4ade80" fill-opacity="0.2" stroke="#4ade80" stroke-width="2" stroke-dasharray="3,2"/>
+    <text x="45" y="108" font-size="9" fill="#888">Capsule</text>
+
+    <!-- Plane -->
+    <line x1="10" y1="135" x2="40" y2="135" stroke="#f472b6" stroke-width="2"/>
+    <text x="50" y="138" font-size="9" fill="#888">Planar</text>
+
+    <!-- Box -->
+    <rect x="15" y="148" width="20" height="15" fill="#c084fc" fill-opacity="0.2" stroke="#c084fc" stroke-width="2" stroke-dasharray="3,2"/>
+    <text x="45" y="160" font-size="9" fill="#888">Box</text>
+  </g>
+
+  <!-- Data flow explanation -->
+  <g transform="translate(520, 240)">
+    <rect width="115" height="120" fill="#1e1e1e" rx="5"/>
+    <text x="57" y="20" font-size="10" fill="#ffffff" text-anchor="middle" font-weight="bold">設定元</text>
+
+    <text x="10" y="42" font-size="9" fill="#4ade80">AnimNode</text>
+    <text x="10" y="55" font-size="8" fill="#666">直接設定</text>
+
+    <text x="10" y="75" font-size="9" fill="#60a5fa">DataAsset</text>
+    <text x="10" y="88" font-size="8" fill="#666">再利用可能</text>
+
+    <text x="10" y="108" font-size="9" fill="#c084fc">PhysicsAsset</text>
+    <text x="10" y="118" font-size="8" fill="#666">自動生成</text>
+  </g>
+
+  <!-- Bottom note -->
+  <text x="325" y="380" font-size="10" fill="#888" text-anchor="middle">コリジョンは物理ボーンがメッシュを貫通するのを防ぎます</text>
+</svg>
