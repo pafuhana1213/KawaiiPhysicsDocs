@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="700" height="350" fill="#2a2a2a"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">力の合成</text>
+  <text x="350" y="50" font-size="11" fill="#888" text-anchor="middle">最終的な力 = Gravity + Wind + ExternalForce</text>
+
+  <!-- Character silhouette -->
+  <g transform="translate(180, 100)">
+    <!-- Head -->
+    <circle cx="0" cy="0" r="25" fill="#333" stroke="#555" stroke-width="2"/>
+    <!-- Body -->
+    <rect x="-20" y="25" width="40" height="60" fill="#333" stroke="#555" stroke-width="2" rx="5"/>
+
+    <!-- Hair bones (physics affected) -->
+    <g>
+      <path d="M -15 -20 Q -25 -10, -30 20 Q -35 50, -25 80" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="-25" cy="80" r="4" fill="#fbbf24"/>
+      <path d="M 0 -25 Q 5 -5, 10 30 Q 12 60, 5 85" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="5" cy="85" r="4" fill="#fbbf24"/>
+      <path d="M 15 -20 Q 30 0, 35 35 Q 38 65, 30 90" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="30" cy="90" r="4" fill="#fbbf24"/>
+    </g>
+  </g>
+
+  <!-- Force vectors -->
+  <!-- Gravity (downward) -->
+  <g transform="translate(180, 180)">
+    <line x1="0" y1="0" x2="0" y2="80" stroke="#60a5fa" stroke-width="4"/>
+    <polygon points="0,90 -8,75 8,75" fill="#60a5fa"/>
+    <text x="15" y="50" font-size="12" fill="#60a5fa" font-weight="bold">Gravity</text>
+    <text x="15" y="65" font-size="10" fill="#888">(0, 0, -980)</text>
+  </g>
+
+  <!-- Wind (horizontal) -->
+  <g transform="translate(280, 140)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#4ade80" stroke-width="4"/>
+    <polygon points="90,0 75,-8 75,8" fill="#4ade80"/>
+    <text x="30" y="-15" font-size="12" fill="#4ade80" font-weight="bold">Wind</text>
+    <text x="30" y="25" font-size="10" fill="#888">WindScale適用</text>
+  </g>
+
+  <!-- External Force (diagonal) -->
+  <g transform="translate(280, 200)">
+    <line x1="0" y1="0" x2="60" y2="-40" stroke="#f472b6" stroke-width="4"/>
+    <polygon points="68,-45 50,-40 55,-55" fill="#f472b6"/>
+    <text x="70" y="-30" font-size="12" fill="#f472b6" font-weight="bold">ExternalForce</text>
+    <text x="70" y="-15" font-size="10" fill="#888">任意の方向</text>
+  </g>
+
+  <!-- Result panel -->
+  <g transform="translate(450, 80)">
+    <rect width="220" height="200" fill="#1e1e1e" rx="5"/>
+    <text x="110" y="25" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">合成結果</text>
+
+    <!-- Combined force visualization -->
+    <g transform="translate(60, 100)">
+      <!-- Origin point -->
+      <circle cx="0" cy="0" r="6" fill="#fbbf24"/>
+
+      <!-- Individual vectors (small, transparent) -->
+      <line x1="0" y1="0" x2="0" y2="40" stroke="#60a5fa" stroke-width="2" opacity="0.5"/>
+      <line x1="0" y1="0" x2="50" y2="0" stroke="#4ade80" stroke-width="2" opacity="0.5"/>
+      <line x1="0" y1="0" x2="30" y2="-20" stroke="#f472b6" stroke-width="2" opacity="0.5"/>
+
+      <!-- Combined force vector -->
+      <line x1="0" y1="0" x2="80" y2="20" stroke="#ffffff" stroke-width="4"/>
+      <polygon points="88,22 72,28 75,12" fill="#ffffff"/>
+    </g>
+
+    <text x="110" y="165" font-size="10" fill="#888" text-anchor="middle">各力が加算されて</text>
+    <text x="110" y="180" font-size="10" fill="#888" text-anchor="middle">物理ボーンに適用</text>
+  </g>
+
+  <!-- Formula box -->
+  <g transform="translate(100, 300)">
+    <rect width="500" height="35" fill="#1e1e1e" rx="5"/>
+    <text x="250" y="23" font-size="12" fill="#ffffff" text-anchor="middle" font-family="monospace">
+      <tspan fill="#fbbf24">FinalForce</tspan> =
+      <tspan fill="#60a5fa">Gravity</tspan> +
+      <tspan fill="#4ade80">Wind</tspan> × WindScale +
+      <tspan fill="#f472b6">ExternalForce</tspan>
+    </text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(30, 300)">
+    <line x1="0" y1="17" x2="20" y2="17" stroke="#fbbf24" stroke-width="3"/>
+    <text x="25" y="22" font-size="10" fill="#888">物理ボーン</text>
+  </g>
+</svg>

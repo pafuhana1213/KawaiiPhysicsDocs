@@ -10,12 +10,9 @@ KawaiiPhysicsの仕組みを理解しましょう。
 
 KawaiiPhysicsはPhysXを使用せず、独自の軽量アルゴリズムでボーン物理を実現します。
 
-```
-Animation Pose → KawaiiPhysics Node → Modified Pose
-                       ↑
-              Physics Simulation
-              (独自アルゴリズム)
-```
+![アーキテクチャとデータフロー](/img/generated/architecture-dataflow.svg)
+
+*AnimGraph内でのKawaiiPhysicsノードの位置と内部処理フロー*
 
 ## ボーンチェーン
 

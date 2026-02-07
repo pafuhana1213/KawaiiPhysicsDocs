@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="700" height="380" fill="#2a2a2a"/>
+
+  <!-- Title -->
+  <text x="350" y="30" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">複数コリジョン形状の組み合わせ</text>
+  <text x="350" y="50" font-size="11" fill="#888" text-anchor="middle">実践的なコリジョン配置例</text>
+
+  <!-- Main character setup -->
+  <g transform="translate(100, 70)">
+    <rect width="280" height="280" fill="#1e1e1e" rx="5"/>
+    <text x="140" y="25" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">キャラクター上半身</text>
+
+    <!-- Character silhouette -->
+    <g transform="translate(140, 140)">
+      <!-- Head -->
+      <ellipse cx="0" cy="-50" rx="30" ry="35" fill="#444" stroke="#555" stroke-width="2"/>
+
+      <!-- Body -->
+      <rect x="-35" y="-10" width="70" height="90" fill="#444" stroke="#555" stroke-width="2" rx="5"/>
+
+      <!-- Arms -->
+      <line x1="-35" y1="0" x2="-80" y2="40" stroke="#444" stroke-width="15" stroke-linecap="round"/>
+      <line x1="35" y1="0" x2="80" y2="40" stroke="#444" stroke-width="15" stroke-linecap="round"/>
+
+      <!-- Collision: Head Sphere (Inner) -->
+      <circle cx="0" cy="-50" r="45" fill="#60a5fa" fill-opacity="0.15" stroke="#60a5fa" stroke-width="2" stroke-dasharray="5,3"/>
+
+      <!-- Collision: Shoulder Capsules (Outer) -->
+      <ellipse cx="-55" cy="20" rx="18" ry="35" fill="#4ade80" fill-opacity="0.15" stroke="#4ade80" stroke-width="2" stroke-dasharray="5,3" transform="rotate(-30, -55, 20)"/>
+      <ellipse cx="55" cy="20" rx="18" ry="35" fill="#4ade80" fill-opacity="0.15" stroke="#4ade80" stroke-width="2" stroke-dasharray="5,3" transform="rotate(30, 55, 20)"/>
+
+      <!-- Collision: Body Box (Outer) -->
+      <rect x="-40" y="-15" width="80" height="100" fill="#c084fc" fill-opacity="0.15" stroke="#c084fc" stroke-width="2" stroke-dasharray="5,3" rx="3"/>
+
+      <!-- Hair bones -->
+      <path d="M -25 -80 Q -35 -60, -45 -30 Q -50 0, -40 30" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="-40" cy="30" r="4" fill="#fbbf24"/>
+      <path d="M 25 -80 Q 35 -60, 45 -30 Q 50 0, 40 30" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="40" cy="30" r="4" fill="#fbbf24"/>
+    </g>
+
+    <!-- Labels -->
+    <text x="140" y="255" font-size="9" fill="#60a5fa" text-anchor="middle">Head: Sphere (Inner)</text>
+    <text x="55" y="270" font-size="9" fill="#4ade80" text-anchor="middle">Shoulder</text>
+    <text x="225" y="270" font-size="9" fill="#4ade80" text-anchor="middle">Shoulder</text>
+  </g>
+
+  <!-- Skirt setup with ground plane -->
+  <g transform="translate(410, 70)">
+    <rect width="260" height="280" fill="#1e1e1e" rx="5"/>
+    <text x="130" y="25" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">スカート + 地面</text>
+
+    <g transform="translate(130, 130)">
+      <!-- Waist -->
+      <ellipse cx="0" cy="0" rx="50" ry="15" fill="#444" stroke="#555" stroke-width="2"/>
+
+      <!-- Legs -->
+      <ellipse cx="-25" cy="60" rx="18" ry="50" fill="#444" stroke="#555" stroke-width="2"/>
+      <ellipse cx="25" cy="60" rx="18" ry="50" fill="#444" stroke="#555" stroke-width="2"/>
+
+      <!-- Leg Capsules (Outer) -->
+      <ellipse cx="-25" cy="60" rx="25" ry="55" fill="#4ade80" fill-opacity="0.15" stroke="#4ade80" stroke-width="2" stroke-dasharray="5,3"/>
+      <ellipse cx="25" cy="60" rx="25" ry="55" fill="#4ade80" fill-opacity="0.15" stroke="#4ade80" stroke-width="2" stroke-dasharray="5,3"/>
+
+      <!-- Skirt bones -->
+      <path d="M -50 10 Q -55 50, -50 90 Q -48 110, -55 130" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="-55" cy="130" r="4" fill="#fbbf24"/>
+      <path d="M -25 15 Q -20 55, -15 95 Q -12 115, -18 135" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="-18" cy="135" r="4" fill="#fbbf24"/>
+      <path d="M 25 15 Q 20 55, 15 95 Q 12 115, 18 135" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="18" cy="135" r="4" fill="#fbbf24"/>
+      <path d="M 50 10 Q 55 50, 50 90 Q 48 110, 55 130" fill="none" stroke="#fbbf24" stroke-width="3"/>
+      <circle cx="55" cy="130" r="4" fill="#fbbf24"/>
+
+      <!-- Ground Plane -->
+      <line x1="-100" y1="140" x2="100" y2="140" stroke="#f472b6" stroke-width="3"/>
+      <polygon points="0,135 -5,130 5,130" fill="#f472b6"/>
+    </g>
+
+    <!-- Labels -->
+    <text x="130" y="255" font-size="9" fill="#4ade80" text-anchor="middle">Legs: Capsule (Outer)</text>
+    <text x="130" y="270" font-size="9" fill="#f472b6" text-anchor="middle">Ground: Planar</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(100, 360)">
+    <circle cx="10" cy="0" r="8" fill="#60a5fa" fill-opacity="0.3" stroke="#60a5fa" stroke-width="2"/>
+    <text x="25" y="4" font-size="10" fill="#888">Sphere (Inner)</text>
+
+    <ellipse cx="130" cy="0" rx="8" ry="12" fill="#4ade80" fill-opacity="0.3" stroke="#4ade80" stroke-width="2"/>
+    <text x="145" y="4" font-size="10" fill="#888">Capsule (Outer)</text>
+
+    <rect x="250" y="-8" width="16" height="16" fill="#c084fc" fill-opacity="0.3" stroke="#c084fc" stroke-width="2" rx="2"/>
+    <text x="275" y="4" font-size="10" fill="#888">Box (Outer)</text>
+
+    <line x1="370" y1="0" x2="400" y2="0" stroke="#f472b6" stroke-width="2"/>
+    <text x="410" y="4" font-size="10" fill="#888">Planar</text>
+
+    <line x1="480" y1="-3" x2="500" y2="3" stroke="#fbbf24" stroke-width="3"/>
+    <circle cx="500" cy="3" r="3" fill="#fbbf24"/>
+    <text x="510" y="4" font-size="10" fill="#888">物理ボーン</text>
+  </g>
+</svg>

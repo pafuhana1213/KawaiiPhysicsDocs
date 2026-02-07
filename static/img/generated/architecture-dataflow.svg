@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 300" font-family="Segoe UI, Arial, sans-serif">
+  <!-- Background -->
+  <rect width="750" height="300" fill="#2a2a2a"/>
+
+  <!-- Title -->
+  <text x="375" y="30" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold">KawaiiPhysics アーキテクチャ</text>
+
+  <!-- Animation Blueprint Container -->
+  <g transform="translate(30, 55)">
+    <rect width="690" height="110" fill="#1e1e1e" stroke="#555" stroke-width="2" rx="8"/>
+    <text x="20" y="25" font-size="12" fill="#888">Animation Blueprint (AnimGraph)</text>
+
+    <!-- Input Pose -->
+    <g transform="translate(40, 45)">
+      <rect width="120" height="50" fill="#0a3d62" stroke="#0080ff" stroke-width="2" rx="5"/>
+      <text x="60" y="22" font-size="11" fill="#0080ff" text-anchor="middle" font-weight="bold">Animation</text>
+      <text x="60" y="38" font-size="10" fill="#888" text-anchor="middle">Pose</text>
+    </g>
+
+    <!-- Arrow 1 -->
+    <g transform="translate(170, 70)">
+      <line x1="0" y1="0" x2="50" y2="0" stroke="#4ade80" stroke-width="3"/>
+      <polygon points="55,0 45,-6 45,6" fill="#4ade80"/>
+    </g>
+
+    <!-- KawaiiPhysics Node -->
+    <g transform="translate(235, 35)">
+      <rect width="180" height="70" fill="#4a3c00" stroke="#fbbf24" stroke-width="3" rx="5"/>
+      <text x="90" y="25" font-size="12" fill="#fbbf24" text-anchor="middle" font-weight="bold">KawaiiPhysics</text>
+      <text x="90" y="42" font-size="10" fill="#888" text-anchor="middle">AnimNode</text>
+      <text x="90" y="58" font-size="9" fill="#666" text-anchor="middle">物理シミュレーション</text>
+    </g>
+
+    <!-- Arrow 2 -->
+    <g transform="translate(425, 70)">
+      <line x1="0" y1="0" x2="50" y2="0" stroke="#4ade80" stroke-width="3"/>
+      <polygon points="55,0 45,-6 45,6" fill="#4ade80"/>
+    </g>
+
+    <!-- Output Pose -->
+    <g transform="translate(490, 45)">
+      <rect width="120" height="50" fill="#0a3d62" stroke="#0080ff" stroke-width="2" rx="5"/>
+      <text x="60" y="22" font-size="11" fill="#0080ff" text-anchor="middle" font-weight="bold">Modified</text>
+      <text x="60" y="38" font-size="10" fill="#888" text-anchor="middle">Pose</text>
+    </g>
+
+    <!-- To Output -->
+    <g transform="translate(620, 70)">
+      <line x1="0" y1="0" x2="40" y2="0" stroke="#888" stroke-width="2"/>
+      <polygon points="45,0 35,-5 35,5" fill="#888"/>
+      <text x="50" y="5" font-size="9" fill="#888">Output</text>
+    </g>
+  </g>
+
+  <!-- Physics Processing Detail -->
+  <g transform="translate(30, 180)">
+    <rect width="690" height="100" fill="#1e1e1e" stroke="#555" stroke-width="2" rx="8"/>
+    <text x="20" y="25" font-size="12" fill="#888">KawaiiPhysics 内部処理フロー</text>
+
+    <!-- Step 1: Get Bone Transform -->
+    <g transform="translate(30, 45)">
+      <rect width="110" height="45" fill="#2d2d2d" stroke="#60a5fa" stroke-width="2" rx="4"/>
+      <text x="55" y="18" font-size="9" fill="#60a5fa" text-anchor="middle">ボーン位置</text>
+      <text x="55" y="33" font-size="9" fill="#60a5fa" text-anchor="middle">取得</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="145" y1="67" x2="165" y2="67" stroke="#666" stroke-width="2"/>
+    <polygon points="170,67 162,62 162,72" fill="#666"/>
+
+    <!-- Step 2: Physics Simulation -->
+    <g transform="translate(175, 45)">
+      <rect width="110" height="45" fill="#2d2d2d" stroke="#4ade80" stroke-width="2" rx="4"/>
+      <text x="55" y="18" font-size="9" fill="#4ade80" text-anchor="middle">物理演算</text>
+      <text x="55" y="33" font-size="9" fill="#888" text-anchor="middle">Damping, Stiffness</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="290" y1="67" x2="310" y2="67" stroke="#666" stroke-width="2"/>
+    <polygon points="315,67 307,62 307,72" fill="#666"/>
+
+    <!-- Step 3: Collision -->
+    <g transform="translate(320, 45)">
+      <rect width="110" height="45" fill="#2d2d2d" stroke="#f472b6" stroke-width="2" rx="4"/>
+      <text x="55" y="18" font-size="9" fill="#f472b6" text-anchor="middle">コリジョン</text>
+      <text x="55" y="33" font-size="9" fill="#888" text-anchor="middle">判定・補正</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="435" y1="67" x2="455" y2="67" stroke="#666" stroke-width="2"/>
+    <polygon points="460,67 452,62 452,72" fill="#666"/>
+
+    <!-- Step 4: Constraints -->
+    <g transform="translate(465, 45)">
+      <rect width="110" height="45" fill="#2d2d2d" stroke="#c084fc" stroke-width="2" rx="4"/>
+      <text x="55" y="18" font-size="9" fill="#c084fc" text-anchor="middle">制約処理</text>
+      <text x="55" y="33" font-size="9" fill="#888" text-anchor="middle">Limits, Sync</text>
+    </g>
+
+    <!-- Arrow -->
+    <line x1="580" y1="67" x2="600" y2="67" stroke="#666" stroke-width="2"/>
+    <polygon points="605,67 597,62 597,72" fill="#666"/>
+
+    <!-- Step 5: Apply -->
+    <g transform="translate(610, 45)">
+      <rect width="70" height="45" fill="#2d2d2d" stroke="#fbbf24" stroke-width="2" rx="4"/>
+      <text x="35" y="18" font-size="9" fill="#fbbf24" text-anchor="middle">ボーン</text>
+      <text x="35" y="33" font-size="9" fill="#fbbf24" text-anchor="middle">適用</text>
+    </g>
+  </g>
+
+  <!-- Note -->
+  <text x="375" y="295" font-size="10" fill="#888" text-anchor="middle">PhysXを使用せず、独自の軽量アルゴリズムでボーン物理を実現</text>
+</svg>

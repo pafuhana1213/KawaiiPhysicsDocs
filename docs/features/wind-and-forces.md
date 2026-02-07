@@ -92,6 +92,10 @@ FVector Gravity = FVector::ZeroVector;
 最終的な力 = Gravity + Wind + ExternalForce
 ```
 
+![力の合成](/img/generated/external-forces-composition.svg)
+
+*Gravity、Wind、ExternalForceが合成されて物理ボーンに適用される様子*
+
 ## 動的な制御
 
 ゲーム中に力をリアルタイムで変更できます。
