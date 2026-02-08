@@ -33,6 +33,8 @@ const sidebars: SidebarsConfig = {
         'features/curve-editor',
         'features/data-assets',
         'features/sync-bone',
+        'features/external-force-presets',
+        'features/animnotify',
       ],
     },
     {

@@ -69,6 +69,8 @@ v1.19.0で正式化
 
 BoneConstraint設定専用のData Assetです。複数のAnimNodeやAnimation Blueprintで設定を共有したい場合に推奨されます。
 
+[ソースを見る](https://github.com/pafuhana1213/KawaiiPhysics/blob/master/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/KawaiiPhysicsBoneConstraintsDataAsset.h)
+
 ![Export BoneConstraint](/img/features/export-boneconstraint.png)
 
 *AnimNodeからBoneConstraint設定をエクスポート*
@@ -76,6 +78,33 @@ BoneConstraint設定専用のData Assetです。複数のAnimNodeやAnimation Bl
 ```cpp
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bone Constraint")
 TObjectPtr<UKawaiiPhysicsBoneConstraintsDataAsset> BoneConstraintsDataAsset;
+```
+
+#### BoneConstraintsDataAssetのパラメータ
+
+| パラメータ | 型 | 説明 |
+|-----------|-----|------|
+| BoneConstraintsData | TArray\<FModifyBoneConstraintData\> | ボーン制約データの配列 |
+| RegexPatternList | TArray\<FRegexPatternBoneSet\> | 正規表現パターンリスト（エディタのみ） |
+| PreviewSkeleton | TSoftObjectPtr\<USkeleton\> | エディタ用プレビュースケルトン |
+
+#### FModifyBoneConstraintData構造体
+
+| パラメータ | 型 | 説明 |
+|-----------|-----|------|
+| BoneReference1 | FBoneReference | 最初のボーンへの参照 |
+| BoneReference2 | FBoneReference | 2番目のボーンへの参照 |
+| bOverrideCompliance | bool | Compliance Typeを上書きするかどうか |
+| ComplianceType | EXPBDComplianceType | 上書きする場合のCompliance Type（デフォルト: Leather） |
+
+#### 正規表現による一括設定
+
+`ApplyRegex` ボタンを使用すると、正規表現パターンからボーン制約を自動生成できます。
+
+```cpp
+// FRegexPatternBoneSet
+RegexPatternBone1 = "skirt_01_.*";  // 最初のボーンパターン
+RegexPatternBone2 = "skirt_02_.*";  // 2番目のボーンパターン
 ```
 
 ## メリット

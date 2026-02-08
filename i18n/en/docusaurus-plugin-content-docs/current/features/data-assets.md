@@ -61,9 +61,38 @@ Stabilized in v1.19.0
 
 A Data Asset dedicated to BoneConstraint settings. Recommended when you want to share settings across multiple AnimNodes or Animation Blueprints.
 
+[View Source](https://github.com/pafuhana1213/KawaiiPhysics/blob/master/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/KawaiiPhysicsBoneConstraintsDataAsset.h)
+
 ```cpp
 UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Bone Constraint")
 TObjectPtr<UKawaiiPhysicsBoneConstraintsDataAsset> BoneConstraintsDataAsset;
+```
+
+#### BoneConstraintsDataAsset Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| BoneConstraintsData | TArray\<FModifyBoneConstraintData\> | Array of bone constraint data |
+| RegexPatternList | TArray\<FRegexPatternBoneSet\> | Regular expression pattern list (editor only) |
+| PreviewSkeleton | TSoftObjectPtr\<USkeleton\> | Preview skeleton for editor |
+
+#### FModifyBoneConstraintData Struct
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| BoneReference1 | FBoneReference | Reference to first bone |
+| BoneReference2 | FBoneReference | Reference to second bone |
+| bOverrideCompliance | bool | Whether to override Compliance Type |
+| ComplianceType | EXPBDComplianceType | Compliance Type when overriding (Default: Leather) |
+
+#### Batch Setup with Regular Expressions
+
+Use the `ApplyRegex` button to automatically generate bone constraints from regex patterns.
+
+```cpp
+// FRegexPatternBoneSet
+RegexPatternBone1 = "skirt_01_.*";  // First bone pattern
+RegexPatternBone2 = "skirt_02_.*";  // Second bone pattern
 ```
 
 ## Benefits

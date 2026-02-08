@@ -18,9 +18,26 @@ git clone --depth 1 https://github.com/pafuhana1213/KawaiiPhysics.git /tmp/Kawai
 ```
 
 ### 2. 解析対象ファイル
+
+#### メインファイル
 - `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/AnimNode_KawaiiPhysics.h`
 - `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/KawaiiPhysicsLibrary.h`
 - `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/KawaiiPhysicsLimitsDataAsset.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/KawaiiPhysicsBoneConstraintsDataAsset.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/KawaiiPhysicsCustomExternalForce.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/KawaiiPhysicsSyncBone.h`
+
+#### ExternalForcesディレクトリ
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/ExternalForces/KawaiiPhysicsExternalForce.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/ExternalForces/KawaiiPhysicsExternalForce_Basic.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/ExternalForces/KawaiiPhysicsExternalForce_Curve.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/ExternalForces/KawaiiPhysicsExternalForce_Gravity.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/ExternalForces/KawaiiPhysicsExternalForce_Wind.h`
+
+#### AnimNotifiesディレクトリ
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/AnimNotifies/AnimNotify_KawaiiPhysicsAddExternalForce.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/AnimNotifies/AnimNotifyState_KawaiiPhysicsAddExternalForce.h`
+- `/tmp/KawaiiPhysics/Plugins/KawaiiPhysics/Source/KawaiiPhysics/Public/AnimNotifies/AnimNotifyState_KawaiiPhysicsSetAlpha.h`
 
 ### 3. 抽出パターン
 ```cpp
@@ -29,12 +46,22 @@ float ParameterName; // 日本語コメント
 ```
 
 ### 4. 更新対象ドキュメント
+
+#### パラメータリファレンス
 - `docs/parameters/physics.md`
 - `docs/parameters/collision.md`
 - `docs/parameters/limits.md`
 - `docs/parameters/external-forces.md`
+
+#### APIリファレンス
 - `docs/api/animnode-kawaiiphysics.md`
 - `docs/api/kawaiiphysics-library.md`
+
+#### 機能ガイド
+- `docs/features/data-assets.md`
+- `docs/features/external-force-presets.md`
+- `docs/features/animnotify.md`
+- `docs/features/sync-bone.md`
 
 ### 5. 検証
 ```bash

@@ -13,6 +13,11 @@ sidebar_class_name: hidden
 | `AnimNode_KawaiiPhysics.h` | `docs/api/animnode-kawaiiphysics.md`, `docs/parameters/*.md` |
 | `KawaiiPhysicsLibrary.h` | `docs/api/kawaiiphysics-library.md` |
 | `KawaiiPhysicsLimitsDataAsset.h` | `docs/features/data-assets.md` |
+| `KawaiiPhysicsBoneConstraintsDataAsset.h` | `docs/features/data-assets.md` |
+| `KawaiiPhysicsCustomExternalForce.h` | `docs/features/external-force-presets.md` |
+| `ExternalForces/*.h` | `docs/features/external-force-presets.md` |
+| `AnimNotifies/*.h` | `docs/features/animnotify.md` |
+| `KawaiiPhysicsSyncBone.h` | `docs/features/sync-bone.md` |
 
 ## パラメータカテゴリとファイルの対応
 
