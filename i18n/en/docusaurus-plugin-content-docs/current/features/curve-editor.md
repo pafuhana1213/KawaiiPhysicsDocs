@@ -1,5 +1,6 @@
 ---
 sidebar_position: 4
+title: "Curve Editor"
 ---
 
 # Curve Editor

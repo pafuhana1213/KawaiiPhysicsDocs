@@ -30,5 +30,69 @@
   "homepage.description": {
     "message": "Documentation for KawaiiPhysics, a lightweight bone physics plugin for Unreal Engine",
     "description": "The meta description of the homepage"
+  },
+  "contact.title": {
+    "message": "Contact",
+    "description": "Contact page title"
+  },
+  "contact.subtitle": {
+    "message": "Feel free to reach out",
+    "description": "Contact page subtitle"
+  },
+  "contact.description": {
+    "message": "Contact and inquiries about KawaiiPhysics",
+    "description": "Contact page meta description"
+  },
+  "contact.intro": {
+    "message": "Please use the appropriate channel below depending on your purpose.",
+    "description": "Contact page intro text"
+  },
+  "contact.form.title": {
+    "message": "Contact Form",
+    "description": "Contact form card title"
+  },
+  "contact.form.description": {
+    "message": "For adoption reports or private inquiries",
+    "description": "Contact form card description"
+  },
+  "contact.form.linkText": {
+    "message": "Open Form",
+    "description": "Contact form link text"
+  },
+  "contact.discussions.title": {
+    "message": "GitHub Discussions",
+    "description": "Discussions card title"
+  },
+  "contact.discussions.description": {
+    "message": "For questions, ideas, and community discussions",
+    "description": "Discussions card description"
+  },
+  "contact.discussions.linkText": {
+    "message": "Open Discussions",
+    "description": "Discussions link text"
+  },
+  "contact.issues.title": {
+    "message": "GitHub Issues",
+    "description": "Issues card title"
+  },
+  "contact.issues.description": {
+    "message": "For bug reports and feature requests",
+    "description": "Issues card description"
+  },
+  "contact.issues.linkText": {
+    "message": "Open Issues",
+    "description": "Issues link text"
+  },
+  "contact.x.title": {
+    "message": "X (Twitter)",
+    "description": "X card title"
+  },
+  "contact.x.description": {
+    "message": "For casual contact and latest updates",
+    "description": "X card description"
+  },
+  "contact.x.linkText": {
+    "message": "Open X",
+    "description": "X link text"
   }
 }

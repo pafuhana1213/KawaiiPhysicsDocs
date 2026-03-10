@@ -5,7 +5,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'KawaiiPhysics',
   tagline: 'Simple bone physics for Unreal Engine',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.png',
 
   future: {
     v4: true,
@@ -60,7 +60,7 @@ const config: Config = {
             xslt: true,
           },
           editUrl: 'https://github.com/pafuhana1213/KawaiiPhysics-Portal/tree/main/',
-          blogTitle: 'KawaiiPhysics Updates',
+          blogTitle: '更新情報',
           blogDescription: 'KawaiiPhysicsの更新情報とTips',
         },
         theme: {
@@ -100,6 +100,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          to: '/contact',
+          label: 'お問い合わせ',
+          position: 'left',
+        },
+        {
           type: 'localeDropdown',
           position: 'right',
         },
@@ -136,6 +141,10 @@ const config: Config = {
             {
               label: 'Issues',
               href: 'https://github.com/pafuhana1213/KawaiiPhysics/issues',
+            },
+            {
+              label: 'お問い合わせ',
+              to: '/contact',
             },
           ],
         },

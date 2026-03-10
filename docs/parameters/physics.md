@@ -1,8 +1,9 @@
 ---
 sidebar_position: 2
+title: "物理パラメータ"
 ---
 
-# Physics パラメータ
+# 物理パラメータ
 
 <!-- AUTO-GENERATED: このページはソースコードから自動生成されます -->
 

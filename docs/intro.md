@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 slug: /
+title: "はじめに"
 ---
 
-# KawaiiPhysics
+# はじめに
 
 **KawaiiPhysics** は、Unreal Engine向けの軽量なボーン物理シミュレーションプラグインです。
 

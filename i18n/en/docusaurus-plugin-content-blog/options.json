@@ -1,0 +1,10 @@
+{
+  "blogTitle": {
+    "message": "Updates",
+    "description": "Blog page title"
+  },
+  "blogDescription": {
+    "message": "Updates and tips for KawaiiPhysics",
+    "description": "Blog page meta description"
+  }
+}

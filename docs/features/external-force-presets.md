@@ -1,8 +1,9 @@
 ---
 sidebar_position: 7
+title: "外部力プリセット"
 ---
 
-# External Force プリセット
+# 外部力プリセット
 
 :::tip バージョン情報
 v1.16.0で追加

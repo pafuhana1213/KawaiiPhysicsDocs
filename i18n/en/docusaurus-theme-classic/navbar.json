@@ -15,6 +15,10 @@
     "message": "Showcase",
     "description": "Navbar item with label 採用実績"
   },
+  "item.label.お問い合わせ": {
+    "message": "Contact",
+    "description": "Navbar item with label お問い合わせ"
+  },
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"

@@ -1,8 +1,9 @@
 ---
 sidebar_position: 4
+title: "リミットパラメータ"
 ---
 
-# Limits パラメータ
+# リミットパラメータ
 
 <!-- AUTO-GENERATED: このページはソースコードから自動生成されます -->
 

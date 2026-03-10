@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+title: "風と外部力"
 ---
 
 # 風と外部力

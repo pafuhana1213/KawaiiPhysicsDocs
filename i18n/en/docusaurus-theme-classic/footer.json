@@ -31,6 +31,10 @@
     "message": "Issues",
     "description": "The label of footer link with label=Issues"
   },
+  "link.item.label.お問い合わせ": {
+    "message": "Contact",
+    "description": "The label of footer link with label=お問い合わせ"
+  },
   "link.item.label.GitHub": {
     "message": "GitHub",
     "description": "The label of footer link with label=GitHub"

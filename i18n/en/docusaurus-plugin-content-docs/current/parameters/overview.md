@@ -1,8 +1,9 @@
 ---
 sidebar_position: 1
+title: "Parameters Overview"
 ---
 
-# Parameter Overview
+# Parameters Overview
 
 <!-- AUTO-GENERATED: This page is auto-generated from source code -->
 

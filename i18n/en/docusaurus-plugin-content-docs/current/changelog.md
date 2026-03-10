@@ -1,5 +1,6 @@
 ---
 sidebar_position: 101
+title: "Changelog"
 ---
 
 # Changelog

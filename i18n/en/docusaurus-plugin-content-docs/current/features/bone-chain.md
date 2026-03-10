@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+title: "Bone Chain Setup"
 ---
 
 # Bone Chain Setup

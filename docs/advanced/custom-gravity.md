@@ -1,5 +1,6 @@
 ---
 sidebar_position: 3
+title: "カスタム重力"
 ---
 
 # カスタム重力

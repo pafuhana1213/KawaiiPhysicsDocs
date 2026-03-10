@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 slug: /
+title: "Introduction"
 ---
 
-# KawaiiPhysics
+# Introduction
 
 **KawaiiPhysics** is a lightweight bone physics simulation plugin for Unreal Engine.
 

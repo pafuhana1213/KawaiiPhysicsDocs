@@ -121,7 +121,7 @@ function HomepageFeatures() {
 export default function Home(): ReactNode {
   return (
     <Layout
-      title="KawaiiPhysics Documentation"
+      title="KawaiiPhysics Portal"
       description={translate({id: 'homepage.description', message: 'Unreal Engine向け軽量ボーン物理プラグイン KawaiiPhysics のドキュメント'})}>
       <HomepageHeader />
       <main>

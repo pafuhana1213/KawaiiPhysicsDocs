@@ -1,8 +1,9 @@
 ---
 sidebar_position: 3
+title: "コリジョンパラメータ"
 ---
 
-# Collision パラメータ
+# コリジョンパラメータ
 
 <!-- AUTO-GENERATED: このページはソースコードから自動生成されます -->
 

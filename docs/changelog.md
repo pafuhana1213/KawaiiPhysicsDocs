@@ -1,5 +1,6 @@
 ---
 sidebar_position: 101
+title: "更新履歴"
 ---
 
 # 更新履歴

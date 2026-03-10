@@ -1,8 +1,9 @@
 ---
 sidebar_position: 5
+title: "外部力パラメータ"
 ---
 
-# External Forces パラメータ
+# 外部力パラメータ
 
 <!-- AUTO-GENERATED: このページはソースコードから自動生成されます -->
 
