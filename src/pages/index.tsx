@@ -1,12 +1,15 @@
+import {useState, useEffect} from 'react';
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
-import Translate, {translate} from '@docusaurus/Translate';
+import {translate} from '@docusaurus/Translate';
 
 import styles from './index.module.css';
+import {adoptionData} from '../data/adoptionData';
+import type {GameTitle} from '../data/adoptionData';
 
 const iconStyle = {
   marginRight: '0.5rem',
@@ -41,9 +44,84 @@ function DocumentIcon() {
   );
 }
 
+// Play icon SVG
+function PlayIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={iconStyle}>
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+  );
+}
+
+// Feature card icons (outline style, 48px)
+function ClickIcon() {
+  return (
+    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#4ecdc4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 8a10 10 0 1 1-4 19.2" />
+      <path d="M16 20v16l4-4 4 4 4-4 4 4V20" />
+      <circle cx="16" cy="14" r="2" fill="#4ecdc4" stroke="none" />
+    </svg>
+  );
+}
+
+function BoltIcon() {
+  return (
+    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#4ecdc4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M26 6L12 28h10l-2 14L34 20H24l2-14z" />
+    </svg>
+  );
+}
+
+function SliderIcon() {
+  return (
+    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#4ecdc4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <line x1="8" y1="14" x2="40" y2="14" />
+      <line x1="8" y1="24" x2="40" y2="24" />
+      <line x1="8" y1="34" x2="40" y2="34" />
+      <circle cx="16" cy="14" r="3" fill="#1a1a2e" />
+      <circle cx="30" cy="24" r="3" fill="#1a1a2e" />
+      <circle cx="22" cy="34" r="3" fill="#1a1a2e" />
+    </svg>
+  );
+}
+
+function VideoModal({isOpen, onClose, videoId}: {isOpen: boolean; onClose: () => void; videoId: string}) {
+  useEffect(() => {
+    if (!isOpen) return;
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onClose();
+    };
+    document.addEventListener('keydown', handleEsc);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleEsc);
+      document.body.style.overflow = '';
+    };
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div className={styles.modalOverlay} onClick={onClose}>
+      <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
+        <button className={styles.modalClose} onClick={onClose}>✕</button>
+        <div className={styles.modalVideo}>
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
+            title="KawaiiPhysics Demo"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   const videoId = '0f-l-SP07Mo';
+  const [showDemo, setShowDemo] = useState(false);
 
   return (
     <header className={clsx('hero', styles.heroBanner)}>
@@ -78,40 +156,181 @@ function HomepageHeader() {
             to="/docs">
             <DocumentIcon />Document
           </Link>
+          <button
+            className="button button--outline button--lg"
+            onClick={() => setShowDemo(true)}>
+            <PlayIcon />Demo
+          </button>
         </div>
       </div>
+      <VideoModal isOpen={showDemo} onClose={() => setShowDemo(false)} videoId={videoId} />
     </header>
   );
 }
 
-function Feature({title, description}: {title: string; description: string}) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  );
+interface FeatureItem {
+  icon: ReactNode;
+  title: string;
+  description: string;
 }
+
+const featureList: FeatureItem[] = [
+  {
+    icon: <ClickIcon />,
+    title: translate({id: 'homepage.feature1.title', message: 'シンプルなセットアップ'}),
+    description: translate({
+      id: 'homepage.feature1.description',
+      message: 'AnimGraph内で1つのノードを追加するだけで、髪や服、アクセサリーに物理挙動を適用。複雑な設定は不要で、すぐに揺れものを実現できます。',
+    }),
+  },
+  {
+    icon: <BoltIcon />,
+    title: translate({id: 'homepage.feature2.title', message: '軽量な処理'}),
+    description: translate({
+      id: 'homepage.feature2.description',
+      message: 'PhysXに依存しない独自アルゴリズムにより、低負荷で安定した物理シミュレーションを実現。モバイルを含むあらゆるプラットフォームで安心して使用できます。',
+    }),
+  },
+  {
+    icon: <SliderIcon />,
+    title: translate({id: 'homepage.feature3.title', message: '柔軟なカスタマイズ'}),
+    description: translate({
+      id: 'homepage.feature3.description',
+      message: 'コリジョン、カーブ、外部力プリセットなど、豊富なパラメータで細かな挙動調整が可能。Data Assetによる設定の使い回しにも対応しています。',
+    }),
+  },
+];
 
 function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
-          <Feature
-            title={translate({id: 'homepage.feature1.title', message: 'シンプルなセットアップ'})}
-            description={translate({id: 'homepage.feature1.description', message: 'AnimGraph内で1つのノードを追加するだけで、髪や服に物理を適用できます。'})}
-          />
-          <Feature
-            title={translate({id: 'homepage.feature2.title', message: '軽量な処理'})}
-            description={translate({id: 'homepage.feature2.description', message: 'PhysXに依存しない独自アルゴリズムにより、低負荷で安定した物理シミュレーションを実現。'})}
-          />
-          <Feature
-            title={translate({id: 'homepage.feature3.title', message: '柔軟なカスタマイズ'})}
-            description={translate({id: 'homepage.feature3.description', message: 'コリジョン、カーブ、外部力など、豊富なパラメータで細かな調整が可能。'})}
-          />
+        <Heading as="h2" className={styles.sectionTitle}>
+          {translate({id: 'homepage.features.title', message: '主な特徴'})}
+        </Heading>
+        <div className={styles.featureGrid}>
+          {featureList.map((feature, idx) => (
+            <div key={idx} className={styles.featureCard}>
+              <div className={styles.featureIcon}>{feature.icon}</div>
+              <Heading as="h3" className={styles.featureTitle}>{feature.title}</Heading>
+              <p className={styles.featureDescription}>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// Pick 5 highlighted titles from the adoption data
+const highlightedTitles: {game: GameTitle; year: number}[] = [
+  {game: adoptionData[0].titles[0], year: 2026}, // ドラゴンクエストVII Reimagined
+  {game: adoptionData[1].titles[1], year: 2025}, // SILENT HILL f
+  {game: adoptionData[2].titles[9], year: 2024}, // ペルソナ3 リロード
+  {game: adoptionData[1].titles[6], year: 2025}, // Clair Obscur
+  {game: adoptionData[2].titles[5], year: 2024}, // Stellar Blade
+];
+
+function AdoptionHighlightSection() {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  return (
+    <section className={styles.adoptionSection}>
+      <div className="container">
+        <Heading as="h2" className={styles.sectionTitle}>
+          {translate({id: 'homepage.adoption.title', message: '採用実績'})}
+        </Heading>
+        <div className={styles.adoptionGrid}>
+          {highlightedTitles.map(({game, year}, idx) => (
+            <div
+              key={idx}
+              className={styles.adoptionCard}
+              style={{cursor: game.videoId ? 'pointer' : undefined}}
+              onClick={() => game.videoId && setActiveVideo(game.videoId)}
+            >
+              <div className={styles.adoptionThumbnail}>
+                <img
+                  src={`https://img.youtube.com/vi/${game.videoId}/mqdefault.jpg`}
+                  alt={game.name}
+                  loading="lazy"
+                />
+                {game.videoId && (
+                  <div className={styles.adoptionPlayButton}>
+                    <svg viewBox="0 0 68 48" width="68" height="48">
+                      <path
+                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
+                        fill="#f00"
+                      />
+                      <path d="M 45,24 27,14 27,34" fill="#fff" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+              <div className={styles.adoptionInfo}>
+                <div className={styles.adoptionName}>{game.name}</div>
+                <div className={styles.adoptionMeta}>
+                  {year} / {game.company}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className={styles.adoptionMore}>
+          <Link to="/adoption" className={styles.moreLink}>
+            {translate({id: 'homepage.adoption.more', message: 'もっと見る'})} &rarr;
+          </Link>
+        </div>
+      </div>
+      {activeVideo && (
+        <VideoModal isOpen onClose={() => setActiveVideo(null)} videoId={activeVideo} />
+      )}
+    </section>
+  );
+}
+
+function VersionInfoSection() {
+  return (
+    <section className={styles.versionSection}>
+      <div className="container">
+        <Heading as="h2" className={styles.sectionTitle}>
+          {translate({id: 'homepage.version.title', message: 'バージョン情報'})}
+        </Heading>
+        <div className={styles.versionGrid}>
+          <div className={styles.versionCard}>
+            <div className={styles.versionLabel}>
+              {translate({id: 'homepage.version.latest', message: '最新バージョン'})}
+            </div>
+            <div className={styles.versionValue}>1.20.0</div>
+          </div>
+          <div className={styles.versionCard}>
+            <div className={styles.versionLabel}>
+              {translate({id: 'homepage.version.ue', message: '対応UEバージョン'})}
+            </div>
+            <div className={styles.versionValue}>5.3 - 5.7</div>
+          </div>
+          <div className={styles.versionCard}>
+            <div className={styles.versionLabel}>
+              {translate({id: 'homepage.version.download', message: 'ダウンロード'})}
+            </div>
+            <div className={styles.versionLinks}>
+              <a
+                href="https://www.fab.com/ja/listings/f870c07e-0a02-4a78-a888-e52a22794572"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.versionLink}
+              >
+                <FabIcon />Fab
+              </a>
+              <a
+                href="https://github.com/pafuhana1213/KawaiiPhysics"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.versionLink}
+              >
+                <GitHubIcon />GitHub
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -126,6 +345,8 @@ export default function Home(): ReactNode {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <AdoptionHighlightSection />
+        <VersionInfoSection />
       </main>
     </Layout>
   );
