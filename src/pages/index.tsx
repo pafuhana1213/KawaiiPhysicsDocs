@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
@@ -10,6 +10,8 @@ import {translate} from '@docusaurus/Translate';
 import styles from './index.module.css';
 import {adoptionData} from '../data/adoptionData';
 import type {GameTitle} from '../data/adoptionData';
+import VideoModal from '../components/VideoModal';
+import YouTubePlayButton from '../components/YouTubePlayButton';
 
 const iconStyle = {
   marginRight: '0.5rem',
@@ -50,39 +52,6 @@ function PlayIcon() {
     <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style={iconStyle}>
       <path d="M8 5v14l11-7z"/>
     </svg>
-  );
-}
-
-function VideoModal({isOpen, onClose, videoId}: {isOpen: boolean; onClose: () => void; videoId: string}) {
-  useEffect(() => {
-    if (!isOpen) return;
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-    };
-    document.addEventListener('keydown', handleEsc);
-    document.body.style.overflow = 'hidden';
-    return () => {
-      document.removeEventListener('keydown', handleEsc);
-      document.body.style.overflow = '';
-    };
-  }, [isOpen, onClose]);
-
-  if (!isOpen) return null;
-
-  return (
-    <div className={styles.modalOverlay} onClick={onClose}>
-      <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-        <button className={styles.modalClose} onClick={onClose}>✕</button>
-        <div className={styles.modalVideo}>
-          <iframe
-            src={`https://www.youtube.com/embed/${videoId}?autoplay=1`}
-            title="KawaiiPhysics Demo"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          />
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -131,7 +100,7 @@ function HomepageHeader() {
           </button>
         </div>
       </div>
-      <VideoModal isOpen={showDemo} onClose={() => setShowDemo(false)} videoId={videoId} />
+      <VideoModal isOpen={showDemo} onClose={() => setShowDemo(false)} videoId={videoId} title="KawaiiPhysics Demo" />
     </header>
   );
 }
@@ -219,13 +188,7 @@ function AdoptionHighlightSection() {
                 />
                 {game.videoId && (
                   <div className={styles.adoptionPlayButton}>
-                    <svg viewBox="0 0 68 48" width="68" height="48">
-                      <path
-                        d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z"
-                        fill="#f00"
-                      />
-                      <path d="M 45,24 27,14 27,34" fill="#fff" />
-                    </svg>
+                    <YouTubePlayButton />
                   </div>
                 )}
               </div>

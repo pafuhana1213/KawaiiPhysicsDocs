@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: "Installation"
+description: "How to install KawaiiPhysics. Step-by-step guide for Fab, GitHub, and Git Submodule installation methods."
 ---
 
 # Installation
@@ -41,26 +42,10 @@ git submodule add https://github.com/pafuhana1213/KawaiiPhysics.git Plugins/Kawa
 3. Check **Enabled**
 4. Restart the editor
 
-<!-- IMAGE_NEEDED: installation-plugin-enable.png
-     Content: Screenshot of plugin enable screen
-     Location: Edit > Plugins window
-     Requirements:
-     - Search field with "KawaiiPhysics" entered
-     - KawaiiPhysics plugin displayed with Enabled checked
-     - Resolution: 800x500px or higher
-     - Capture window only (no desktop background)
--->
+![Plugin enable screen](/img/generated/plugin-enable-mock.svg)
 
 ## Verification
 
 When the plugin is correctly installed, **Kawaii Physics** will appear in the node list of Animation Blueprint.
 
-<!-- IMAGE_NEEDED: installation-animgraph-node.png
-     Content: Adding KawaiiPhysics node in AnimGraph
-     Location: Animation Blueprint > AnimGraph
-     Requirements:
-     - Right-click context menu open
-     - Search for "Kawaii Physics" with node displayed
-     - Resolution: 800x600px or higher
-     - Composition showing AnimGraph background and node
--->
+![KawaiiPhysics node in AnimGraph](/img/animgraph-example.jpg)

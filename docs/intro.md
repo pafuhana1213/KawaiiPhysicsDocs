@@ -2,6 +2,7 @@
 sidebar_position: 1
 slug: /
 title: "はじめに"
+description: "KawaiiPhysics - Unreal Engine向け軽量ボーン物理プラグイン。髪・服・アクセサリーに物理挙動を簡単に適用できます。"
 ---
 
 # はじめに

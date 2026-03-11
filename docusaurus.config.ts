@@ -70,6 +70,16 @@ const config: Config = {
     ],
   ],
 
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'description',
+        content: 'KawaiiPhysics - Unreal Engine向け軽量ボーン物理プラグインのドキュメント。髪・服・アクセサリーに簡単に物理挙動を適用。',
+      },
+    },
+  ],
+
   themeConfig: {
     image: 'img/social-card.jpg',
     colorMode: {

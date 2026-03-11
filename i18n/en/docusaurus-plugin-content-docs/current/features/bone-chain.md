@@ -15,17 +15,7 @@ This guide explains how to set up bone chains in KawaiiPhysics.
 Physics is not applied to the Root Bone itself. Physics is applied to its child bones and below.
 :::
 
-<!-- IMAGE_NEEDED: bone-chain-root-concept.png
-     Content: Root Bone concept diagram
-     Method: Diagram or skeleton view screenshot
-     Requirements:
-     - Visual display of bone hierarchy
-     - Highlight Root Bone (no physics) with red border or different color
-     - Display child bones (with physics) in different color
-     - Arrow indicating "range where physics is applied"
-     - For skeleton view: bone selection state in Persona (skeleton editor)
-     - Resolution: 600x600px or higher
--->
+![Bone chain structure diagram](/img/generated/bone-chain-diagram.svg)
 
 ## Auto-detection
 

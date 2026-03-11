@@ -1,6 +1,7 @@
 ---
 sidebar_position: 2
 title: "Quick Start"
+description: "Get started with KawaiiPhysics in 5 minutes. Basic setup from adding an AnimGraph node to previewing physics."
 ---
 
 # Quick Start
@@ -23,15 +24,7 @@ Open the Animation Blueprint of the character you want to apply physics to.
 
 Right-click in AnimGraph and add the **Kawaii Physics** node.
 
-<!-- IMAGE_NEEDED: quickstart-add-node.png
-     Content: Steps for adding KawaiiPhysics node
-     Location: Animation Blueprint > AnimGraph
-     Requirements:
-     - Added KawaiiPhysics node displayed in AnimGraph
-     - Node input/output pins visible
-     - Preferably connected to Output Pose node
-     - Resolution: 800x500px or higher
--->
+![KawaiiPhysics node in AnimGraph](/img/animgraph-example.jpg)
 
 ### Step 3: Set Root Bone
 
@@ -56,17 +49,7 @@ Basic parameters:
 
 Move the character in the Animation Blueprint preview window to verify the physics behavior.
 
-<!-- VIDEO_NEEDED: quickstart-preview.mp4 (or GIF)
-     Content: Preview video after basic setup
-     Location: Animation Blueprint preview window
-     Requirements:
-     - State immediately after setting Root Bone
-     - Move character in preview window showing bones swaying
-     - Demonstrate with easily visible parts like hair or tail
-     - Duration: 5-10 seconds
-     - Resolution: 1280x720px or higher
-     - Format: MP4 (H.264) or high-quality GIF
--->
+![KawaiiPhysics preview](/img/intro-demo.gif)
 
 ## Next Steps
 

@@ -19,7 +19,13 @@ For the latest release information, see [GitHub Releases](https://github.com/paf
 
 Added a feature that applies the movement and rotation of a specified bone to physics-controlled bones. Effective for preventing skirt penetration through legs.
 
-<!-- IMAGE_NEEDED: syncbone-demo.gif - Sync Bone feature demo -->
+![SyncBone + Collision comparison](/img/features/syncbone-collision-compare.gif)
+
+*Preventing penetration with SyncBone and Collision combined*
+
+![SyncBone + BoneConstraint + Collision](/img/features/syncbone-full-demo.gif)
+
+*Full demo combining SyncBone, BoneConstraint, and Collision*
 
 - Reflects source bone position/rotation to physics bones
 - Prevents penetration without using collisions

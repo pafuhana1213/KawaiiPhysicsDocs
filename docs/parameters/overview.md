@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: "パラメータ概要"
+description: "KawaiiPhysicsの全パラメータ一覧。物理、コリジョン、リミット、外部力の設定リファレンス。"
 ---
 
 # パラメータ概要

@@ -1,6 +1,7 @@
 ---
 sidebar_position: 3
 title: "Basic Concepts"
+description: "How KawaiiPhysics works. Learn about bone chains, Damping, Stiffness, collision, and other core concepts."
 ---
 
 # Basic Concepts
@@ -41,16 +42,7 @@ You can exclude specific bones from physics calculation.
 
 Gradually converges bone movement. Higher values stop movement faster.
 
-<!-- IMAGE_NEEDED: concepts-damping-comparison.png (or GIF)
-     Content: Comparison showing different Damping values
-     Method: Compare the same motion with different Damping values side by side
-     Requirements:
-     - Display 2-3 patterns side by side
-     - Damping=0.0 (doesn't converge), Damping=0.2 (moderate), Damping=0.5 (stops quickly)
-     - Add labels/text to each pattern
-     - If GIF: 3-5 second loop
-     - Resolution: 1200x400px or higher (horizontal layout)
--->
+![Damping value comparison](/img/generated/damping-comparison.svg)
 
 ### Stiffness
 

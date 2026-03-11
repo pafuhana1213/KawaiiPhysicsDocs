@@ -1,6 +1,7 @@
 ---
 sidebar_position: 100
 title: "FAQ"
+description: "KawaiiPhysicsのよくある質問と回答。トラブルシューティング、パフォーマンス、互換性について。"
 ---
 
 # FAQ

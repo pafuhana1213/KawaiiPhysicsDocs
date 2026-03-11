@@ -73,16 +73,13 @@ FVector Gravity = FVector::ZeroVector;
 
 Different gravity can be applied to specific bones.
 
-<!-- IMAGE_NEEDED: forces-gravity-direction.png (or GIF)
-     Content: Examples of different gravity direction settings
-     Method: Compare multiple gravity settings side by side, or switching GIF
-     Requirements:
-     - Default gravity (downward): hair hanging down
-     - Custom gravity (sideways): hair flowing sideways
-     - Custom gravity (upward): hair standing up
-     - Add labels/text to each setting
-     - Resolution: 1000x400px or higher (horizontal layout), or GIF
--->
+```
+Gravity direction examples:
+
+  ↓ (0, 0, -980)      → (980, 0, 0)      ↑ (0, 0, 980)
+  Default gravity      Sideways gravity    Upward gravity
+  (hair hangs down)    (hair flows sideways) (hair stands up)
+```
 
 ## Force Composition
 

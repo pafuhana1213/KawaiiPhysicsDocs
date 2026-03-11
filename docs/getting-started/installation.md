@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: "インストール"
+description: "KawaiiPhysicsのインストール方法。Fab、GitHub、Git Submoduleからの導入手順を解説。"
 ---
 
 # インストール

@@ -13,29 +13,13 @@ Set up collisions to prevent bones from penetrating through the body.
 
 Suitable for spherical parts like head and shoulders.
 
-<!-- IMAGE_NEEDED: collision-sphere-example.png
-     Content: Sphere collision example
-     Location: Animation Blueprint preview or Persona
-     Requirements:
-     - Debug display showing sphere collision visualization
-     - Example of sphere collision placed on head or shoulders
-     - Bones (like hair) being restricted by collision
-     - Resolution: 600x400px or higher
--->
+![Sphere collision example](/img/collision-example.gif)
 
 ### Capsule
 
 Suitable for cylindrical parts like arms and legs.
 
-<!-- IMAGE_NEEDED: collision-capsule-example.png
-     Content: Capsule collision example
-     Location: Animation Blueprint preview or Persona
-     Requirements:
-     - Debug display showing capsule collision visualization
-     - Example of capsule collision placed on arms or legs
-     - Angle showing collision orientation and length
-     - Resolution: 600x400px or higher
--->
+![Capsule collision example](/img/collision-example.gif)
 
 ### Plane
 

@@ -2,6 +2,7 @@
 sidebar_position: 1
 slug: /
 title: "Introduction"
+description: "KawaiiPhysics - A lightweight bone physics plugin for Unreal Engine. Easily add physics simulation to hair, clothing, and accessories."
 ---
 
 # Introduction

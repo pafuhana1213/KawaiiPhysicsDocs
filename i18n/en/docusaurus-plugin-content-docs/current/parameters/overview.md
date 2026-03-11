@@ -1,6 +1,7 @@
 ---
 sidebar_position: 1
 title: "Parameters Overview"
+description: "Complete parameter reference for KawaiiPhysics. Physics, collision, limits, and external force settings."
 ---
 
 # Parameters Overview

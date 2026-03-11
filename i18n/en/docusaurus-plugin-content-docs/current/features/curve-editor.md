@@ -30,16 +30,7 @@ The following parameters support curves:
 2. Expand the target Curve property
 3. Add and edit keys in the curve editor
 
-<!-- IMAGE_NEEDED: curve-editor-ui.png
-     Content: Curve editor UI
-     Location: KawaiiPhysics node Details Panel > Curve property
-     Requirements:
-     - Curve editor in expanded state
-     - Curve with 2-3 key points set
-     - X axis (0-1) and Y axis visible
-     - Example curve showing values changing from root to tip
-     - Resolution: 700x400px or higher
--->
+![Curve editor UI](/img/generated/curve-editor-mock.svg)
 
 ## Reading Curves
 

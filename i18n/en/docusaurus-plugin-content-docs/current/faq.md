@@ -1,6 +1,7 @@
 ---
 sidebar_position: 100
 title: "FAQ"
+description: "Frequently asked questions about KawaiiPhysics. Troubleshooting, performance tips, and compatibility information."
 ---
 
 # FAQ

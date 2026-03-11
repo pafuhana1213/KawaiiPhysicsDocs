@@ -13,16 +13,7 @@ This guide explains how to investigate and resolve KawaiiPhysics issues.
 
 Collision shapes can be displayed in the editor.
 
-<!-- IMAGE_NEEDED: debug-collision-display.png
-     Content: Collision debug display screenshot
-     Location: Animation Blueprint preview or in-game
-     Requirements:
-     - Debug display enabled
-     - Sphere/capsule/plane collisions displayed as wireframe
-     - Bone chain visualized as well if possible
-     - Collision colors and shapes identifiable
-     - Resolution: 800x600px or higher
--->
+![Collision debug display](/img/collision-example.gif)
 
 ### Supported Collision Shapes
 
