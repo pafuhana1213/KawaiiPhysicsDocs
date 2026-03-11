@@ -9,7 +9,7 @@ description: "KawaiiPhysics - A lightweight bone physics plugin for Unreal Engin
 
 **KawaiiPhysics** is a lightweight bone physics simulation plugin for Unreal Engine.
 
-![KawaiiPhysics Demo](/img/intro-demo.gif)
+![KawaiiPhysics Demo](/img/intro-demo.webp)
 
 <div style={{textAlign: 'center', margin: '20px 0'}}>
   <iframe

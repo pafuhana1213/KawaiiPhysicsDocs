@@ -49,7 +49,7 @@ Basic parameters:
 
 Move the character in the Animation Blueprint preview window to verify the physics behavior.
 
-![KawaiiPhysics preview](/img/intro-demo.gif)
+![KawaiiPhysics preview](/img/intro-demo.webp)
 
 ## Next Steps
 

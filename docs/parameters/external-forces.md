@@ -141,7 +141,7 @@ v1.16.0で追加
 
 ![External Force設定2](/img/features/externalforce-settings2.png)
 
-![External Forceデモ](/img/features/externalforce-demo.gif)
+![External Forceデモ](/img/features/externalforce-demo.webp)
 
 *External Forceプリセットによる揺れの制御*
 
@@ -198,7 +198,7 @@ v1.17.0で追加
 
 AnimNotifyを使用してアニメーション中に外力を制御できます。
 
-![AnimNotifyState External Force](/img/features/animnotify-externalforce.gif)
+![AnimNotifyState External Force](/img/features/animnotify-externalforce.webp)
 
 *AnimNotifyStateによる外力の適用*
 

@@ -28,7 +28,7 @@ KawaiiPhysicsは3種類のAnimNotifyを提供しています：
 - **AnimNotify**: 単一フレームでトリガーされる。瞬間的な衝撃などに使用
 - **AnimNotifyState**: 開始〜終了の区間で動作する。継続的な効果に使用
 
-![AnimNotifyState External Force](/img/features/animnotify-externalforce.gif)
+![AnimNotifyState External Force](/img/features/animnotify-externalforce.webp)
 
 *AnimNotifyStateによる外力の適用*
 

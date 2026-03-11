@@ -44,7 +44,7 @@ UKawaiiPhysicsLimitsDataAsset* LimitsDataAsset;
 
 From v1.14.0, BoneConstraint (distance constraints between bones) can be configured in DataAssets. Became official in v1.19.0.
 
-![BoneConstraint Demo](/img/features/boneconstraint-demo.gif)
+![BoneConstraint Demo](/img/features/boneconstraint-demo.webp)
 
 Bone sets for constraints can be specified using regular expressions:
 

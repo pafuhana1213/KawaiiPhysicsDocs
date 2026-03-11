@@ -15,7 +15,7 @@ The Sync Bone feature applies the movement and rotation of a specified bone to p
 
 Previously, collisions were used to prevent penetration of skirts, but it was difficult to handle complex shapes and movements. With the Sync Bone feature, you can reflect the movement of bones like legs to physics bones without using collisions.
 
-![Sync Bone Demo](/img/features/syncbone-demo.gif)
+![Sync Bone Demo](/img/features/syncbone-demo.webp)
 
 ## How It Works
 

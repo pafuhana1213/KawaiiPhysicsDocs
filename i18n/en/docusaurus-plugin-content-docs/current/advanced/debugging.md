@@ -13,7 +13,7 @@ This guide explains how to investigate and resolve KawaiiPhysics issues.
 
 Collision shapes can be displayed in the editor.
 
-![Collision debug display](/img/collision-example.gif)
+![Collision debug display](/img/collision-example.webp)
 
 ### Supported Collision Shapes
 

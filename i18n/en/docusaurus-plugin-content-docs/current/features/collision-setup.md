@@ -13,13 +13,13 @@ Set up collisions to prevent bones from penetrating through the body.
 
 Suitable for spherical parts like head and shoulders.
 
-![Sphere collision example](/img/collision-example.gif)
+![Sphere collision example](/img/collision-example.webp)
 
 ### Capsule
 
 Suitable for cylindrical parts like arms and legs.
 
-![Capsule collision example](/img/collision-example.gif)
+![Capsule collision example](/img/collision-example.webp)
 
 ### Plane
 

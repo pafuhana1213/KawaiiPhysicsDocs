@@ -19,11 +19,11 @@ For the latest release information, see [GitHub Releases](https://github.com/paf
 
 Added a feature that applies the movement and rotation of a specified bone to physics-controlled bones. Effective for preventing skirt penetration through legs.
 
-![SyncBone + Collision comparison](/img/features/syncbone-collision-compare.gif)
+![SyncBone + Collision comparison](/img/features/syncbone-collision-compare.webp)
 
 *Preventing penetration with SyncBone and Collision combined*
 
-![SyncBone + BoneConstraint + Collision](/img/features/syncbone-full-demo.gif)
+![SyncBone + BoneConstraint + Collision](/img/features/syncbone-full-demo.webp)
 
 *Full demo combining SyncBone, BoneConstraint, and Collision*
 
@@ -206,7 +206,7 @@ See [GitHub Discussion #117](https://github.com/pafuhana1213/KawaiiPhysics/discu
 
 Added BoneConstraint feature for distance constraints between bones.
 
-![BoneConstraint Demo](/img/features/boneconstraint-demo.gif)
+![BoneConstraint Demo](/img/features/boneconstraint-demo.webp)
 
 *Effective for cloth simulation like skirts*
 

@@ -52,7 +52,7 @@ UKawaiiPhysicsLimitsDataAsset* LimitsDataAsset;
 
 v1.14.0からDataAssetでBoneConstraint（骨間の距離拘束）を設定できるようになりました。v1.19.0で正式版になっています。
 
-![BoneConstraint Demo](/img/features/boneconstraint-demo.gif)
+![BoneConstraint Demo](/img/features/boneconstraint-demo.webp)
 
 正規表現を使って拘束対象の骨セットを指定できます：
 

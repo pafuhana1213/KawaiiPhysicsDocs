@@ -38,7 +38,7 @@ hair_root → hair_02 → hair_04
 
 v1.17.0から、1つのAnimNodeで複数のRootBoneを制御できるようになりました。
 
-![Additional RootBones](/img/features/additional-rootbones.gif)
+![Additional RootBones](/img/features/additional-rootbones.webp)
 
 *1つのノードで複数のボーンチェーンを制御*
 

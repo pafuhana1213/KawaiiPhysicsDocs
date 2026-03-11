@@ -28,7 +28,7 @@ KawaiiPhysics provides three types of AnimNotify:
 - **AnimNotify**: Triggers on a single frame. Use for instant impacts
 - **AnimNotifyState**: Operates during start-to-end interval. Use for continuous effects
 
-![AnimNotifyState External Force](/img/features/animnotify-externalforce.gif)
+![AnimNotifyState External Force](/img/features/animnotify-externalforce.webp)
 
 *External force application via AnimNotifyState*
 

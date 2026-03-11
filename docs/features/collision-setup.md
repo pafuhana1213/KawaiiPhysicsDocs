@@ -13,7 +13,7 @@ title: "コリジョン設定"
 
 頭や肩など、球形に近い部位に適しています。
 
-![コリジョンの例](/img/collision-example.gif)
+![コリジョンの例](/img/collision-example.webp)
 
 ### Capsule（カプセル）
 
@@ -31,7 +31,7 @@ v1.17.0で追加
 
 直方体形状のコリジョンです。体や建物など、矩形に近い形状に適しています。
 
-![Box Limits](/img/features/box-limits.gif)
+![Box Limits](/img/features/box-limits.webp)
 
 *Box Limitsによる直方体形状の制限*
 
